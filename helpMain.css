@@ -1,0 +1,492 @@
+#helpPage h1 {
+	font: 500 28px/29px ProximaNova, Arial, sans-serif;
+	margin: 0;
+	transition: opacity .3s;
+}
+#helpPage h2 {
+	font: 500 21px/24px ProximaNova, Arial, sans-serif;
+	margin: 0;
+}
+#main h3#pageHeader {
+	font: 400 28px/24px ProximaNova, Arial, sans-serif;
+	margin: 30px auto 0;
+	max-width: 1360px;
+	width: 96%;
+}
+#helpPage h3 {
+	font: 400 16px/24px ProximaNova, Arial, sans-serif;
+	margin: 0;
+}
+#helpPage a {
+	font: 400 17px/24px ProximaNova, Arial, sans-serif;
+}
+#helpPage ul {
+	width: 100%;
+ 	margin: 10px auto;
+ 	display: block;
+	list-style: none;
+}
+#helpPage li {
+	font: 100 17px/18px ProximaNovaReg, ProximaNova, Arial, sans-serif;
+	color: #303030;
+}
+#helpPage li a {
+	font: 400 17px/24px ProximaNova, Arial, sans-serif;
+}
+#helpMain {
+	width: 100%;
+	max-width: 1400px;
+	margin: 0px auto;
+	padding: 0px 40px;
+	display: flex;
+ 	flex-direction: row;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	justify-content: center;
+	transition: opacity .3s;
+}
+#helpBreadCrumbs {
+	width: 100%;
+	max-width: 1400px;
+	min-height: 20px;
+ 	margin: 16px auto 8px;
+  	padding: 0px 10px 0;
+  	display: flex;
+ 	flex-direction: row;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	justify-content: flex-start;
+}
+#main #helpMain #helpBreadCrumbs a{
+	font: 500 15px/18px ProximaNova, Arial, sans-serif;
+	color: #00aeef;
+}
+#helpBreadCrumbs .breadCrumbInner a:before{
+	content: "|";
+	margin: 0 5px;
+	color: #303030;
+}
+#helpBreadCrumbs .breadCrumbInner {
+	transition: opacity .3s;
+}
+
+#helpMain #helpSideBar {
+	width: auto;
+	padding: 0px 10px 14px;
+	order: 2;
+}
+#helpMain #helpSideBar a {
+	color: #303030;
+}
+#helpMain #helpSideBar li {
+	margin: 6px 0;
+}
+#contactSideBar {
+	width: 100%;
+	max-width: 240px;
+ 	margin: 40px 0 0 0;
+  	padding: 0;
+  	display: flex;
+ 	flex-direction: column;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	justify-content: flex-start;
+	z-index: 2;
+}
+#contactSideBar h2 {
+	margin-bottom: 10px;
+}
+#contactSideBar .contactCell {
+	width: 100%;
+  	padding: 0px 0px 0 35px;
+  	display: flex;
+ 	flex-direction: row;
+  	flex-wrap: wrap;
+  	align-content: center;
+	align-items: center;
+  	justify-content: flex-start;
+	position: relative;
+	margin: 8px 0;
+}
+#contactSideBar .contactImg {
+	height: 100%;
+	width: 30px;
+	min-height: 24px;
+	margin: 2px 5px 0 0;
+	position: absolute;
+	left: 0;
+  	display: flex;
+ 	flex-direction: column;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	justify-content: flex-start;
+}
+#contactSideBar .contactCell img {
+	object-fit: contain;
+	align-self: center;
+	max-width: 24px;
+}
+#contactSideBar {
+	margin-bottom: 10px;
+}
+#helpSideBar #contactSideBar .contactCell a {
+	font: 400 15px/20px ProximaNovaReg, ProximaNova, Arial, sans-serif;
+	margin-bottom: 0px;
+	color: #00aeef;
+	align-self: center;
+}
+#contactSideBar .contactCell a:hover {
+	color: #c8c8c8;
+}
+
+#helpMain #helpContent {
+	flex: 1 1 75%;
+	padding: 0px 10px 10px;
+	margin-right: 26px;
+}
+#helpContent .helpContentWrap {
+	min-height: 400px;
+	transition: .3s height;
+}
+
+#helpSearch {
+	width: 100%;
+	margin: 0px auto 30px;
+	z-index: 2;
+}
+#helpSearch div {
+	width: 100%;
+	height: 40px;
+	position: relative;
+  	display: flex;
+ 	flex-direction: row;
+  	flex-wrap: nowrap;
+  	align-content: center;
+  	justify-content: center;
+}
+#helpSearch input {
+	padding: 4px 5px 4px 12px;
+	width: calc(100% - 40px);
+	height: 100%;
+	border: 1px solid grey;
+	border-right: none;
+}
+#helpSearch .helpIconDiv {
+	width: 40px;
+	height: 40px;
+	background: url('imgs/magnifying-glass.png') no-repeat, #00aeef;
+	z-index: 2;
+	background-position: center;
+	cursor: pointer;
+}
+
+#helpQuickLinks {
+	width: 100%;
+	margin: 5px 0 34px 0;
+	padding: 0 0 0 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-between;
+}
+#helpQuickLinks a {
+	font: 600 14px/16px ProximaNova, Arial, sans-serif;
+	width: 19%;
+	display: block;
+	margin: 0;
+	padding: 10px;
+	background: #F2F2F2;
+	border-radius: 5px;
+	border: 1px solid grey;
+	color: #303030;
+	text-align: center;
+  	display: flex;
+ 	flex-direction: column;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	justify-content: center;
+}
+#helpMain .helpHeader {
+ 	margin: 0px 0 8px;
+  	padding: 0;
+  	display: flex;
+ 	flex-direction: row;
+  	flex-wrap: nowrap;
+  	align-content: center;
+  	justify-content: flex-start;
+}
+#helpMain #helpSectionBoxes {
+ 	margin: 0 0 0 0;
+  	padding: 0 0 0 0;
+  	display: flex;
+ 	flex-direction: row;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	justify-content: flex-start;
+}
+#helpMain .helpSectionBox {
+	width: 33.33333%;
+ 	margin: 12px 0;
+  	display: flex;
+ 	flex-direction: column;
+  	flex-wrap: wrap;
+  	align-content: center;
+  	justify-content: center;
+ 	text-align: center;
+	color: #232323;
+	transition: .6s background-color;
+}
+.helpSectionBoxWrap {
+	margin: 0px 8px;
+	padding: 0 5px;
+	min-height: 58px;
+	border: 1px solid #303030;
+	border-radius: 4px;
+	display: flex;
+ 	flex-direction: row;
+  	flex-wrap: wrap;
+  	align-content: center;
+	align-items: center;
+  	justify-content: center;
+ 	text-align: center;
+	color: #232323;
+	font: 500 15px/20px ProximaNova, Arial, sans-serif;
+	position: relative;
+}
+#helpMain .helpSectionBox:hover {
+	background-color: #F2F2F2;
+}
+#helpMain .helpSectionBox img {
+	object-fit: contain;
+	align-self: center;
+	max-height: 30px;
+	max-width: 30px;
+	position: absolute;
+	left: 14px;
+}
+#helpMain .helpAnswerBox {
+	padding: 0px 20px 10px;
+	width: 100%;
+}
+#helpMain .helpAnswerBox h2 {
+	margin: 0px 0 10px;
+	font: 400 21px/22px ProximaNova, Arial, sans-serif;
+}
+#helpMain .helpAnswerBox h3 {
+	margin: 14px 0 5px;
+	font: 600 16px/22px ProximaNova, Arial, sans-serif;
+}
+#helpMain .helpAnswerBox p {
+	margin: 5px 0 10px;
+	font: 400 16px/19px ProximaNova, Arial, sans-serif;
+}
+#helpMain .helpAnswerBox p.paraUnder {
+	text-decoration: underline;
+	font-weight: 600;
+	margin-bottom: 0px;
+}
+#helpMain .helpAnswerBox ul {
+	margin: 5px auto;
+	list-style: disc;
+	width: 90%;
+}
+#helpMain .helpAnswerBox ul ul {
+	margin: 0px auto;
+	list-style: circle;
+	width: 90%;
+}
+#helpMain .helpAnswerBox li {
+	margin: 2px 0 0 10px;
+	font: 400 16px/19px ProximaNova, Arial, sans-serif;
+}
+#helpMain .helpAnswerBox a {
+	margin: auto 0;
+	font: 400 16px/19px ProximaNova, Arial, sans-serif;
+	color: #00aeef;
+}
+#reset {
+ 	margin: 0 auto 0 auto;
+ 	display: block;
+ 	text-align: center;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 600;
+	background: #00aeef;
+	width: 180px;
+	padding: 10px 25px;
+	color: #FFF;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.helpFade {
+	opacity: 0 !important;
+}
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width:1230px) {
+	#helpMain #helpContent {
+		padding: 0px 5px 10px 0;
+		margin-right: 0px;
+	}
+}
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width:1195px) {
+	#helpMain #helpContent {
+		padding: 0px 10px 10px 0;
+		margin-right: 0px;
+	}
+	#helpMain .helpSectionBox {
+		width: 50%;
+	}
+	#helpMain .helpSectionBox .helpSectionBoxWrap {
+		font: 400 14px/15px ProximaNova, Arial, sans-serif;
+	}
+	#helpMain {
+		padding: 0 20px;
+		margin-top: 20px;
+	}
+	#helpQuickLinks a {
+		font: 600 13px/14px ProximaNova, Arial, sans-serif;
+		padding: 5px;
+	}
+	#helpMain #helpSideBar {
+		padding: 0 0px 10px 10px;
+	}
+}
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width:1040px) {
+	#helpSideBarHeader, #helpSideBar ul {
+		display: none;
+	}
+	#helpMain #helpSideBar, #contactSideBar {
+		width: 100%;
+		max-width: 100%;
+	}
+	#contactSideBar {
+		margin-top: 20px;
+		flex-direction: row;
+	}
+	#contactSideBar h2 {
+		width: 100%;
+		margin-bottom: 3px;
+	}
+	#contactSideBar .contactCell {
+		width: 25%;
+	}
+	#contactSideBar .contactImg {
+		justify-content: center;
+		margin-top: 0px;
+	}
+}
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width:985px) {
+	#contactSideBar .contactCell {
+		width: 35%;
+	}
+}
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width:920px) {
+	#helpQuickLinks {
+		justify-content: center;
+	}
+	#helpQuickLinks a {
+		padding: 8px 0;
+		width: 220px;
+		margin: 7px 5px;	
+	}
+}
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width:880px) {
+	#helpMain {
+		padding: 0 10px;
+		margin-top: 10px;
+	}
+}
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width:720px) {
+	#contactSideBar .contactCell {
+		width: 50%;
+	}
+	.helpSectionBoxWrap {
+		margin: 0px 4px;
+	}
+	#helpMain .helpSectionBox {
+		margin: 8px 0;
+	}
+	#helpMain .helpSectionBox img {
+		max-height: 22px;
+		max-width: 22px;
+	}
+	#helpQuickLinks {
+		justify-content: space-around;
+		margin-bottom: 24px;
+	}
+	#helpQuickLinks a {
+		padding: 8px 0;
+		width: 46%;
+		margin: 7px 5px;	
+	}
+}
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width:685px) {
+	#helpMain .helpSectionBox img {
+		position: relative;
+		margin: 0 0 4px 0;
+		left: 0;
+	}
+	.helpSectionBoxWrap {
+		flex-direction: column;
+		margin: 0px 6px;
+		min-height: 64px;
+	}
+}
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width:600px) {
+	#helpQuickLinks {
+		margin: 5px auto 25px;
+		justify-content: space-between
+	}
+	#helpQuickLinks a {
+		width: 49%;
+		margin: 5px 0;
+		font: 600 13px/13px ProximaNova, Arial, sans-serif;
+	}
+}
+/* ----------------------------  MEDIA QUERY ------------------------------ */
+@media screen and (max-width:500px) {
+	#contactSideBar h2 {
+		text-align: center;
+	}
+	#contactSideBar .contactCell {
+		width: 100%;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 7px auto;
+		padding: 0;
+	}
+	#contactSideBar .contactCell a{
+		width: 100%;
+		text-align: center;
+	}
+	#contactSideBar .contactImg {
+		position: relative;
+		max-height: 30px;
+	}
+	#contactSideBar {
+		margin: 20px auto 0;
+	}
+	.helpSectionBoxWrap {
+		margin: 0px 4px;
+	}
+	#helpPage h1 {
+		font: 500 24px/24px ProximaNova, Arial, sans-serif;
+		margin: 0;
+	}
+	#main h3#pageHeader {
+		font: 600 22px/24px ProximaNova, Arial, sans-serif;
+	}
+	#helpBreadCrumbs {
+		padding: 0;
+	}
+	
+}

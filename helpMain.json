@@ -1,0 +1,646 @@
+{
+	"selfHelpLinksHeader": "Self-Help Links",
+	"selfHelpLinkTopics": [
+		{
+			"section": "Where's My Order?",
+			"alternate": "Where's My Order?"
+		},
+		{
+			"section": "Order History",
+			"link": "",
+			"alternate": "Order History"
+		},
+		{
+			"section": "Return An Item",
+			"alternate": "Returns and Exchanges"
+		},
+		{
+			"section": "Change Password",
+			"alternate": "Change Password"
+		},
+		{
+			"section": "Add/Delete Pictures",
+			"alternate": "Add/Delete Pictures"
+		}
+	],
+	"popularTopicsHeader": "Most Popular Topics",
+	"popularTopics": [
+		{
+			"section": "Shipping Rates",
+			"alternate": "Shipping Rates"
+		},
+		{
+			"section": "Duties and Taxes",
+			"alternate": "Duties and Taxes"
+		},
+		{
+			"section": "Refund Timeframes",
+			"alternate": "Refund Timeframes"
+		},
+		{
+			"section": "Account Management",
+			"alternate": "Account Management"
+		},
+		{
+			"section": "Privacy Policy",
+			"alternate": "Privacy Policy"
+		},
+		{
+			"section": "Changing An Order",
+			"alternate": "Changing An Order"
+		}
+	],
+	"mainSectionHeader": "All Help Topics",
+	"mainSection": [
+		{
+			"section": "Domestic Shipping",
+			"sectionImg" : "imgs/north-america.png",
+			"secondSection": [
+				{
+					"section": "Shipping Rates",
+					"sectionImg" : "",
+					"answer": [
+						{
+							"block": "<h2>Shipping Rates</h2>"
+						}
+					]
+				},
+				{
+					"section": "APO / DPO / FPO (Military Shipping)",
+					"answer": [
+						{
+							"block": "<p>Answer Answers</p>"
+						}
+					]
+				},
+				{
+					"section": "Free Shipping",
+					"answer": [
+						{
+							"block": "<p>Answer Answers</p>"
+						}
+					]
+				},
+				{
+					"section": "Shipping Methods",
+					"answer": [
+						{
+							"block": "<p>Answer Answers</p>"
+						}
+					]
+				},
+				{
+					"section": "PO Boxes",
+					"answer": [
+						{
+							"block": "<p>Answer Answers</p>"
+						}
+					]
+				},
+				{
+					"section": "Where's My Order - Domestic",
+					"answer": [
+						{
+							"block": "<p>Answer Answers</p>"
+						}
+					]
+				},
+				{
+					"section": "Sales Tax",
+					"answer": [
+						{
+							"block": "<p>Answer Answers</p>"
+						}
+					]
+				}
+			]
+		},
+		{
+			"section": "International Shipping",
+			"sectionImg" : "imgs/earth-globe.png",
+			"secondSection": [
+				{
+					"section": "Countries We Ship To",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Country Stores",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Customs",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Delays",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Duties & Taxes",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Missing Package",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Product Restrictions",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Shipping Timeframes",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}
+				
+			]
+		},
+		{
+			"section": "Order Inquiries",
+			"sectionImg" : "imgs/icon_orders.png",
+			"secondSection": [
+   				{
+					"section": "Returns and Exchanges",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Backordered Products",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Canceling Orders",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Changing an Order",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Bad/Damaged Products",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Adverse Reaction to Product",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Discontinued Products",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Order History",
+					"link": "",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Reorder Products",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}
+   			]
+		},
+		{
+			"section": "All Access",
+			"sectionImg" : "imgs/allaccess3.png",
+			"secondSection": [
+				{
+					"section": "What is All Access?",
+					"answer": [
+						{
+							"block": "<p>All Access is a subscription service that gives you access to incredible fitness experts who can tell you exactly what you need to do to hit your goals. Start with the fitness plans they created exclusively for Bodybuilding.com. Each plan includes video instruction, daily workouts, nutrition information, supplement guides, and more. We have more than 45 plans for you to choose from!</p>"
+						}
+					]
+				},
+				{
+					"section": "Benefits of All-Access",
+					"answer": [
+						{
+							"block": "<p>45+ expert-designed fitness plans that include:</p><ul><li>Daily workouts</li><li>Video instruction</li><li>Nutrition guides</li><li>Meal plans</li><li>Recipes</li><li>Free apps</li></ul><p>With Much more to come!</p><p>All of the great articles and videos you love will still be free, with fresh features added on the regular. All Access is a premium content subscription service which includes over 45 fitness plans all curated by Bodybuilding.com experts and editors. What you will experience with All Access is a simple path to finding and finishing a fitness plan that fits your goals and your lifestyle.</p><p>We will continue to add new fitness plans, so we can support a broader range of fitness goals. In the near future, we’ll be rolling out live Q&A sessions with the pros, daily advice, original programming, chat, and much more.</p>"
+						}
+					]
+				},
+				{
+					"section": "How Much Is All-Access?",
+					"answer": [
+						{
+							"block": "<h3>How much is all Access?</h3><ul><li>$8.99 per month<li>$89.99 per year (Two months free!)</ul><h3>Can I purchase All Access with Bodybuilding.com in-store credit?</h3><p>You cannot purchase All Access with in-store credit. Your All Access subscription will require a valid credit card for auto renewal.<h3>The Bodybuilding.com store has a 10% Off Everything promotion. Does that apply to All Access?</h3><p>No, that promotion cannot be applied to the purchase of an All Access subscription. If we choose to run a promotion on All Access, it will be clearly specified.<h3>Is there a free trial of All Access?</h3><p>We do not offer a free trial period, but try out this pared down version of our fitness plans. It’s simple for you to jump in, give it a try, and consider signing up for All Access.</p><a href=https://www.bodybuilding.com/fun/new-year-start-here-7-day-beginner-trainer.html>7-Day Beginner Trainer</a><h3>Will I be charged sales tax if I purchase an All Access subscription?</h3><p>Yes, you will be charged sales tax based on the credit card billing address associated with your subscription purchase and auto renewals."
+						}
+					]
+				},
+				{
+					"section": "How Do I Use All-Access?",
+					"answer": [
+						{
+							"block": "<h3>Once I’m signed up, how do I view the All Access content?</h3><p>Please make sure you are logged into your Bodybuilding.com account to view the content on the All Access section of the website.<h3>How do I find the right fitness plan for me?</h3><p>Once you are logged in, you will be able to filter all of the plans by goal, fitness experience level, duration, and more."
+						}
+					]
+				},
+				{
+					"section": "All-Access Subscription Details",
+					"answer": [
+						{
+							"block": "<h3>Can I skip a month with my annual All Access subscription?</h3><p>Not at this time. Annual All Access subscriptions will run for twelve consecutive months from your date of purchase. If you need to cancel your subscription, please see our cancelation policy below.<h3>How do I cancel my All Access subscription?</h3><p>If you purchased your All Access subscription directly from Bodybuilding.com’s website, please log in to you Bodybuilding.com Account and choose Manage Subscription from your My Account page. Here you will be able to cancel your All Access subscription. You can also contact our stellar Customer Service team for assistance.<p>If you purchased an All Access subscription through Google Play or iTunes, please reference the subscription policies of Google Play and iTunes directly, as your subscription is managed directly through the app store and not your Bodybuilding.com account.<h3>Will I receive a refund if I cancel All Access?</h3><p>We do not provide refunds for All Access. If you cancel, your subscription will remain active for the duration of the subscription period you purchased.<h3>How do I view or edit my All Access Account and Billing Information?</h3><p>If you purchased your All Access subscription directly from Bodybuilding.com’s website, please log in and choose Manage Subscription from your My Account page. It will have all the information about your All Access purchase, payment method, and renewal transactions. Alternatively, if you purchased your All Access subscription from Google Play or iTunes, your subscriptions will be managed through your Google Play or iTunes account used to purchase your All Access subscription.<h3>How do I know I am officially signed up for All Access?</h3><p>A welcome email will be sent to the email address that is connected to your Bodybuilding.com account."
+						}
+					]
+				},
+				{
+					"section": "All-Access App Questions",
+					"answer": [
+						{
+							"block": "<h3>I downloaded a free Bodybuilding.com fitness plan app from Google Play. Do I still have access to my app?</h3><p>If you downloaded a free Bodybuilding.com fitness plan app from Google Play store, you will no longer have access to its content. You must subscribe to All Access in order to use the app.<h3>I purchased a Bodybuilding.com fitness plan app from iTunes. Do I still have access to my app?</h3><p>If you purchased your Bodybuilding.com fitness plan app from iTunes, that app and its content is yours as long as you like.<h3>Will I get All Access since the app I purchased is now part of the subscription package?</h3><p>Your previously downloaded Bodybuilding.com fitness app does not grant you access to the All Access program but rather only the content within the app you purchased. You must subscribe to All Access in order to enjoy other fitness plans.<h3>Can I purchase an All Access subscription through Google Play or iTunes?</h3><p>Yes, you can sign up for All Access directly through any Bodybuilding.com fitness plan app (excluding the BodySpace application) using the payment method associated with your iTunes or Google Play account. All subscriptions and auto-renewing charges purchased through a Bodybuilding.com fitness plan application will be managed through your Google Play or iTunes account."
+						}
+					]
+				}
+			]
+   
+		},
+		{
+			"section": "Gift Certificates",
+			"sectionImg" : "imgs/gift1.png",
+			"secondSection": [
+				{
+					"section": "Buying Gift Certificates",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Gift Certificate Balance",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Using Gift Certificate",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}
+			]
+		},
+		{
+			"section": "Account Inquiries",
+			"sectionImg" : "imgs/icon_account.png",
+			"secondSection": [
+				{
+					"section" : "Change Billing Address",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section" : "Change Username",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section" : "Manage Credit Cards",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section" : "Deactivate Account",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section" : "Change Password",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section" : "Change Email Address",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section" : "Order History",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section" : "Change Shipping Address ",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}
+			]
+		},
+		{
+			"section": "BodySpace",
+			"sectionImg" : "https://www.bodybuilding.com/images/lpimages/optimization/testing/help-page/bbIcon1.png",
+			"secondSection": [
+				{
+					"section": "Deactivate My Account",
+					"answer": [
+						{
+							"block": "<p>You can easily deactivate your profile by getting in touch with our customer service team. You can call our team at <a href='tel:+1-866-236-8417'>1-866-236-8417</a>, <a href='https://cschat.bodybuilding.com/chat/chatstart.aspx?domain=www.bodybuilding.com&SID=0'>Chat Live</a> with a representative, or send us an email at <a href='mailTo:service@bodybuilding.com'>service@bodybuilding.com</a></p><p>Please include your BodySpace Username, your date of birth, and the email address associated with your account.</p><p>Please note there is no way to completely delete an account, so you may want to erase any personal photos/information from your account before contacting us. After deactivation you are still able to log into the account and place orders, but the account is not active on BodySpace or the forums.</p>"
+						}
+					]
+				},
+				{
+					"section": "Change Username",
+					"answer": [
+						{
+							"block": "<p>Once an account has been created, the username cannot be changed. If changing your username is vital, the only solution is to deactivate your profile and create a new one using a different username and email address.</p><p>If you choose to create a new profile, please note you will not have access to your previous order history, saved payments and shipping details, forum posts, or BodySpace profile information (including tracked workouts).</p><p>Click here for more information on deactivating your account.</p>"
+						}
+					]
+				},
+				{
+					"section": "Create An Account",
+					"answer": [
+						{
+							"block": "<p>You can easily create a profile on the <a href='https://www.bodybuilding.com/profile/signup'>Account Registration page</a>.</p>"
+						}
+					]
+				},
+				{
+					"section": "BodySpace Profile Management",
+					"answer": [
+						{
+							"block": "<p>You can easily manage profile information in your profile by going to <a href='https://my.bodybuilding.com/community/my-bodyspace/'>your BodySpace dashboard</a> and clicking the ‘Manage Profile’ link located in the left bar.</p>"
+						}
+					]
+				},
+				{
+					"section": "Manage Friends",
+					"answer": [
+						{
+							"block": "<p>Having friends with similar aspirations can make a big difference when it comes to accomplishing your own health and fitness goals.</p><ul><p>Adding:</p><ul><li>You can add someone as a friend by going to the ‘Member Search’ section of BodySpace.</li></ul><p>Removing:</p><ul><li>You can remove friends by logging in and going to your friends page. From there you can click on the friend button to remove a user from your friends list.</li></ul></ul>"
+						}
+					]
+				},
+				{
+					"section": "Add/Remove Pictures",
+					"answer": [
+						{
+							"block": "<h2>Removing Pictures</h2><p>You can remove Progress photos, Gallery photos, and Videos from your profile by logging in and going to <a href='https://my.bodybuilding.com/community/my-bodyspace/'>your BodySpace dashboard</a>, clicking the ‘Manage Profile’ link in the left bar, and then clicking on Photos in the left bar. Click on the blue ‘edit’ button at the top right of photos, and then click delete.</p><h2>Adding Pictures</h2><p>You can add Progress photos and Gallery photos to your profile by logging in and going to <a href='https://my.bodybuilding.com/community/my-bodyspace/'>your BodySpace dashboard</a>, and then clicking on 'Add Photo' in the right top bar.</p>"
+						}
+					]
+				},
+				{
+					"section": "Block User",
+					"answer": [
+						{
+							"block": "<p>You can block other BodySpace members by adding them to your Ignore List, in the <a href='https://forum.bodybuilding.com/profile.php?do=ignorelist'>forum settings</a>. Members can be added or removed at any time.</p><p>Once a member has been added to your ignore list, they can no longer send direct messages, leave profile comments, or interact with your BodySpace profile.</p>"
+						}
+					]
+				},
+				{
+					"section": "Tracking Workouts",
+					"answer": [
+						{
+							"block": "<h2>On Website:</h2><p>You can easily track your progress or track a workout at your computer by logging in and going to the <a href='https://bodyspace.bodybuilding.com/community/track'>Track section</a> of your BodySpace profile.</p><h2>On App:</h2><p>Using the BodySpace app….</p>"
+						}
+					]
+				},
+				{
+					"section": "Setting Goals",
+					"answer": [
+						{
+							"block": "<p>Setting goals is an important step on the road to success.</p><h2>On Website:</h2><p>You can add, change, or remove your goals from BodySpace by navigating to the <a href='https://bodyspace.bodybuilding.com/community/goal'>Track section</a> of your BodySpace account.<h2>On App:</h2><p>Using the BodySpace app….</p>"
+						}
+					]
+				}
+    			
+			]
+			
+		},
+		{
+			"section": "Payments and Refunds",
+			"sectionImg" : "imgs/icon_payment.png",
+			"secondSection": [
+				{
+					"section": "Payment Methods",
+					"answer": [
+						{
+							"block": "<h2>Accepted Methods</h2><p>We accept several different payment methods including:</p><ul><li>Amazon Pay</li><li>Credit Cards</li><ul><li>Visa</li><li>MasterCard</li><li>Discover</li><li>American Express</li><li>JCB</li></ul><li>Bodybuilding.com Gift Certificates</li><li>PayPal</li><li>Bank Wire Transfer</li><li>Money Order</li></ul><p>We do not accept cash or personal check payments.</p><p>Notes:</p><ul><li>The bank wire transfer and money order options are not available for customers using our mobile Store app.</li><li>Money order, Discover cards, and JCB cards are only available for domestic customers.</li><li>For the safety and security of our customers, any international orders over $25,000 USD must be placed using a secure form of payment.</li></ul><p>Brazilian Customers: A few Brazilian banks currently block the use of credit cards on the Brazilian Bodybuilding.com site. If you are having problems using your credit card, please attempt to place your order again using the U.S. store.</p>"
+						}
+						
+					]
+				},
+				{
+					"section": "Checkout Errors",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}, 
+				{
+					"section": "Credit / Debit Cards",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}, 
+				{
+					"section": "In-Store Credit",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}, 
+				{
+					"section": "Using Gift Certificate",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}, 
+				{
+					"section": "PayPal",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}, 
+				{
+					"section": "Refund Timeframes",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}, 
+				{
+					"section": "Secure Payments",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}, 
+				{
+					"section": "Store Currency",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}
+			]
+		},
+		{
+			"section": "Shopping the Store",
+			"sectionImg" : "imgs/shoppingthestore.png",
+			"secondSection": [
+				{
+					"section": "Backordered Products",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Country Store",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Discontinued Products",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "New Product Request",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Product Restrictions",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Quantity Policy",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				},
+				{
+					"section": "Review Products",
+					"answer": [
+						{
+							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+						}
+					]
+				}
+			]
+   
+		}
+	]
+}
