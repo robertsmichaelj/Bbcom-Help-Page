@@ -61,12 +61,12 @@
 	font: 500 15px/18px ProximaNova, Arial, sans-serif;
 	color: #00aeef;
 }
-#helpBreadCrumbs .breadCrumbInner a:before{
+#helpBreadCrumbs #breadCrumbInner a:before{
 	content: "|";
 	margin: 0 5px;
 	color: #303030;
 }
-#helpBreadCrumbs .breadCrumbInner {
+#helpBreadCrumbs #breadCrumbInner {
 	transition: opacity .3s;
 }
 
@@ -224,6 +224,7 @@
   	flex-wrap: wrap;
   	align-content: center;
   	justify-content: flex-start;
+	transition: opacity .3s;
 }
 #helpMain .helpSectionBox {
 	width: 33.33333%;

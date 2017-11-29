@@ -1,18 +1,17 @@
 /*jslint devel: true, nomen: true, sloppy: true, browser: true, regexp: true*/
 /*global $*/
 
-var i, helpData, secondIndex, mainSection, firstHeader, secondHeader, thirdHeader, forthHeader, origClick, breadcrumb, value, sectionName,
-	sideTopicsAppendTo = document.getElementById("helpSideBar").getElementsByTagName("UL")[0],
+//BASIC GLOBAL VARIABLES
+var i, helpData, secondIndex, mainSection, firstHeader, secondHeader, thirdHeader, forthHeader, origClick, breadcrumb, value, sectionName, sectionAnswer,
+	sideTopicsContainer = document.getElementById("helpSideBar").getElementsByTagName("UL")[0],
 	mainCellsAppendTo = document.getElementById("helpSectionBoxes"),
-	quickLinksAppendTo = document.getElementById("helpQuickLinks"),
-	topicHeader = document.getElementById('helpContent').getElementsByTagName("h1")[0],
-	helpBoxes = $('#helpSectionBoxes'),
-	helpBoxes1 = document.getElementById('helpSectionBoxes'),
+	quickLinksContainer = document.getElementById("helpQuickLinks"),
+	breadCrumbsContainer = document.getElementById('helpBreadCrumbs'),
+	breadCrumbInner = document.getElementById('breadCrumbInner'),
+	helpBoxes = document.getElementById('helpSectionBoxes'),
 	searchBar = document.getElementById('helpSearchBar'),
-	helpMain = document.getElementById('helpMain'),
-	breadCrumbInner = $('.breadCrumbInner'),
-	transitionSpeed = 300;
-
+	transitionSpeed = 300,
+	classFade = 'helpFade';
 //ADDS CUSTOMERS NAME TO THE HEADER OF THE PAGE IF THEY ARE LOGGED IN AND HAVE A NAME SET
 document.addEventListener("DOMContentLoaded", function () {
 	if (localStorage.getItem("currentUser") !== null) {
@@ -30,35 +29,42 @@ function changePageAttributes(text) {
 	var titleText = text;
 	document.title = "Bodybuilding.com Help - " + titleText;
 }
-
-function mainHeaderFade(text) {
-	topicHeader.classList.add('helpFade');
-	setTimeout(function () {
-		topicHeader.innerHTML = text;
-		topicHeader.classList.remove('helpFade');
-	}, transitionSpeed);
-}
-
+//REMOVES CHILDREN OF AN ELEMENT
 function removeChildren(element) {
 	while (element.hasChildNodes()) {
 		element.removeChild(element.lastChild);
 	}
 }
-
 function helpFadeOut(element) {
-	element.classList.add('helpFade');
+	element.classList.add(classFade);
 }
-
 function helpFadeIn(element) {
-	element.classList.remove('helpFade');
+	element.classList.remove(classFade);
 }
 
-function breadCrumbs(first, second, third, forth) {
-	var breadLink,
-		breadCrumbInner1 = document.querySelector('.breadCrumbInner');
-	helpFadeOut(breadCrumbInner1);
+//CREATES FADE FOR THE MAIN HEADER 
+function mainHeaderFade(text) {
+	var topicHeader = document.getElementById('helpContent').getElementsByTagName("h1")[0];
+	helpFadeOut(topicHeader);
 	setTimeout(function () {
-		removeChildren(breadCrumbInner1);
+		topicHeader.innerHTML = text;
+		helpFadeIn(topicHeader);
+	}, transitionSpeed);
+}
+
+function breadLinked() {
+	var bread = document.querySelectorAll('.helpBreadLink');
+	for (i = 0; i < bread.length; i += 1) {
+		bread[i].addEventListener("click", function () {
+			searching(this.textContent);
+		});
+	}
+}
+function breadCrumbs(first, second, third, forth) {
+	var breadLink;
+	helpFadeOut(breadCrumbInner);
+	setTimeout(function () {
+		removeChildren(breadCrumbInner);
 		if (second) {
 			breadLink = document.createElement('a');
 			breadLink.classList.add("helpBreadLink", "helpBreadLink2");
@@ -80,7 +86,8 @@ function breadCrumbs(first, second, third, forth) {
 			breadLink.textContent = forth;
 			breadCrumbInner.append(breadLink);
 		}
-		helpFadeIn(breadCrumbInner1);
+		helpFadeIn(breadCrumbInner);
+		breadLinked();
 	}, transitionSpeed);
 }
 
@@ -107,11 +114,11 @@ function createCells(text, appendTo, main, second, third, imgSrc) {
 		}
 		cell.append(wrapSection);
 		appendTo.append(cell);
-	} else if (appendTo === sideTopicsAppendTo) {
+	} else if (appendTo === sideTopicsContainer) {
 		listItem.append(anchor);
 		anchor.innerHTML = text;
 		appendTo.append(listItem);
-	} else if (appendTo === quickLinksAppendTo) {
+	} else if (appendTo === quickLinksContainer) {
 		cell.append(anchor);
 		anchor.innerHTML = text;
 		appendTo.append(anchor);
@@ -124,16 +131,15 @@ function createAnswers(text) {
 	try {
 		if (text[0].block.length >= 1) {
 			helpDiv.innerHTML = text[0].block;
-			helpBoxes1.append(helpDiv);
+			helpBoxes.append(helpDiv);
 		} else if (text[0].block === undefined) {
 			helpDiv.innerHTML = text;
-			helpBoxes1.append(helpDiv);
+			helpBoxes.append(helpDiv);
 		}
 	} catch (e) {
 		helpDiv.innerHTML = text;
-		helpBoxes1.append(helpDiv);
+		helpBoxes.append(helpDiv);
 	}
-	
 }
 
 function createSearchAnswers(answer, breadcrumb) {
@@ -147,19 +153,19 @@ function createSearchAnswers(answer, breadcrumb) {
 			sectionText = answerData[index].section;
 		breadCrumbs(firstHeader, breadcrumb, thirdBreadCrumb1);
 		mainHeaderFade(sectionText);
-		helpFadeOut(helpBoxes1);
+		helpFadeOut(helpBoxes);
 		setTimeout(function () {
-			removeChildren(helpBoxes1);
+			removeChildren(helpBoxes);
 			createAnswers(textData);
-			helpBoxes1.classList.remove('helpFade');
+			helpBoxes.classList.remove(classFade);
 		}, transitionSpeed);
 	});
 }
 
 function createSearchCells(answer) {
-	helpFadeOut(helpBoxes1);
+	helpFadeOut(helpBoxes);
 	setTimeout(function () {
-		removeChildren(helpBoxes1);
+		removeChildren(helpBoxes);
 		for (i = 0; i < answer.length; i += 1) {
 			var wrapSection = document.createElement('div'),
 				cell = document.createElement('a');
@@ -169,7 +175,7 @@ function createSearchCells(answer) {
 			cell.append(wrapSection);
 			mainCellsAppendTo.append(cell);
 		}
-		helpBoxes1.classList.remove('helpFade');
+		helpBoxes.classList.remove(classFade);
 	}, transitionSpeed);
 }
 
@@ -183,17 +189,15 @@ function initSearch(data) {
 function quickSearch(term) {
 	$.each(mainSection, function (index, value) {
 		if (typeof value.answer !== "undefined") {
-			var sectionAnswer = value.answer,
-				link2 = term.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
+			var link2 = term.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
+			sectionAnswer = value.answer;
 			sectionName = value.section.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
-			
 			if (sectionName.indexOf(link2) >= 0 && sectionAnswer.length >= 0) {
 				createAnswers(sectionAnswer[0].block);
 			}
 		}
 	});
 }
-
 function searching(term) {
 	var searchArray = [],
 		searchTerm,
@@ -202,9 +206,9 @@ function searching(term) {
 		searchTerm = searchBar.value.toLowerCase();
 		for (i = 0; i < mainSection.length; i += 1) {
 			value = mainSection[i];
-			var sectionAnswer = value.answer[0].block;
-			sectionName = value.section.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
 			if (typeof value.answer !== "undefined") {
+				sectionAnswer = value.answer[0].block;
+				sectionName = value.section.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
 				if (sectionAnswer.toLowerCase().indexOf(searchTerm) >= 0 && searchTerm.length > 0) {
 					searchArray.push(value);
 				}
@@ -219,7 +223,7 @@ function searching(term) {
 		createSearchCells(stripSearch);
 		createSearchAnswers(stripSearch);
 	} else if (term !== undefined) {
-		searchTerm = term;
+		searchTerm = term.toLowerCase();
 		for (i = 0; i < breadcrumb.length; i += 1) {
 			value = breadcrumb[i];
 			sectionName = value.section.toLowerCase();
@@ -243,7 +247,7 @@ function initLoad(data) {
 	document.getElementById('helpSideBarHeader').textContent = helpData.popularTopicsHeader;
 	for (i = 0; i < helpData.popularTopics.length; i += 1) {
 		text = helpData.popularTopics[i].section;
-		createCells(text, sideTopicsAppendTo);
+		createCells(text, sideTopicsContainer);
 	}
 	//CREATE MAIN SECTIONS
 	document.getElementById('helpH1').textContent = firstHeader;
@@ -256,7 +260,7 @@ function initLoad(data) {
 	document.getElementById('helpQuickLinksHeader').textContent = helpData.selfHelpLinksHeader;
 	for (i = 0; i < helpData.selfHelpLinkTopics.length; i += 1) {
 		text = helpData.selfHelpLinkTopics[i].section;
-		createCells(text, quickLinksAppendTo);
+		createCells(text, quickLinksContainer);
 	}
 	//SET CLICK ZONES
 	$(document).on('click', '.helpSectionNormalBox', function (e) {
@@ -269,32 +273,31 @@ function initLoad(data) {
 			thirdHeader = helpData.mainSection[origClick].secondSection[indexBox].section;
 			breadCrumbs(firstHeader, secondHeader, thirdHeader);
 			mainHeaderFade(thirdHeader);
-			helpFadeOut(helpBoxes1);
-			removeChildren(helpBoxes1);
-			createAnswers(text);
-			changePageAttributes(thirdHeader);
-			helpFadeIn(helpBoxes1);
+			helpFadeOut(helpBoxes);
+			setTimeout(function () {
+				removeChildren(helpBoxes);
+				createAnswers(text);
+				changePageAttributes(thirdHeader);
+				helpFadeIn(helpBoxes);
+			}, transitionSpeed);
 		} else {
 			//FIRST CLICK ON MAIN CELLS
 			origClick = indexBox;
 			secondHeader = helpData.mainSection[indexBox].section;
 			breadCrumbs(firstHeader, secondHeader);
 			mainHeaderFade(secondHeader);
-			helpFadeOut(helpBoxes1);
-			removeChildren(helpBoxes1);
-			for (i = 0; i < helpData.mainSection[indexBox].secondSection.length; i += 1) {
-				text = helpData.mainSection[indexBox].secondSection[i].section;
-				imgSrc = helpData.mainSection[indexBox].secondSection[i].sectionImg;
-				createCells(text, mainCellsAppendTo, true, true, false, imgSrc);
-				changePageAttributes(secondHeader);
-			}
-			helpFadeIn(helpBoxes1);
+			helpFadeOut(helpBoxes);
+			setTimeout(function () {
+				removeChildren(helpBoxes);
+				for (i = 0; i < helpData.mainSection[indexBox].secondSection.length; i += 1) {
+					text = helpData.mainSection[indexBox].secondSection[i].section;
+					imgSrc = helpData.mainSection[indexBox].secondSection[i].sectionImg;
+					createCells(text, mainCellsAppendTo, true, true, false, imgSrc);
+					changePageAttributes(secondHeader);
+				}
+				helpFadeIn(helpBoxes);
+			}, transitionSpeed);
 		}
-	});
-
-	$(document).on('click', '.helpBreadLink', function () {
-		var breadText = $(this).text().toLowerCase();
-		searching(breadText);
 	});
 	var quickLinks = $('#helpQuickLinks a'),
 		popTopics = $('#helpSideBar ul li');
@@ -305,11 +308,12 @@ function initLoad(data) {
 			alternate = helpData.selfHelpLinkTopics[indexBox].alternate;
 		breadCrumbs(header1, header2);
 		mainHeaderFade(header2);
-		helpBoxes.fadeOut(transitionSpeed, function () {
-			helpBoxes.children().remove();
+		helpFadeOut(helpBoxes);
+		setTimeout(function () {
+			removeChildren(helpBoxes);
 			quickSearch(alternate);
-			helpBoxes.fadeIn(transitionSpeed);
-		});
+			helpFadeIn(helpBoxes);
+		}, transitionSpeed);
 	});
 	popTopics.on('click', function () {
 		indexBox = $(this).index();
@@ -318,29 +322,32 @@ function initLoad(data) {
 			alternate = helpData.popularTopics[indexBox].alternate;
 		breadCrumbs(header1, header2);
 		mainHeaderFade(header2);
-		helpBoxes.fadeOut(transitionSpeed, function () {
-			helpBoxes.children().remove();
+		helpFadeOut(helpBoxes);
+		setTimeout(function () {
+			removeChildren(helpBoxes);
 			quickSearch(alternate);
-			helpBoxes.fadeIn(transitionSpeed);
-		});
+			helpFadeIn(helpBoxes);
+		}, transitionSpeed);
 	});
+	breadLinked();
 }
 
 function reset(data) {
-	//FADE ALL ELEMENTS WITH CHANGES AND REMOVE CHILDREN THEN LOAD PAGE AS NEW AGAIN
-	helpMain.classList.add('helpFade');
+	var helpMain = document.getElementById('helpMain'),
+		resetTitle = "Bodybuilding.com Help Center";
+	//FADE ALL ELEMENTS WITH CHANGES, REMOVE CHILDREN, THEN LOAD PAGE AS NEW AGAIN
+	helpFadeOut(helpMain);
 	setTimeout(function () {
-		$('#helpSectionBoxes, #helpSideBar ul, #helpQuickLinks, #helpBreadCrumbs .breadCrumbInner').children().remove();
+		//REMOVE CHILDREN FOR EACH OF THESE CONTAINERS
+		[helpBoxes, quickLinksContainer, breadCrumbInner, sideTopicsContainer].forEach(removeChildren);
 		initLoad(data);
-		helpMain.classList.remove('helpFade');
+		helpFadeIn(helpMain);
 	}, transitionSpeed);
 	//CHANGE PAGE TITLE WHEN RESETING BACK TO DEFAULT
-	var resetTitle = "Bodybuilding.com Help Center";
 	changePageAttributes(resetTitle);
 	//ERASE ANYTHING IN THE SEARCH BAR WHEN RESETTING
 	searchBar.value = "";
 }
-
 
 function setResetClicksEvents(data) {
 	var resetElements = document.querySelectorAll(".resetLinking"),
