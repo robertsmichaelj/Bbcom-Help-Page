@@ -2,28 +2,34 @@
 /*global $*/
 
 //BASIC GLOBAL VARIABLES
-var i, helpData, secondIndex, mainSection, firstHeader, secondHeader, thirdHeader, forthHeader, origClick, breadcrumb, value, sectionName, sectionAnswer,
+var i, r, jsonData, mainSection, firstHeader, secondHeader, thirdHeader, mainSections, value, secondSections, sectionName, sectionAnswer, answers, value1,
 	sideTopicsContainer = document.getElementById("helpSideBar").getElementsByTagName("UL")[0],
 	mainCellsAppendTo = document.getElementById("helpSectionBoxes"),
 	quickLinksContainer = document.getElementById("helpQuickLinks"),
-	breadCrumbsContainer = document.getElementById('helpBreadCrumbs'),
 	breadCrumbInner = document.getElementById('breadCrumbInner'),
 	helpBoxes = document.getElementById('helpSectionBoxes'),
 	searchBar = document.getElementById('helpSearchBar'),
+	resetElements = document.querySelectorAll(".resetLinking"),
+	typingTimer,
 	transitionSpeed = 300,
 	classFade = 'helpFade';
-//ADDS CUSTOMERS NAME TO THE HEADER OF THE PAGE IF THEY ARE LOGGED IN AND HAVE A NAME SET
-document.addEventListener("DOMContentLoaded", function () {
-	if (localStorage.getItem("currentUser") !== null) {
-		var name = JSON.parse(localStorage.currentUser).user.realName,
-			firstName = name.trim().split(" ")[0];
-		if (firstName.length > 0) {
-			document.getElementById('pageHeader').textContent = "Hello, " + firstName + ". How can we help you?";
-		} else {
-			return;
-		}
+//GET JSON DATA AND SEND TO APPROPRIATE FUNCTIONS
+$.ajax({
+	'async': false,
+	url: "helpMain.json",
+	dataType: "json",
+	success: function (data) {
+		jsonData = data;
 	}
 });
+//ALL SECTIONS TOP AND BOTTOM
+mainSection = JSON.search(jsonData, '*//*[section]');
+//TOP LEVEL SECTIONS
+mainSections = JSON.search(jsonData, '//mainSection[section]');
+//BOTTOM LEVEL SECTIONS AND ANSWERS
+answers = JSON.search(jsonData, '//secondSection[section]');
+//SECONDARY SECTIONS
+secondSections = JSON.search(jsonData, '//secondSection[secondarySection]');
 //CHANGES PAGE TITLE IN HOPES SEARCH ENGINES WILL PICK UP ON IT
 function changePageAttributes(text) {
 	var titleText = text;
@@ -35,29 +41,33 @@ function removeChildren(element) {
 		element.removeChild(element.lastChild);
 	}
 }
+//FADES OUT ELEMENT WITH CSS
 function helpFadeOut(element) {
 	element.classList.add(classFade);
 }
+//FADE IN ELEMENT WITH CSS
 function helpFadeIn(element) {
 	element.classList.remove(classFade);
 }
 
-//CREATES FADE FOR THE MAIN HEADER 
-function mainHeaderFade(text) {
-	var topicHeader = document.getElementById('helpContent').getElementsByTagName("h1")[0];
-	helpFadeOut(topicHeader);
-	setTimeout(function () {
-		topicHeader.innerHTML = text;
-		helpFadeIn(topicHeader);
-	}, transitionSpeed);
+//BREADCRUMBS SECTION
+function breadClick(element, i) {
+	element[i].addEventListener("click", function () {
+		if (this.classList.contains('helpBreadLink2')) {
+			console.log('bread link 2');
+			searching(this.textContent, 1);
+		} else if (this.classList.contains('helpBreadLink3')) {
+			console.log('bread link 3');
+			searching(this.textContent, 2);
+		}
+		console.log(this.textContent);
+		
+	});
 }
-
 function breadLinked() {
 	var bread = document.querySelectorAll('.helpBreadLink');
 	for (i = 0; i < bread.length; i += 1) {
-		bread[i].addEventListener("click", function () {
-			searching(this.textContent);
-		});
+		breadClick(bread, i);
 	}
 }
 function breadCrumbs(first, second, third, forth) {
@@ -91,7 +101,18 @@ function breadCrumbs(first, second, third, forth) {
 	}, transitionSpeed);
 }
 
-function createCells(text, appendTo, main, second, third, imgSrc) {
+//CREATES FADE FOR THE MAIN HEADER 
+function mainHeaderFade(text) {
+	var topicHeader = document.getElementById('helpContent').getElementsByTagName("h1")[0];
+	helpFadeOut(topicHeader);
+	setTimeout(function () {
+		topicHeader.innerHTML = text;
+		helpFadeIn(topicHeader);
+	}, transitionSpeed);
+}
+
+//CREATES CLICKABLE CELLS
+function createCells(text, appendTo, main, second, imgSrc) {
 	var cell = document.createElement('a'),
 		wrapSection = document.createElement('div'),
 		cellImg = document.createElement('img'),
@@ -99,12 +120,10 @@ function createCells(text, appendTo, main, second, third, imgSrc) {
 		anchor = document.createElement('a'),
 		imgSource = imgSrc;
 	if (appendTo === mainCellsAppendTo) {
-		if (main === true && second === false && third === false) {
+		if (main === true && second === false) {
 			cell.classList.add('helpSectionBox', 'helpSectionNormalBox');
-		} else if (main === true && second === true && third === false) {
+		} else if (main === true && second === true) {
 			cell.classList.add('helpSectionBox', 'helpSectionNormalBox', 'helpSectionBoxSecond');
-		} else if (main === true && second === true && third === true) {
-			cell.classList.add('helpSectionBox', 'helpSectionNormalBox', 'helpSectionBoxThird');
 		}
 		wrapSection.className = 'helpSectionBoxWrap';
 		wrapSection.innerHTML = text;
@@ -142,7 +161,7 @@ function createAnswers(text) {
 	}
 }
 
-function createSearchAnswers(answer, breadcrumb) {
+function setSearchClicks(answer, breadcrumb) {
 	//CLICK ON SEARCH GENERATED CELLS
 	$(document).on('click', '.helpSectionSearchBox', function (e) {
 		e.preventDefault();
@@ -157,55 +176,48 @@ function createSearchAnswers(answer, breadcrumb) {
 		setTimeout(function () {
 			removeChildren(helpBoxes);
 			createAnswers(textData);
-			helpBoxes.classList.remove(classFade);
+			helpFadeIn(helpBoxes);
 		}, transitionSpeed);
 	});
 }
-
-function createSearchCells(answer) {
+function createSearchCells(data, secondary) {
 	helpFadeOut(helpBoxes);
 	setTimeout(function () {
-		removeChildren(helpBoxes);
-		for (i = 0; i < answer.length; i += 1) {
+		if (secondary !== true) {
+			removeChildren(helpBoxes);
+		}
+		for (i = 0; i < data.length; i += 1) {
 			var wrapSection = document.createElement('div'),
 				cell = document.createElement('a');
 			wrapSection.className = 'helpSectionBoxWrap';
-			wrapSection.innerHTML = answer[i].section;
-			cell.classList.add('helpSectionBox', 'helpSectionSearchBox');
+			wrapSection.innerHTML = data[i].section;
+			cell.classList.add('helpSectionBox', 'helpSectionNormalBox');
 			cell.append(wrapSection);
 			mainCellsAppendTo.append(cell);
 		}
-		helpBoxes.classList.remove(classFade);
+		helpFadeIn(helpBoxes);
 	}, transitionSpeed);
 }
-
-//SEARCH FUNCTIONS
-function initSearch(data) {
-	var searchData = data;
-	mainSection = JSON.search(searchData, '*//*[section]');
-	breadcrumb = JSON.search(searchData, '//mainSection[section]');
-}
-
-function quickSearch(term) {
-	$.each(mainSection, function (index, value) {
-		if (typeof value.answer !== "undefined") {
-			var link2 = term.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
-			sectionAnswer = value.answer;
-			sectionName = value.section.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
-			if (sectionName.indexOf(link2) >= 0 && sectionAnswer.length >= 0) {
-				createAnswers(sectionAnswer[0].block);
-			}
+function secondarySearch(term) {
+	var secTerm = term.toLowerCase();
+	for (i = 0; i < secondSections.length; i += 1) {
+		var value1 = secondSections[i];
+		sectionName = value1.secondarySection.toLowerCase();
+		if (sectionName.indexOf(secTerm) >= 0) {
+			createCells(value1.section, mainCellsAppendTo, true, true);
 		}
-	});
+	}
 }
-function searching(term) {
+function searching(term, type, header) {
+	console.log(term);
 	var searchArray = [],
 		searchTerm,
 		stripSearch;
 	if (searchBar.value) {
+		//SEARCH IN THE SEARCH BAR
 		searchTerm = searchBar.value.toLowerCase();
-		for (i = 0; i < mainSection.length; i += 1) {
-			value = mainSection[i];
+		for (i = 0; i < answers.length; i += 1) {
+			value = answers[i];
 			if (typeof value.answer !== "undefined") {
 				sectionAnswer = value.answer[0].block;
 				sectionName = value.section.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
@@ -221,113 +233,114 @@ function searching(term) {
 			return index === self.indexOf(elem);
 		});
 		createSearchCells(stripSearch);
-		createSearchAnswers(stripSearch);
+		setSearchClicks(stripSearch);
 	} else if (term !== undefined) {
+		//SEARCHING FOR A TERM IN THE JSON BY CLICKING
 		searchTerm = term.toLowerCase();
-		for (i = 0; i < breadcrumb.length; i += 1) {
-			value = breadcrumb[i];
-			sectionName = value.section.toLowerCase();
-			var cells = value.secondSection,
-				secondHeader = document.querySelector('.helpBreadLink2').innerHTML;
-			if (sectionName.indexOf(searchTerm) >= 0) {
-				createSearchCells(cells);
-				createSearchAnswers(cells, secondHeader);
-				mainHeaderFade(value.section);
-				breadCrumbs(firstHeader, secondHeader);
+		if (type === 1) {
+			//SEARCHES TOP LEVEL MAIN SECTIONS
+			console.log("1");
+			for (i = 0; i < mainSections.length; i += 1) {
+				value = mainSections[i];
+				var sectionNames = value.secondSection[i],
+					sectionWhole = value.section;
+				sectionName = value.section.toLowerCase();
+				if (sectionName.indexOf(searchTerm) >= 0) {
+					mainHeaderFade(term);
+					breadCrumbs(firstHeader, term);
+					helpFadeOut(helpBoxes);
+					value1 = value;
+					setTimeout(function () {
+						removeChildren(helpBoxes);
+						for (r = 0; r < value1.secondSection.length; r += 1) {
+							createCells(value1.secondSection[r].section, mainCellsAppendTo, true, true);
+						}
+						changePageAttributes(thirdHeader);
+						secondarySearch(term);
+						helpFadeIn(helpBoxes);
+					}, transitionSpeed);
+				}
+			}
+		} else if (type === 2) {
+			//SEARCHES ANSWERS - SECOND LAYER CLICKS AND QUICK LINKS
+			console.log("2");
+			for (i = 0; i < answers.length; i += 1) {
+				value = answers[i];
+				sectionName = value.section.toLowerCase();
+				if (sectionName.indexOf(searchTerm) >= 0) {
+					var section = value.section,
+						block = value.answer[0].block;
+					mainHeaderFade(section);
+					if (header) {
+						secondHeader = header;
+						breadCrumbs(firstHeader, secondHeader);
+					} else {
+						secondHeader = document.querySelector('.helpBreadLink2').innerHTML;
+						breadCrumbs(firstHeader, secondHeader, section);
+					}
+					helpFadeOut(helpBoxes);
+					setTimeout(function () {
+						removeChildren(helpBoxes);
+						createAnswers(block);
+						changePageAttributes(thirdHeader);
+						helpFadeIn(helpBoxes);
+					}, transitionSpeed);
+				}
 			}
 		}
 	}
 }
 
-function initLoad(data) {
-	var text, indexBox, imgSrc,
-		helpData = data;
-	firstHeader = helpData.mainSectionHeader;
+function initLoad() {
+	var text, indexBox, imgSrc;
+	firstHeader = jsonData.mainSectionHeader;
 	//CREATE SIDE BAR LINKS
-	document.getElementById('helpSideBarHeader').textContent = helpData.popularTopicsHeader;
-	for (i = 0; i < helpData.popularTopics.length; i += 1) {
-		text = helpData.popularTopics[i].section;
+	document.getElementById('helpSideBarHeader').textContent = jsonData.popularTopicsHeader;
+	for (i = 0; i < jsonData.popularTopics.length; i += 1) {
+		text = jsonData.popularTopics[i].section;
 		createCells(text, sideTopicsContainer);
 	}
 	//CREATE MAIN SECTIONS
 	document.getElementById('helpH1').textContent = firstHeader;
-	for (i = 0; i < helpData.mainSection.length; i += 1) {
-		text = helpData.mainSection[i].section;
-		imgSrc = helpData.mainSection[i].sectionImg;
-		createCells(text, mainCellsAppendTo, true, false, false, imgSrc);
+	for (i = 0; i < mainSections.length; i += 1) {
+		text = mainSections[i].section;
+		imgSrc = mainSections[i].sectionImg;
+		createCells(text, mainCellsAppendTo, true, false, imgSrc);
 	}
 	//CREATE QUICK LINKS
-	document.getElementById('helpQuickLinksHeader').textContent = helpData.selfHelpLinksHeader;
-	for (i = 0; i < helpData.selfHelpLinkTopics.length; i += 1) {
-		text = helpData.selfHelpLinkTopics[i].section;
+	document.getElementById('helpQuickLinksHeader').textContent = jsonData.selfHelpLinksHeader;
+	for (i = 0; i < jsonData.selfHelpLinkTopics.length; i += 1) {
+		text = jsonData.selfHelpLinkTopics[i].section;
 		createCells(text, quickLinksContainer);
 	}
 	//SET CLICK ZONES
 	$(document).on('click', '.helpSectionNormalBox', function (e) {
 		e.preventDefault();
-		indexBox = Array.prototype.slice.call(e.currentTarget.parentElement.children).indexOf(e.currentTarget);
 		if (e.currentTarget.classList.contains('helpSectionBoxSecond')) {
 			//SECOND LEVEL CELL CLICK
-			text = helpData.mainSection[origClick].secondSection[indexBox].answer;
-			secondHeader = helpData.mainSection[origClick].section;
-			thirdHeader = helpData.mainSection[origClick].secondSection[indexBox].section;
-			breadCrumbs(firstHeader, secondHeader, thirdHeader);
-			mainHeaderFade(thirdHeader);
-			helpFadeOut(helpBoxes);
-			setTimeout(function () {
-				removeChildren(helpBoxes);
-				createAnswers(text);
-				changePageAttributes(thirdHeader);
-				helpFadeIn(helpBoxes);
-			}, transitionSpeed);
+			text = e.currentTarget.textContent;
+			console.log(text);
+			searching(text, 2);
 		} else {
+			text = e.currentTarget.textContent;
+			searching(text, 1);
 			//FIRST CLICK ON MAIN CELLS
-			origClick = indexBox;
-			secondHeader = helpData.mainSection[indexBox].section;
-			breadCrumbs(firstHeader, secondHeader);
-			mainHeaderFade(secondHeader);
-			helpFadeOut(helpBoxes);
-			setTimeout(function () {
-				removeChildren(helpBoxes);
-				for (i = 0; i < helpData.mainSection[indexBox].secondSection.length; i += 1) {
-					text = helpData.mainSection[indexBox].secondSection[i].section;
-					imgSrc = helpData.mainSection[indexBox].secondSection[i].sectionImg;
-					createCells(text, mainCellsAppendTo, true, true, false, imgSrc);
-					changePageAttributes(secondHeader);
-				}
-				helpFadeIn(helpBoxes);
-			}, transitionSpeed);
 		}
 	});
-	var quickLinks = $('#helpQuickLinks a'),
-		popTopics = $('#helpSideBar ul li');
-	quickLinks.on('click', function () {
-		indexBox = $(this).index();
-		var header1 = helpData.selfHelpLinksHeader,
-			header2 = helpData.selfHelpLinkTopics[indexBox].section,
-			alternate = helpData.selfHelpLinkTopics[indexBox].alternate;
-		breadCrumbs(header1, header2);
-		mainHeaderFade(header2);
-		helpFadeOut(helpBoxes);
-		setTimeout(function () {
-			removeChildren(helpBoxes);
-			quickSearch(alternate);
-			helpFadeIn(helpBoxes);
-		}, transitionSpeed);
+	$('#helpQuickLinks a').on('click', function (e) {
+		indexBox = Array.prototype.slice.call(e.currentTarget.parentElement.children).indexOf(e.currentTarget);
+		var header1 = jsonData.selfHelpLinksHeader,
+			section = jsonData.selfHelpLinkTopics[indexBox].section,
+			alternate = jsonData.selfHelpLinkTopics[indexBox].alternate;
+		console.log(indexBox);
+		searching(alternate, 2, section);
 	});
-	popTopics.on('click', function () {
-		indexBox = $(this).index();
-		var header1 = helpData.popularTopicsHeader,
-			header2 = helpData.popularTopics[indexBox].section,
-			alternate = helpData.popularTopics[indexBox].alternate;
-		breadCrumbs(header1, header2);
-		mainHeaderFade(header2);
-		helpFadeOut(helpBoxes);
-		setTimeout(function () {
-			removeChildren(helpBoxes);
-			quickSearch(alternate);
-			helpFadeIn(helpBoxes);
-		}, transitionSpeed);
+	$('#helpSideBar ul li').on('click', function (e) {
+		indexBox = Array.prototype.slice.call(e.currentTarget.parentElement.children).indexOf(e.currentTarget);
+		var header1 = jsonData.popularTopicsHeader,
+			section = jsonData.popularTopics[indexBox].section,
+			alternate = jsonData.popularTopics[indexBox].alternate;
+		searching(alternate, 2, section);
 	});
 	breadLinked();
 }
@@ -349,45 +362,41 @@ function reset(data) {
 	searchBar.value = "";
 }
 
-function setResetClicksEvents(data) {
-	var resetElements = document.querySelectorAll(".resetLinking"),
-		typingTimer;
-	helpData = data;
-	//SEARCH BAR TYPING
-	//ON ANY KEY UP SET TIMER TO SEE IF USER IS DONE TYPING AND THEN SEARCH FOR WHAT IS IN THE SEARCH BOX
-	searchBar.addEventListener('keyup', function () {
-		clearTimeout(typingTimer);
-		//IF SEARCH FIELD IS EMPTY AFTER TYPING THEN RESET HELP PAGE
-		if (searchBar.value.length === 0) {
-			reset(helpData);
+//SEARCH BAR TYPING
+//ON ANY KEY UP SET TIMER TO SEE IF USER IS DONE TYPING AND THEN SEARCH FOR WHAT IS IN THE SEARCH BOX
+searchBar.addEventListener('keyup', function () {
+	clearTimeout(typingTimer);
+	//IF SEARCH FIELD IS EMPTY AFTER TYPING THEN RESET HELP PAGE
+	if (searchBar.value.length === 0) {
+		reset(jsonData);
+		return;
+	}
+	//IF SEARCH FIELD HAS MORE THAN 4 CHARACTERS RUN SEARCH - PREVENTS TOO MANY ENTRIES FROM SHOWING
+	if (searchBar.value.length >= 4) {
+		typingTimer = setTimeout(searching, 400);
+	}
+});
+//ON ANY KEY DOWN RESET TIMER ABOVE
+searchBar.addEventListener('keydown', function () {
+	clearTimeout(typingTimer);
+});
+//ADD CLICK EVENTS TO RESET TO ALL WITH RESETLINKING CLASS
+for (i = 0; i < resetElements.length; i += 1) {
+	resetElements[i].addEventListener("click", function () {
+		reset(jsonData);
+	});
+}
+//INITAL LOAD AND SEARCHES
+initLoad(jsonData);
+//ADDS CUSTOMERS NAME TO THE HEADER OF THE PAGE IF THEY ARE LOGGED IN AND HAVE A NAME SET
+document.addEventListener("DOMContentLoaded", function () {
+	if (localStorage.getItem("currentUser") !== null) {
+		var name = JSON.parse(localStorage.currentUser).user.realName,
+			firstName = name.trim().split(" ")[0];
+		if (firstName.length > 0) {
+			document.getElementById('pageHeader').textContent = "Hello, " + firstName + ". How can we help you?";
+		} else {
 			return;
 		}
-		//IF SEARCH FIELD HAS MORE THAN 4 CHARACTERS RUN SEARCH - PREVENTS TOO MANY ENTRIES FROM SHOWING
-		if (searchBar.value.length >= 4) {
-			typingTimer = setTimeout(searching, 400);
-		}
-	});
-	//ON ANY KEY DOWN RESET TIMER ABOVE
-	searchBar.addEventListener('keydown', function () {
-		clearTimeout(typingTimer);
-	});
-	//ADD CLICK EVENTS TO RESET TO ALL WITH RESETLINKING CLASS
-	for (i = 0; i < resetElements.length; i += 1) {
-		resetElements[i].addEventListener("click", function () {
-			reset(helpData);
-		});
-	}
-}
-
-//GET JSON DATA AND SEND TO APPROPRIATE FUNCTIONS
-$.ajax({
-	'async': false,
-	url: "helpMain.json",
-	dataType: "json",
-	success: function (data) {
-		var jsonData = data;
-		initLoad(jsonData);
-		setResetClicksEvents(jsonData);
-		initSearch(jsonData);
 	}
 });
