@@ -20,7 +20,7 @@
 		},
 		{
 			"section": "Add/Delete Pictures",
-			"alternate": "Add/Delete Pictures"
+			"alternate": "Add/Remove Pictures"
 		}
 	],
 	"popularTopicsHeader": "Most Popular Topics",
@@ -53,27 +53,26 @@
 	"mainSectionHeader": "All Help Topics",
 	"mainSection": [
 		{
-			"section": "Free Shipping",
-			"sectionImg" : "imgs/north-america.png",
+			"section": "Free Shipping Details",
+			"sectionImg" : "imgs/freeShipTruck.png",
 			"secondSection": [
 				{
-					"section": "Free Shipping Details11",
+					"section": "Free Shipping Section",
 					"answer": [
 						{
-							"block": "<h2>Test is working</h2>"
+							"block": "<h2>Free Shipping Section - Test is working</h2>"
 						}
 					],
 					"secondarySection" : "Domestic Shipping"
 				},
 				{
 					"section": "APO / DPO / FPO (Military Shipping)",
-					"secondarySection" : "",
 					"answer": [
 						{
 							"block": "<p>Answer Answers</p>"
 						}
 					],
-					"secondarySection" : ""
+					"secondarySection" : "Domestic Shipping, International Shipping"
 				}
 			]
 		},
@@ -127,7 +126,7 @@
 					"secondarySection" : ""
 				},
 				{
-					"section": "Where's My Order - Domestic",
+					"section": "Where's My Order? - Domestic",
 					"answer": [
 						{
 							"block": "<p>Answer Answers</p>"
@@ -356,10 +355,10 @@
 			"sectionImg" : "imgs/icon_orders.png",
 			"secondSection": [
    				{
-					"section": "Returns and Exchanges",
+					"section": "asdf",
 					"answer": [
 						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+							"block": "<h2>Holder Header</h2>"
 						}
 					]
 				},
@@ -656,7 +655,7 @@
 					"section": "Discontinued Products",
 					"answer": [
 						{
-							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
 						}
 					]
 				},
@@ -664,7 +663,7 @@
 					"section": "New Product Request",
 					"answer": [
 						{
-							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
 						}
 					]
 				},
@@ -672,7 +671,7 @@
 					"section": "Product Restrictions",
 					"answer": [
 						{
-							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
 						}
 					]
 				},
@@ -680,7 +679,7 @@
 					"section": "Quantity Policy",
 					"answer": [
 						{
-							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
 						}
 					]
 				},
@@ -688,7 +687,7 @@
 					"section": "Review Products",
 					"answer": [
 						{
-							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
 						}
 					]
 				}
