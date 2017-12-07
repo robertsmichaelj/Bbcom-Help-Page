@@ -1,97 +1,193 @@
 /*jslint devel: true, nomen: true, sloppy: true, browser: true, regexp: true*/
 /*global $*/
 
+//TAKE HELP MAIN OUT AT DEPLOYMENT
+//TAKE HELP MAIN OUT AT DEPLOYMENT
+
 //BASIC GLOBAL VARIABLES
-var i, helpData, secondIndex, mainSection, firstHeader, secondHeader, thirdHeader, forthHeader, origClick, breadcrumb, value, sectionName, sectionAnswer,
-	sideTopicsContainer = document.getElementById("helpSideBar").getElementsByTagName("UL")[0],
+var i, r, jsonData, firstHeader, mainSections, sectionName, answers, fullLoadQueries, splitQueries, pop, found, sideTopicsContainer = document.getElementById("helpSideBar").getElementsByTagName("UL")[0],
 	mainCellsAppendTo = document.getElementById("helpSectionBoxes"),
 	quickLinksContainer = document.getElementById("helpQuickLinks"),
-	breadCrumbsContainer = document.getElementById('helpBreadCrumbs'),
 	breadCrumbInner = document.getElementById('breadCrumbInner'),
 	helpBoxes = document.getElementById('helpSectionBoxes'),
 	searchBar = document.getElementById('helpSearchBar'),
-	transitionSpeed = 300,
-	classFade = 'helpFade';
-//ADDS CUSTOMERS NAME TO THE HEADER OF THE PAGE IF THEY ARE LOGGED IN AND HAVE A NAME SET
-document.addEventListener("DOMContentLoaded", function () {
-	if (localStorage.getItem("currentUser") !== null) {
-		var name = JSON.parse(localStorage.currentUser).user.realName,
-			firstName = name.trim().split(" ")[0];
-		if (firstName.length > 0) {
-			document.getElementById('pageHeader').textContent = "Hello, " + firstName + ". How can we help you?";
-		} else {
-			return;
-		}
+	resetElements = document.querySelectorAll(".resetLinking"),
+	typingTimer,
+	tSpeed = 350,
+	classFade = 'helpFade',
+	topicHeader = document.getElementById('helpContent').getElementsByTagName("h1")[0],
+	topicHeaderImg = document.getElementById('helpHeaderImg');
+//GET JSON DATA AND SET DATA VARIABLE
+//http://cms.bodybuilding.com/dA/8cd7e639fd/helpMain.json
+$.ajax({
+	'async': false,
+	url: "/helpMain.json",
+	dataType: "json",
+	success: function (data) {
+		jsonData = data;
 	}
 });
-//CHANGES PAGE TITLE IN HOPES SEARCH ENGINES WILL PICK UP ON IT
+var snapshot = Defiant.getSnapshot(jsonData);
+//TOP LEVEL SECTIONS
+mainSections = JSON.search(jsonData, '//mainSection[section]');
+//BOTTOM LEVEL SECTIONS AND ANSWERS
+answers = JSON.search(jsonData, '//secondSection[section]');
+
 function changePageAttributes(text) {
+	//CHANGES PAGE TITLE IN HOPES SEARCH ENGINES WILL PICK UP ON IT
 	var titleText = text;
 	document.title = "Bodybuilding.com Help - " + titleText;
 }
-//REMOVES CHILDREN OF AN ELEMENT
 function removeChildren(element) {
+	//REMOVES CHILDREN OF AN ELEMENT
 	while (element.hasChildNodes()) {
 		element.removeChild(element.lastChild);
 	}
 }
 function helpFadeOut(element) {
+	//FADES OUT ELEMENT WITH CSS
 	element.classList.add(classFade);
 }
 function helpFadeIn(element) {
+	//FADE IN ELEMENT WITH CSS
 	element.classList.remove(classFade);
 }
-
-//CREATES FADE FOR THE MAIN HEADER 
-function mainHeaderFade(text) {
-	var topicHeader = document.getElementById('helpContent').getElementsByTagName("h1")[0];
-	helpFadeOut(topicHeader);
-	setTimeout(function () {
-		topicHeader.innerHTML = text;
-		helpFadeIn(topicHeader);
-	}, transitionSpeed);
+if (window.location.search.indexOf('?') >= 0) {
+	//PARSES URL - AND RETURNS SECTIONS
+	fullLoadQueries = window.location.search.split('?')[1];
+	splitQueries = fullLoadQueries.split('&');
+}
+function setQuery(first, second) {
+	//USES HTML5 PUSHSTATE TO CHANGE AND SET URLS
+	var state = ["home", first, second];
+	if (first && !second) {
+		history.pushState(state, null, "helpMain.html?" + first);
+	} else if (first) {
+		history.pushState(state, null, "helpMain.html?" + first + "&" + second);
+	}
+	if (!first) {
+		window.history.pushState(state, null, "helpMain.html");
+	}
+	pop = state.filter(function (val) {return val !== undefined; });
 }
 
+var isEqual = function (value, other) {
+	//CHECKS IF TWO ARRAYS ARE THE SAME - MIGHT BE ABLE TO DELETE - CHECK FOR USAGE WHEN DONE
+    var type = Object.prototype.toString.call(value);
+    if (type !== Object.prototype.toString.call(other)) {
+		return false;
+	}
+    if (['[object Array]', '[object Object]'].indexOf(type) < 0) {
+		return false;
+	}
+    var valueLen = type === '[object Array]' ? value.length : Object.keys(value).length,
+		otherLen = type === '[object Array]' ? other.length : Object.keys(other).length;
+    if (valueLen !== otherLen) {
+		return false;
+	}
+    var compare = function (item1, item2) {
+        var itemType = Object.prototype.toString.call(item1);
+        if (['[object Array]', '[object Object]'].indexOf(itemType) >= 0) {
+            if (!isEqual(item1, item2)) {
+				return false;
+			}
+        } else {
+            if (itemType !== Object.prototype.toString.call(item2)) {
+				return false;
+			}
+            if (itemType === '[object Function]') {
+                if (item1.toString() !== item2.toString()) {
+					return false;
+				}
+            } else {
+                if (item1 !== item2) {
+					return false;
+				}
+            }
+        }
+    };
+    if (type === '[object Array]') {
+        for (i = 0; i < valueLen; i += 1) {
+            if (compare(value[i], other[i]) === false) {
+				return false;
+			}
+        }
+    } else {
+		var key;
+        for (key in value) {
+            if (value.hasOwnProperty(key)) {
+                if (compare(value[key], other[key]) === false) {
+					return false;
+				}
+            }
+        }
+    }
+    return true;
+};
+function breadClick(element, i) {
+	//CLICKS ON BREADCRUMBS SET HERE
+	element[i].addEventListener("click", function () {
+		if (this.classList.contains('helpBreadLink2')) {
+			searching(this.textContent, 2);
+		} else if (this.classList.contains('helpBreadLink3')) {
+			searching(this.textContent, 3);
+		}
+	});
+}
 function breadLinked() {
+	//CALL FUNCTION FOR SETTING CLICKS ON BREADCRUMBS - MAY BE ABLE TO REVISE TO TAKE THIS OUT
 	var bread = document.querySelectorAll('.helpBreadLink');
 	for (i = 0; i < bread.length; i += 1) {
-		bread[i].addEventListener("click", function () {
-			searching(this.textContent);
-		});
+		breadClick(bread, i);
 	}
 }
-function breadCrumbs(first, second, third, forth) {
+function breadCrumbs(first, second, third) {
+	//CREATES BREADCRUMB ELEMENTS
 	var breadLink;
-	helpFadeOut(breadCrumbInner);
-	setTimeout(function () {
-		removeChildren(breadCrumbInner);
-		if (second) {
-			breadLink = document.createElement('a');
-			breadLink.classList.add("helpBreadLink", "helpBreadLink2");
-			breadLink.id = 'helpBreadLink2';
-			breadLink.textContent = second;
-			breadCrumbInner.append(breadLink);
+	removeChildren(breadCrumbInner);
+	if (second) {
+		breadLink = document.createElement('a');
+		breadLink.classList.add("helpBreadLink", "helpBreadLink2");
+		breadLink.id = 'helpBreadLink2';
+		breadLink.textContent = second.replace(/-/g, ' ');
+		breadCrumbInner.append(breadLink);
+	}
+	if (third) {
+		breadLink = document.createElement('a');
+		breadLink.classList.add("helpBreadLink", "helpBreadLink3");
+		breadLink.id = 'helpBreadLink3';
+		breadLink.textContent = third.replace(/-/g, ' ');
+		breadCrumbInner.append(breadLink);
+	}
+	breadLinked();
+}
+function mainHeaderText(text, img) {
+	//CHANGES TEXT IN THE MAIN HEADER 
+	topicHeaderImg.setAttribute('src', '');
+	topicHeader.innerHTML = text;
+	if (img) {
+		topicHeaderImg.setAttribute('src', '../' + img);
+	}
+}
+function alpha() {
+	//ALPHABETIZES CLICKABLE CELLS
+	var cellsArray = Array.prototype.slice.call(helpBoxes.children);
+	cellsArray.sort(function (a, b) {
+		if (a.innerText < b.innerText) {
+			return -1;
 		}
-		if (third) {
-			breadLink = document.createElement('a');
-			breadLink.classList.add("helpBreadLink", "helpBreadLink3");
-			breadLink.id = 'helpBreadLink3';
-			breadLink.textContent = third;
-			breadCrumbInner.append(breadLink);
+		if (a.innerText > b.innerText) {
+			return 1;
 		}
-		if (forth) {
-			breadLink = document.createElement('a');
-			breadLink.classList.add("helpBreadLink", "helpBreadLink4");
-			breadLink.id = 'helpBreadLink4';
-			breadLink.textContent = forth;
-			breadCrumbInner.append(breadLink);
-		}
-		helpFadeIn(breadCrumbInner);
-		breadLinked();
-	}, transitionSpeed);
+		return 0;
+	});
+	cellsArray.forEach(function (item) {
+		helpBoxes.append(item);
+	});
 }
 
-function createCells(text, appendTo, main, second, third, imgSrc) {
+function createCells(text, appendTo, main, second, imgSrc) {
+	//CREATES CLICKABLE AREAS
 	var cell = document.createElement('a'),
 		wrapSection = document.createElement('div'),
 		cellImg = document.createElement('img'),
@@ -99,33 +195,43 @@ function createCells(text, appendTo, main, second, third, imgSrc) {
 		anchor = document.createElement('a'),
 		imgSource = imgSrc;
 	if (appendTo === mainCellsAppendTo) {
-		if (main === true && second === false && third === false) {
+		//IF CREATING MAIN SECTION CELLS
+		if (main === true && second === false) {
 			cell.classList.add('helpSectionBox', 'helpSectionNormalBox');
-		} else if (main === true && second === true && third === false) {
+		} else if (main === true && second === true) {
 			cell.classList.add('helpSectionBox', 'helpSectionNormalBox', 'helpSectionBoxSecond');
-		} else if (main === true && second === true && third === true) {
-			cell.classList.add('helpSectionBox', 'helpSectionNormalBox', 'helpSectionBoxThird');
 		}
 		wrapSection.className = 'helpSectionBoxWrap';
 		wrapSection.innerHTML = text;
 		if (imgSrc) {
 			cellImg.setAttribute('src', imgSource);
+			cellImg.setAttribute('alt', text);
 			wrapSection.prepend(cellImg);
 		}
 		cell.append(wrapSection);
 		appendTo.append(cell);
 	} else if (appendTo === sideTopicsContainer) {
+		//IF CREATING SIDE TOPICS
 		listItem.append(anchor);
-		anchor.innerHTML = text;
+		if (text.hasOwnProperty('link')) {
+			anchor.setAttribute('href', text.link);
+			anchor.setAttribute('target', '_blank');
+		}
+		anchor.innerHTML = text.name;
 		appendTo.append(listItem);
 	} else if (appendTo === quickLinksContainer) {
+		//IF CREATING SELF HELP LINKS
 		cell.append(anchor);
-		anchor.innerHTML = text;
+		if (text.hasOwnProperty('link')) {
+			anchor.setAttribute('href', text.link);
+			anchor.setAttribute('target', '_blank');
+		}
+		anchor.innerHTML = text.name;
 		appendTo.append(anchor);
 	}
 }
-
 function createAnswers(text) {
+	//CREATES ANSWERS FROM CLICKED ON ELEMENT AND JSON
 	var helpDiv = document.createElement('div');
 	helpDiv.className = "helpAnswerBox";
 	try {
@@ -141,253 +247,300 @@ function createAnswers(text) {
 		helpBoxes.append(helpDiv);
 	}
 }
-
-function createSearchAnswers(answer, breadcrumb) {
-	//CLICK ON SEARCH GENERATED CELLS
-	$(document).on('click', '.helpSectionSearchBox', function (e) {
-		e.preventDefault();
-		var answerData = answer,
-			index = Array.prototype.slice.call(e.currentTarget.parentElement.children).indexOf(e.currentTarget),
-			thirdBreadCrumb1 = e.currentTarget.textContent,
-			textData = answerData[index].answer,
-			sectionText = answerData[index].section;
-		breadCrumbs(firstHeader, breadcrumb, thirdBreadCrumb1);
-		mainHeaderFade(sectionText);
-		helpFadeOut(helpBoxes);
-		setTimeout(function () {
-			removeChildren(helpBoxes);
-			createAnswers(textData);
-			helpBoxes.classList.remove(classFade);
-		}, transitionSpeed);
-	});
+//SEARCHES SECONDARY SECTIONS AND ADDS TO CLICKABLE CELLS IF MATCHES
+//function secondarySearch(term) {
+//	var secTerm = term.toLowerCase();
+//	for (i = 0; i < answers.length; i += 1) {
+//		var v1 = answers[i];
+//		sectionName = v1.secondarySection.toLowerCase();
+//		if (sectionName.indexOf(secTerm) >= 0) {
+//			createCells(v1.section, mainCellsAppendTo, true, true);
+//		}
+//	}
+//}
+var createLink = function (data) {
+	//CREATES TEXT STRING FOR LINKS AND ADDS DASHES
+	var link = data.toString().toLowerCase().replace(/ /g, '-').replace(/\'/g, '').replace(/\?/g, ' ');
+	return link;
+};
+function removeDuplicates(arr) {
+	//REMOVES DUPLICATES FROM ARRAY
+    var unique_array = arr.filter(function (elem, index, self) {
+        return index === self.indexOf(elem);
+    });
+    return unique_array;
 }
-
-function createSearchCells(answer) {
-	helpFadeOut(helpBoxes);
-	setTimeout(function () {
-		removeChildren(helpBoxes);
-		for (i = 0; i < answer.length; i += 1) {
-			var wrapSection = document.createElement('div'),
-				cell = document.createElement('a');
-			wrapSection.className = 'helpSectionBoxWrap';
-			wrapSection.innerHTML = answer[i].section;
-			cell.classList.add('helpSectionBox', 'helpSectionSearchBox');
-			cell.append(wrapSection);
-			mainCellsAppendTo.append(cell);
+function searching(term, level) {
+	//MAIN SEARCHING FUNCTION - USED FOR CLICKS AND TYPING
+	var search = {
+		result: function (data, section) {
+			var searchTerm = term.toLowerCase().trim(),
+				snapshot = Defiant.getSnapshot(data),
+				terms = '//*[contains(' + section + ', "' + searchTerm + '")]';
+			found = JSON.search(snapshot, terms);
+			return found;
 		}
-		helpBoxes.classList.remove(classFade);
-	}, transitionSpeed);
-}
-
-//SEARCH FUNCTIONS
-function initSearch(data) {
-	var searchData = data;
-	mainSection = JSON.search(searchData, '*//*[section]');
-	breadcrumb = JSON.search(searchData, '//mainSection[section]');
-}
-
-function quickSearch(term) {
-	$.each(mainSection, function (index, value) {
-		if (typeof value.answer !== "undefined") {
-			var link2 = term.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
-			sectionAnswer = value.answer;
-			sectionName = value.section.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
-			if (sectionName.indexOf(link2) >= 0 && sectionAnswer.length >= 0) {
-				createAnswers(sectionAnswer[0].block);
-			}
-		}
-	});
-}
-function searching(term) {
-	var searchArray = [],
-		searchTerm,
-		stripSearch;
-	if (searchBar.value) {
-		searchTerm = searchBar.value.toLowerCase();
-		for (i = 0; i < mainSection.length; i += 1) {
-			value = mainSection[i];
-			if (typeof value.answer !== "undefined") {
-				sectionAnswer = value.answer[0].block;
-				sectionName = value.section.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
-				if (sectionAnswer.toLowerCase().indexOf(searchTerm) >= 0 && searchTerm.length > 0) {
-					searchArray.push(value);
-				}
-				if (sectionName.indexOf(searchTerm) >= 0 && searchTerm.length > 0) {
-					searchArray.push(value);
-				}
-			}
-		}
-		stripSearch = searchArray.filter(function (elem, index, self) {
-			return index === self.indexOf(elem);
-		});
-		createSearchCells(stripSearch);
-		createSearchAnswers(stripSearch);
-	} else if (term !== undefined) {
-		searchTerm = term.toLowerCase();
-		for (i = 0; i < breadcrumb.length; i += 1) {
-			value = breadcrumb[i];
-			sectionName = value.section.toLowerCase();
-			var cells = value.secondSection,
-				secondHeader = document.querySelector('.helpBreadLink2').innerHTML;
-			if (sectionName.indexOf(searchTerm) >= 0) {
-				createSearchCells(cells);
-				createSearchAnswers(cells, secondHeader);
-				mainHeaderFade(value.section);
-				breadCrumbs(firstHeader, secondHeader);
-			}
-		}
+	};
+	var answerMatch = search.result(jsonData, "section")[0],
+		secMat = search.result(jsonData, "secondarySection"),
+		resultAnswer = Object.values(answerMatch),
+	//CAN DELETE RESULT CATEGORY AND ALL ASSOCIATED IF ISEQUAL IS NOT NEEDED
+		resultCategory;
+	if (typeof secMat === 'object') {
+        //CATEGORY MATCH EXISTS
+		resultCategory = Object.values(secMat);
+    } else {
+		resultCategory = resultAnswer;
 	}
+	//IF THERE IS A SEARCH QUERY IN THE URL
+	[helpBoxes, breadCrumbInner, topicHeader].forEach(helpFadeOut);
+	setTimeout(function () {
+		if (level === 1) {
+			removeChildren(helpBoxes);
+			var cells = [];
+			for (i = 0; i < answers.length; i += 1) {
+				var name = answers[i].section;
+				if (name.toLowerCase().indexOf(term) >= 0) {
+					cells.push(name);
+				}
+				if (answers[i].answer.block.toLowerCase().indexOf(term) >= 0) {
+					cells.push(name);
+				}
+			}
+			var clean = removeDuplicates(cells);
+			for (i = 0; i < clean.length; i += 1) {
+				createCells(clean[i], mainCellsAppendTo, true, true);
+			}
+			[helpBoxes, breadCrumbInner, topicHeader].forEach(helpFadeIn);
+		} else if (level === 2) {
+			var cn2 = answerMatch.section,
+				cl1 = createLink(cn2);
+			removeChildren(helpBoxes);
+			for (r = 0; r < answerMatch.secondSection.length; r += 1) {
+				createCells(answerMatch.secondSection[r].section, mainCellsAppendTo, true, true);
+			}
+//			console.log(resultAnswer);
+//			console.log(resultCategory);
+//			if (isEqual(resultAnswer, resultCategory) === false) {
+				//ARRAYS ARE NOT EQUAL
+			if (typeof secMat === 'object' && secMat.length > 0) {
+				if (secMat[0].hasOwnProperty('section')) {
+					for (r = 0; r < secMat.length; r += 1) {
+						createCells(secMat[r].section, mainCellsAppendTo, true, true);
+					}
+				} else {
+					for (r = 0; r < secMat.secondSection.length; r += 1) {
+						createCells(secMat.secondSection[r].section, mainCellsAppendTo, true, true);
+					}
+				}
+			}
+			breadCrumbs(firstHeader, cn2);
+			setQuery(cl1);
+			mainHeaderText(cn2);
+			changePageAttributes(cn2);
+//			} else {
+//				console.log('ARE EQUAL');
+//				breadCrumbs(firstHeader, cn2);
+//				setQuery(cl1);
+//				mainHeaderText(cn2);
+//				changePageAttributes(cn2);
+//			}
+			alpha();
+			[helpBoxes, breadCrumbInner, topicHeader].forEach(helpFadeIn);
+		} else if (level === 3) {
+			var an3 = answerMatch.section,
+				al1 = createLink(an3),
+				ac = answerMatch.answer.block;
+			removeChildren(helpBoxes);
+			mainHeaderText(an3);
+			createAnswers(ac);
+			changePageAttributes(an3);
+			for (i = 0; i < mainSections.length; i += 1) {
+				for (r = 0; r < mainSections[i].secondSection.length; r += 1) {
+					var s3 = mainSections[i].secondSection[r].section.toLowerCase(),
+						m3 = mainSections[i].section.toLowerCase(),
+						ml3 = createLink(m3);
+					if (s3 === term.toLowerCase()) {
+						var ml31 = ml3;
+						breadCrumbs(firstHeader, m3, an3);
+						setQuery(ml31, al1);
+						[helpBoxes, breadCrumbInner, topicHeader].forEach(helpFadeIn);
+						return;
+					}
+				}
+			}
+		} else if (level === 4) {
+			var alt = search.result(jsonData, "section")[0];
+			if (alt.hasOwnProperty('answer')) {
+				var an4 = alt.section,
+					al4 = createLink(an4),
+					ac4 = alt.answer.block;
+				removeChildren(helpBoxes);
+				mainHeaderText(an4);
+				createAnswers(ac4);
+				changePageAttributes(an4);
+				for (i = 0; i < mainSections.length; i += 1) {
+					for (r = 0; r < mainSections[i].secondSection.length; r += 1) {
+						var s4 = mainSections[i].secondSection[r].section.toLowerCase(),
+							sc4 = mainSections[i].section.toLowerCase(),
+							scl4 = createLink(sc4);
+						if (s4 === term.toLowerCase()) {
+							breadCrumbs(firstHeader, sc4, an4);
+							setQuery(scl4, al4);
+							[helpBoxes, breadCrumbInner, topicHeader].forEach(helpFadeIn);
+							return;
+						}
+					}
+				}
+			}
+			return;
+		}
+	}, tSpeed);
+	return;
 }
-
-function initLoad(data) {
-	var text, indexBox, imgSrc,
-		helpData = data;
-	firstHeader = helpData.mainSectionHeader;
+function initLoad() {
+	//INTIAL LOADING
+	var text, imgSrc;
+	firstHeader = jsonData.mainSectionHeader;
 	//CREATE SIDE BAR LINKS
-	document.getElementById('helpSideBarHeader').textContent = helpData.popularTopicsHeader;
-	for (i = 0; i < helpData.popularTopics.length; i += 1) {
-		text = helpData.popularTopics[i].section;
+	document.getElementById('helpSideBarHeader').textContent = jsonData.popularTopicsHeader;
+	for (i = 0; i < jsonData.popularTopics.length; i += 1) {
+		text = jsonData.popularTopics[i];
 		createCells(text, sideTopicsContainer);
 	}
-	//CREATE MAIN SECTIONS
-	document.getElementById('helpH1').textContent = firstHeader;
-	for (i = 0; i < helpData.mainSection.length; i += 1) {
-		text = helpData.mainSection[i].section;
-		imgSrc = helpData.mainSection[i].sectionImg;
-		createCells(text, mainCellsAppendTo, true, false, false, imgSrc);
-	}
 	//CREATE QUICK LINKS
-	document.getElementById('helpQuickLinksHeader').textContent = helpData.selfHelpLinksHeader;
-	for (i = 0; i < helpData.selfHelpLinkTopics.length; i += 1) {
-		text = helpData.selfHelpLinkTopics[i].section;
+	document.getElementById('helpQuickLinksHeader').textContent = jsonData.selfHelpLinksHeader;
+	for (i = 0; i < jsonData.selfHelpLinkTopics.length; i += 1) {
+		text = jsonData.selfHelpLinkTopics[i];
 		createCells(text, quickLinksContainer);
 	}
-	//SET CLICK ZONES
+	if (window.location.search.indexOf('?') >= 0) {
+		if (splitQueries.length === 1) {
+			var st1 = splitQueries[0].toString().replace(/-/g, ' ').trim();
+			searching(st1, 2);
+		} else if (splitQueries.length === 2) {
+			var st2 = splitQueries[1].toString().replace(/-/g, ' ').trim();
+			searching(st2, 3);
+		}
+	} else {
+		//CREATE MAIN SECTIONS
+		document.getElementById('helpH1').textContent = firstHeader;
+		for (i = 0; i < mainSections.length; i += 1) {
+			text = mainSections[i].section;
+			imgSrc = mainSections[i].sectionImg;
+			createCells(text, mainCellsAppendTo, true, false, imgSrc);
+		}
+	}
+	//SET CLICK ZONES FOR CLICKABLE BOXES
 	$(document).on('click', '.helpSectionNormalBox', function (e) {
-		e.preventDefault();
-		indexBox = Array.prototype.slice.call(e.currentTarget.parentElement.children).indexOf(e.currentTarget);
-		if (e.currentTarget.classList.contains('helpSectionBoxSecond')) {
-			//SECOND LEVEL CELL CLICK
-			text = helpData.mainSection[origClick].secondSection[indexBox].answer;
-			secondHeader = helpData.mainSection[origClick].section;
-			thirdHeader = helpData.mainSection[origClick].secondSection[indexBox].section;
-			breadCrumbs(firstHeader, secondHeader, thirdHeader);
-			mainHeaderFade(thirdHeader);
-			helpFadeOut(helpBoxes);
-			setTimeout(function () {
-				removeChildren(helpBoxes);
-				createAnswers(text);
-				changePageAttributes(thirdHeader);
-				helpFadeIn(helpBoxes);
-			}, transitionSpeed);
-		} else {
+		e.stopImmediatePropagation();
+		if (!e.currentTarget.classList.contains('helpSectionBoxSecond')) {
 			//FIRST CLICK ON MAIN CELLS
-			origClick = indexBox;
-			secondHeader = helpData.mainSection[indexBox].section;
-			breadCrumbs(firstHeader, secondHeader);
-			mainHeaderFade(secondHeader);
-			helpFadeOut(helpBoxes);
-			setTimeout(function () {
-				removeChildren(helpBoxes);
-				for (i = 0; i < helpData.mainSection[indexBox].secondSection.length; i += 1) {
-					text = helpData.mainSection[indexBox].secondSection[i].section;
-					imgSrc = helpData.mainSection[indexBox].secondSection[i].sectionImg;
-					createCells(text, mainCellsAppendTo, true, true, false, imgSrc);
-					changePageAttributes(secondHeader);
-				}
-				helpFadeIn(helpBoxes);
-			}, transitionSpeed);
+			text = e.currentTarget.textContent;
+			searching(text, 2);
+		} else {
+			//SECOND LEVEL CELL CLICK
+			text = e.currentTarget.textContent;
+			searching(text, 3);
+		}
+		return;
+	});
+	$('#helpQuickLinks a').on('click', function (e) {
+		if (e.target.href.length === 0) {
+			var sqi = Array.prototype.slice.call(e.currentTarget.parentElement.children).indexOf(e.currentTarget),
+				sq = jsonData.selfHelpLinkTopics[sqi].name;
+			searching(sq, 4);
 		}
 	});
-	var quickLinks = $('#helpQuickLinks a'),
-		popTopics = $('#helpSideBar ul li');
-	quickLinks.on('click', function () {
-		indexBox = $(this).index();
-		var header1 = helpData.selfHelpLinksHeader,
-			header2 = helpData.selfHelpLinkTopics[indexBox].section,
-			alternate = helpData.selfHelpLinkTopics[indexBox].alternate;
-		breadCrumbs(header1, header2);
-		mainHeaderFade(header2);
-		helpFadeOut(helpBoxes);
-		setTimeout(function () {
-			removeChildren(helpBoxes);
-			quickSearch(alternate);
-			helpFadeIn(helpBoxes);
-		}, transitionSpeed);
+	$('#helpSideBar ul li').on('click', function (e) {
+		if (e.target.href.length === 0) {
+			var sqp = Array.prototype.slice.call(e.currentTarget.parentElement.children).indexOf(e.currentTarget),
+				sp = jsonData.popularTopics[sqp].name;
+			searching(sp, 4);
+		}
 	});
-	popTopics.on('click', function () {
-		indexBox = $(this).index();
-		var header1 = helpData.popularTopicsHeader,
-			header2 = helpData.popularTopics[indexBox].section,
-			alternate = helpData.popularTopics[indexBox].alternate;
-		breadCrumbs(header1, header2);
-		mainHeaderFade(header2);
-		helpFadeOut(helpBoxes);
-		setTimeout(function () {
-			removeChildren(helpBoxes);
-			quickSearch(alternate);
-			helpFadeIn(helpBoxes);
-		}, transitionSpeed);
+	//CLICKING ON ANCHORS IN ANSWERS BEHAVIOR
+	$(document).one('click', '.helpAnswerBox a',  function (e) {
+		e.preventDefault();
+		if (e.currentTarget.href.length >= 1) {
+			if (e.currentTarget.href.type === 'email') {
+				window.location = e.currentTarget.href;
+			} else {
+				window.open(e.currentTarget.href, '_blank');
+			}
+		} else {
+			var text = $(this).text();
+			searching(text, 4);
+		}
 	});
 	breadLinked();
 }
-
-function reset(data) {
-	var helpMain = document.getElementById('helpMain'),
-		resetTitle = "Bodybuilding.com Help Center";
+function reset() {
+	//RESET HELP PAGE TO INITIAL STATE
+	var resetTitle = "Bodybuilding.com Help Center";
+	setQuery();
 	//FADE ALL ELEMENTS WITH CHANGES, REMOVE CHILDREN, THEN LOAD PAGE AS NEW AGAIN
-	helpFadeOut(helpMain);
+	[helpBoxes, breadCrumbInner, topicHeader].forEach(helpFadeOut);
 	setTimeout(function () {
 		//REMOVE CHILDREN FOR EACH OF THESE CONTAINERS
 		[helpBoxes, quickLinksContainer, breadCrumbInner, sideTopicsContainer].forEach(removeChildren);
-		initLoad(data);
-		helpFadeIn(helpMain);
-	}, transitionSpeed);
-	//CHANGE PAGE TITLE WHEN RESETING BACK TO DEFAULT
-	changePageAttributes(resetTitle);
-	//ERASE ANYTHING IN THE SEARCH BAR WHEN RESETTING
-	searchBar.value = "";
+		//CHANGE PAGE TITLE WHEN RESETING BACK TO DEFAULT
+		changePageAttributes(resetTitle);
+		//ERASE ANYTHING IN THE SEARCH BAR WHEN RESETTING
+		searchBar.value = "";
+		initLoad();
+		[helpBoxes, breadCrumbInner, topicHeader].forEach(helpFadeIn);
+	}, tSpeed);
+	return;
 }
-
-function setResetClicksEvents(data) {
-	var resetElements = document.querySelectorAll(".resetLinking"),
-		typingTimer;
-	helpData = data;
+searchBar.addEventListener('keyup', function () {
 	//SEARCH BAR TYPING
 	//ON ANY KEY UP SET TIMER TO SEE IF USER IS DONE TYPING AND THEN SEARCH FOR WHAT IS IN THE SEARCH BOX
-	searchBar.addEventListener('keyup', function () {
-		clearTimeout(typingTimer);
-		//IF SEARCH FIELD IS EMPTY AFTER TYPING THEN RESET HELP PAGE
-		if (searchBar.value.length === 0) {
-			reset(helpData);
+	clearTimeout(typingTimer);
+	//IF SEARCH FIELD IS EMPTY AFTER TYPING THEN RESET HELP PAGE
+	if (searchBar.value.length === 0) {
+		reset();
+		return;
+	}
+	//IF SEARCH FIELD HAS MORE THAN 4 CHARACTERS RUN SEARCH - PREVENTS TOO MANY ENTRIES FROM SHOWING
+	if (searchBar.value.length >= 4) {
+		var term = searchBar.value;
+		typingTimer = setTimeout(function () {
+			searching(term, 1);
+		}, 400);
+	}
+});
+searchBar.addEventListener('keydown', function () {
+	//ON ANY KEY DOWN RESET TIMER ABOVE
+	clearTimeout(typingTimer);
+});
+for (i = 0; i < resetElements.length; i += 1) {
+	//ADD CLICK EVENTS TO RESET TO ALL WITH RESETLINKING CLASS
+	resetElements[i].addEventListener("click", function () {
+		reset();
+	});
+}
+window.onpopstate = function (event) {
+	//BACK AND FORWARD BUTTONS
+	event.preventDefault();
+	var popL = pop.length;
+	if (popL === 3) {
+		searching(pop[1].replace('-', ' '), 2);
+	} else if (popL === 2) {
+		reset();
+	}
+};
+//INITAL LOAD AND SEARCHES
+initLoad();
+document.addEventListener("DOMContentLoaded", function () {
+	//ADDS CUSTOMERS NAME TO THE HEADER OF THE PAGE IF THEY ARE LOGGED IN AND HAVE A NAME SET
+	if (localStorage.getItem("currentUser") !== null) {
+		var name = JSON.parse(localStorage.currentUser).user.realName,
+			firstName = name.trim().split(" ")[0];
+		if (firstName.length > 0) {
+			document.getElementById('pageHeader').textContent = "Hello, " + firstName + ". How can we help you?";
+		} else {
 			return;
 		}
-		//IF SEARCH FIELD HAS MORE THAN 4 CHARACTERS RUN SEARCH - PREVENTS TOO MANY ENTRIES FROM SHOWING
-		if (searchBar.value.length >= 4) {
-			typingTimer = setTimeout(searching, 400);
-		}
-	});
-	//ON ANY KEY DOWN RESET TIMER ABOVE
-	searchBar.addEventListener('keydown', function () {
-		clearTimeout(typingTimer);
-	});
-	//ADD CLICK EVENTS TO RESET TO ALL WITH RESETLINKING CLASS
-	for (i = 0; i < resetElements.length; i += 1) {
-		resetElements[i].addEventListener("click", function () {
-			reset(helpData);
-		});
-	}
-}
-
-//GET JSON DATA AND SEND TO APPROPRIATE FUNCTIONS
-$.ajax({
-	'async': false,
-	url: "helpMain.json",
-	dataType: "json",
-	success: function (data) {
-		var jsonData = data;
-		initLoad(jsonData);
-		setResetClicksEvents(jsonData);
-		initSearch(jsonData);
 	}
 });

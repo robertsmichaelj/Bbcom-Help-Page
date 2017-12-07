@@ -2,421 +2,424 @@
 	"selfHelpLinksHeader": "Self-Help Links",
 	"selfHelpLinkTopics": [
 		{
-			"section": "Where's My Order?",
-			"alternate": "Where's My Order?"
+			"name": "Order History"
 		},
 		{
-			"section": "Order History",
-			"link": "",
-			"alternate": "Order History"
+			"name": "Returns and Exchanges"
 		},
 		{
-			"section": "Return An Item",
-			"alternate": "Returns and Exchanges"
+			"name": "Change Password"
 		},
 		{
-			"section": "Change Password",
-			"alternate": "Change Password"
-		},
-		{
-			"section": "Add/Delete Pictures",
-			"alternate": "Add/Delete Pictures"
+			"name": "Add or Remove Pictures"
 		}
 	],
 	"popularTopicsHeader": "Most Popular Topics",
 	"popularTopics": [
 		{
-			"section": "Shipping Rates",
-			"alternate": "Shipping Rates"
+			"name": "Shipping Rates"
 		},
 		{
-			"section": "Duties and Taxes",
-			"alternate": "Duties and Taxes"
+			"name": "Duties and Taxes"
 		},
 		{
-			"section": "Refund Timeframes",
-			"alternate": "Refund Timeframes"
+			"name": "Refund Timeframes"
 		},
 		{
-			"section": "Account Management",
-			"alternate": "Account Management"
+			"name": "Account Management"
 		},
 		{
-			"section": "Privacy Policy",
-			"alternate": "Privacy Policy"
+			"name": "Privacy Policy",
+			"link": "https://www.bodybuilding.com/store/help/privacy-policy.htm"
 		},
 		{
-			"section": "Changing An Order",
-			"alternate": "Changing An Order"
+			"name": "Changing An Order"
 		}
 	],
 	"mainSectionHeader": "All Help Topics",
 	"mainSection": [
 		{
-			"section": "Domestic Shipping",
-			"sectionImg" : "imgs/north-america.png",
+			"section": "Free Shipping",
+			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/freeShipTruck.png",
 			"secondSection": [
 				{
+					"section": "Free Shipping Eligibility",
+					"answer": {
+							"block": "<p>We’ve invited the our top brands to partner with us to offer you Free Shipping. Together, we want to make it easier and more cost-effective for you to shop for the products you love. <span>Any product marked with the Free Shipping <img class='smallImg' src='https://www.bodybuilding.com/images/help-pages/icons/freeShipTruck.png'/> icon is eligible for Free Shipping when you spend over $49 on these eligible product(s).</span></p><p>If you have over $49 of eligible products in your cart, those will be shipped for free. Any product that is not eligible will be charged the Economy Shipping rate. Free Shipping also is only applied to orders of up to $500.</p>"
+						},
+					"secondarySection" : "Domestic Shipping"
+				},
+				{
+					"section": "Free Shipping Timeframes",
+					"answer": {
+							"block": "<p>Free Shipping orders should be received within 3-6 days of your order. Orders placed by 2:00pm Monday-Friday will ship out that same day.</p>"
+						},
+					"secondarySection" : "Domestic Shipping"
+				},
+				{
+					"section": "Free Shipping Availability",
+					"answer": {
+							"block": "<p><p>Our free shipping program is currently available to customers in the United States and with orders that have eligible products of $49 or more. Look for the Free Shipping icon (shipping icon here) to find eligible products.</p>"
+						},
+					"secondarySection" : "Domestic Shipping"
+				}
+			]
+		},
+		{
+			"section": "Domestic Shipping",
+			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/north-america.png",
+			"secondSection": [
+				{
+					"section": "Where's My Order? - Domestic",
+					"answer": {
+							"block": "<p>WHERE MY ORDER?!</p>"
+						},
+					"secondarySection" : ""
+				},
+				{
 					"section": "Shipping Rates",
-					"sectionImg" : "",
-					"answer": [
-						{
-							"block": "<h2>Shipping Rates</h2>"
-						}
-					]
+					"answer": {
+							"block": "<p>Shipping rates vary depending on the method selected and the weight of the order. To calculate the exact cost of shipping for your order, place the items you'd like to order in your shopping cart, and the estimated shipping rates are automatically calculated and updated each time an item or quantity is added.</p>"
+						},
+					"secondarySection" : "International Shipping"
 				},
 				{
 					"section": "APO / DPO / FPO (Military Shipping)",
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					]
-				},
-				{
-					"section": "Free Shipping",
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					]
+					"answer": {
+							"block": "<p>We are honored to support members of our nation’s military, and ship to all APO, FPO, or DPO military addresses. When placing your order, select the Military shipping option to help ensure your package arrives safely.<p>Due to heightened security, only limited tracking information is available on military orders and we are unable to track them after they leave the United States. Most military packages are delivered within 3-8 business days, however depending on location and other external factors, including military inspection, some orders may experience additional delays.<p>When shipping to an APO, FPO, or DPO address, please use the following format when completing your shipping address:<p>Example:<ul><li>John Smith<li>Address Line 1<li>Address Line 2 (if needed)<li>APO, AP 91645-<span>0000</span> (ZIP code for your location)<li>USA</ul><p>Note: <span>The 4-digit ZIP code extension is required for all military addresses.</span> Please make sure to enter this extension when placing your order to help ensure your package arrives as quickly as possible.<p>There is no need to enter the actual city, state, or country where you are located. Enter APO, DPO, or FPO for the city and AA, AP, or AE for the state."
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Shipping Methods",
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					]
+					"answer": {
+							"block": "<p>We have domestic warehouse locations throughout the country to help ensure your order is shipped and delivered as quickly as possible.<p>We've partnered with multiple regional and national couriers and offer the following shipping options in the United States:<ul><li><span>Economy:</span> Economy shipping normally arrives within 2 to 6 business days, and is usually the least expensive option. Monday thru Friday delivery only.<li><span>Standard:</span> Standard shipping normally arrives within 2 to 4 business days, and is usually the best option for heavy shipments, like those with large tubs of protein.<li><span>Two Business Day Delivery:</span> Two day delivery helps ensure delivery within two business days. Please understand that we can only ship items that are in-stock at one of our domestic warehouses. For two day delivery, orders must be placed Monday - Friday by 2:00pm Eastern to qualify.<li><span>One Business Day Delivery:</span> Selecting this option ensures we can ship your package to you in just one business day. Please understand that we can only ship items that are in-stock at one of our domestic warehouses. For one day delivery, orders must be placed Monday - Friday by 2:00pm Eastern to qualify.<li><span>Military:</span> Military shipping normally arrives within three to eight business days, and is the only shipping option available for APO, FPO, or DPO military mailing addresses.</ul>"
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "PO Boxes",
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					]
-				},
-				{
-					"section": "Where's My Order - Domestic",
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					]
-				},
-				{
-					"section": "Sales Tax",
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					]
+					"answer": {
+							"block": "<p>We ship to P.O. Boxes with no problem. When you enter your shipping address, our system automatically selects the correct shipping option to get your order delivered directly to the Post Office box specified.</p>"
+						},
+					"secondarySection" : ""
 				}
 			]
 		},
 		{
 			"section": "International Shipping",
-			"sectionImg" : "imgs/earth-globe.png",
+			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/earth-globe.png",
 			"secondSection": [
 				{
+					"section": "Where's My Order? - International",
+					"answer": {
+							"block": "<p>WHERE MY ORDER?!</p>"
+						},
+					"secondarySection" : ""
+				},
+				{
 					"section": "Countries We Ship To",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>We are constantly striving to accommodate all international customers and make their purchase experience with Bodybuilding.com simple, safe, and professional. To determine if we are able to ship to your country, please check the list of available <a href='https://www.bodybuilding.com/store/help/countrystore.htm'>country specific stores.</a></p><p>If your country is not listed, then unfortunately we are unable to ship to you at this time. In some cases, we are restricted by U.S. State Department regulations, and in other cases, we cannot ship to certain countries for other business related reasons.</p><p><span>Note:</span> For customers in the U.S. military, we ship to all APO, FPO, and DPO addresses regardless of country.</p>"
+						},
+					"secondarySection" : "Shopping the Store"
 				},
 				{
-					"section": "Country Stores",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"section": "Delays and Customs",
+					"answer": {
+							"block": "<p>Unfortunately, due to circumstances outside of our control, some international orders are stopped by the customs agency in your country. In these situations, RECOMMEND SOMETHING HERE. CURRENT RESPONSE IS NOT HELPFUL AT ALL<p>Please also read our full disclaimer:<h3>DISCLAIMER:</h3><p>\"We cannot be responsible for any customs restrictions, tariffs, or other regulations that may apply at Customs in any country. Any duties or taxes that may apply are your responsibility. If you have any questions, we encourage you to speak with your customs office, although we will ship any products you order to the address you provide.<p>Since the laws are different in every country (and change often), we maintain an extensive database of known product restrictions. To make ordering easier for you, your country store and the shopping cart will enforce these known restrictions to prevent you from accidentally ordering a product we know to have issues with your customs department. The responsibility is yours to check with your country's customs office to verify that your products can clear customs.<p>We will do our part and follow the exact directions in your order. We will ship your order to the exact address that you provide. Please keep in mind that once an order has shipped, we cannot change the address information on an international order, and errors here could cause a delivery delay or rejection. We will give you the best service and ship it very quickly at the rates that we have agreed to on our site - you pay actual shipping charges based on the weight of the package. If for whatever reason the package is seized by Customs officials, we will not issue you a refund unless all products are returned to us in their original condition. The vast majority of orders make it through customs without any problems, and most orders that are stopped are automatically returned to us. You may be responsible for any return shipping charges, in accordance with your local regulations.\"<p>By ordering from Bodybuilding.com, you are stating that you agree to the above disclaimer. While we rarely have problems with international shipments, if there is a problem with your order, we will work hard to find a solution as quickly as possible.<p><span>Note:</span> International customers are responsible for ensuring that the products ordered can be lawfully imported to your country. When ordering from Bodybuilding.com, the recipient is the importer of record and must comply with all laws and regulations of the destination country. Orders shipped to countries outside of the United States may be subject to import taxes and customs duties levied by the destination country once a shipment enters the country. From our experience, most foreign customers are not charged when they receive the shipment, however, any additional charges for customs clearance must be paid by the recipient. Customs policies vary widely from country to country and we recommend contacting your local customs office for further information. If you do get charged an additional fee, the carrier will expect payment at the time of delivery. If you refuse the shipment because of these charges, or if an order is rejected by customs due to item restrictions, or if the order is returned because the local post is unable to locate your address, we can refund you for the cost of the products (which does not include any shipping or return shipping fees) once the package is returned and processed by our warehouse. Please note that packages returned by customs can sometimes take a very long time to return, and in extreme circumstances can take as long as one year."
+						},
+					"secondarySection" : ""
 				},
 				{
-					"section": "Customs",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Delays",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Duties & Taxes",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Missing Package",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"section": "Duties and Taxes",
+					"answer": {
+							"block": "<p>Duties and taxes are different in every country and many factors play a role in determining if they need to be paid. Orders shipped to countries outside of the United States may be subject to import taxes and customs duties levied by the destination country. From our experience, most foreign customers are not charged when they receive the shipment, however, any additional charges for customs clearance must be paid by the recipient. Customs policies vary widely from country to country and we recommend contacting your local customs office for further information.<p>If you do get charged an additional fee, the carrier will expect payment at the time of delivery. If you refuse the shipment because of these charges, or if an order is rejected by customs due to item restrictions, or if the order is returned because the local post is unable to locate your address, we can refund you for the cost of the products (which does not include any shipping or return shipping fees) once the package is returned and processed by our warehouse. Please note that packages returned by customs can sometimes take a very long time to return, and in extreme circumstances can take as long as one year.</p><p>In accordance with the laws governing members of the E.U., Bodybuilding.com is obligated to charge Value Added Tax (VAT) on all orders delivered to some EU member states. We currently service the following countries in the European Union and work hard to provide quick and cheap delivery options:</p><ul><li>Austria**<li>Finland</li><li>Italy<li>Poland**<li>Sweden**<li>Belgium<li>France**<li>Latvia**<li>Portugal**<li>United Kingdom*<li>Bulgaria**<li>Germany<li>Lithuania**<li>Romania**<li>Czech Republic**<li>Greece<li>Luxembourg**<li>Slovakia**<li>Denmark**<li>Hungary**<li>Malta<li>Slovenia**<li>Estonia**<li>Ireland**<li>Netherlands</li><li>Spain</ul><p>*VAT included in the price of products<br>**VAT calculated and displayed at checkout<p>In accordance with the laws governing members of the E.U., Bodybuilding.com is obligated to charge Value Added Tax (VAT) on all orders delivered to some E.U. member states.<p>In Canada, tax is charged on all sales and is listed separately in the cart so you know exactly what charges are associated with your purchase. Many factors can change between the time you place an order and the time your order is shipped, which could affect the calculation of taxes. Therefore, the amount appearing on your order as 'Estimated Tax' can differ from the taxes ultimately charged when your order ships."
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Product Restrictions",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>When you are shopping in our U.S. store, you have the ability to add any item to your shopping cart. However, when you enter your address, select your shipping country, and an error message displays, the flagged item has known import restrictions to your country and will not be allowed through customs.<p>Due to regulations put in place by the local customs department in some countries, we may not be able to ship all items available in our U.S. store to your location. To help you determine what can or cannot be shipped to you, we created a store specific to your country. The country specific store contains only products available to be shipped directly to you and removes the uncertainty.<p>Regulations are different in every country, and though they change often, we do our best to keep up with them and update your store as soon as we know of a new restriction. We try not to ship products that are restricted in your country to prevent you from losing out on the item and money, however the responsibility falls on you, the customer, to ensure the products ordered are not seized by customs.<p><span>***IMPORTANT:</span> Canada prohibits the importation of more than a 90 day supply of certain dietary supplements (natural health products) within a single order and you may see this restriction reflected in your cart.<span>***</span><h3>DISCLAIMER:</h3><p>\"We cannot be responsible for any customs restrictions, tariffs, or other regulations that may apply at Customs in any country. Any duties or taxes that may apply are your responsibility. If you have any questions, we encourage you to speak with your customs office, although we will ship any products you order to the address you provide.<p>Since the laws are different in every country (and change often), we maintain an extensive database of known product restrictions. To make ordering easier for you, your country store and the shopping cart will enforce these known restrictions to prevent you from accidentally ordering a product we know to have issues with your customs department. The responsibility is yours to check with your country's customs office to verify that your products can clear customs.<p>We will do our part and follow the exact directions in your order. We will ship your order to the exact address that you provide. Please keep in mind that once an order has shipped, we cannot change the address information on an international order, and errors here could cause a delivery delay or rejection. We will give you the best service and ship it very quickly at the rates that we have agreed to on our site - you pay actual shipping charges based on the weight of the package. If for whatever reason the package is seized by Customs officials, we will not issue you a refund unless all products are returned to us in their original condition. The vast majority of orders make it through customs without any problems, and most orders that are stopped are automatically returned to us. You may be responsible for any return shipping charges, in accordance with your local regulations.\"<p>By ordering from Bodybuilding.com, you are stating that you agree to the above disclaimer. While we rarely have problems with international shipments, if there is a problem with your order, we will work hard to find a solution as quickly as possible.<p><span>Note:</span> International customers are responsible for ensuring that the products ordered can be lawfully imported to your country. When ordering from Bodybuilding.com, the recipient is the importer of record and must comply with all laws and regulations of the destination country. Orders shipped to countries outside of the United States may be subject to import taxes and customs duties levied by the destination country once a shipment enters the country. From our experience, most foreign customers are not charged when they receive the shipment, however, any additional charges for customs clearance must be paid by the recipient. Customs policies vary widely from country to country and we recommend contacting your local customs office for further information. If you do get charged an additional fee, the carrier will expect payment at the time of delivery. If you refuse the shipment because of these charges, or if an order is rejected by customs due to item restrictions, or if the order is returned because the local post is unable to locate your address, we can refund you for the cost of the products (which does not include any shipping or return shipping fees) once the package is returned and processed by our warehouse. Please note that packages returned by customs can sometimes take a very long time to return, and in extreme circumstances can take as long as one year.</p>"
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Shipping Timeframes",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<h2>NEED INFO HERE</h2>"
+						},
+					"secondarySection" : "Shopping the Store"
 				}
-				
 			]
 		},
 		{
-			"section": "Order Inquiries",
-			"sectionImg" : "imgs/icon_orders.png",
-			"secondSection": [
-   				{
-					"section": "Returns and Exchanges",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Backordered Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Canceling Orders",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Changing an Order",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Bad/Damaged Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Adverse Reaction to Product",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Discontinued Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Order History",
-					"link": "",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Reorder Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				}
-   			]
-		},
-		{
 			"section": "All Access",
-			"sectionImg" : "imgs/allaccess3.png",
+			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/allaccess3.png",
 			"secondSection": [
 				{
 					"section": "What is All Access?",
-					"answer": [
-						{
-							"block": "<p>All Access is a subscription service that gives you access to incredible fitness experts who can tell you exactly what you need to do to hit your goals. Start with the fitness plans they created exclusively for Bodybuilding.com. Each plan includes video instruction, daily workouts, nutrition information, supplement guides, and more. We have more than 45 plans for you to choose from!</p>"
-						}
-					]
+					"answer": {
+							"block": "<p>All Access is a subscription service that gives you access to incredible fitness experts who can tell you exactly what you need to do to hit your goals. Start with the fitness plans they created exclusively for Bodybuilding.com. Each plan includes video instruction, daily workouts, nutrition information, supplement guides, and more. We have more than 45 plans for you to choose from!</p><p>If you have any other questions about All Access, please feel free to contact us at <a href='tel:1-833-649-9634'>1(833)649-9634</a> and we'll be happy to help you.</p>"
+						},
+					"secondarySection" : ""
 				},
 				{
-					"section": "Benefits of All-Access",
-					"answer": [
-						{
-							"block": "<p>45+ expert-designed fitness plans that include:</p><ul><li>Daily workouts</li><li>Video instruction</li><li>Nutrition guides</li><li>Meal plans</li><li>Recipes</li><li>Free apps</li></ul><p>With Much more to come!</p><p>All of the great articles and videos you love will still be free, with fresh features added on the regular. All Access is a premium content subscription service which includes over 45 fitness plans all curated by Bodybuilding.com experts and editors. What you will experience with All Access is a simple path to finding and finishing a fitness plan that fits your goals and your lifestyle.</p><p>We will continue to add new fitness plans, so we can support a broader range of fitness goals. In the near future, we’ll be rolling out live Q&A sessions with the pros, daily advice, original programming, chat, and much more.</p>"
-						}
-					]
+					"section": "Benefits of All Access",
+					"answer": {
+							"block": "<h2>NEED INFO HERE</h2><p>If you have any other questions about All Access, please feel free to contact us at <a href='tel:1-833-649-9634'>1(833)649-9634</a> and we'll be happy to help you.</p>"
+						},
+					"secondarySection" : ""
 				},
 				{
-					"section": "How Much Is All-Access?",
-					"answer": [
-						{
-							"block": "<h3>How much is all Access?</h3><ul><li>$8.99 per month<li>$89.99 per year (Two months free!)</ul><h3>Can I purchase All Access with Bodybuilding.com in-store credit?</h3><p>You cannot purchase All Access with in-store credit. Your All Access subscription will require a valid credit card for auto renewal.<h3>The Bodybuilding.com store has a 10% Off Everything promotion. Does that apply to All Access?</h3><p>No, that promotion cannot be applied to the purchase of an All Access subscription. If we choose to run a promotion on All Access, it will be clearly specified.<h3>Is there a free trial of All Access?</h3><p>We do not offer a free trial period, but try out this pared down version of our fitness plans. It’s simple for you to jump in, give it a try, and consider signing up for All Access.</p><a href=https://www.bodybuilding.com/fun/new-year-start-here-7-day-beginner-trainer.html>7-Day Beginner Trainer</a><h3>Will I be charged sales tax if I purchase an All Access subscription?</h3><p>Yes, you will be charged sales tax based on the credit card billing address associated with your subscription purchase and auto renewals."
-						}
-					]
+					"section": "All Access Purchase Details",
+					"answer": {
+							"block": "<h3>How much is all Access?</h3><ul><li>$8.99 per month<li>$89.99 per year (Two months free!)</ul><h3>Can I purchase All Access with Bodybuilding.com in-store credit?</h3><p>You cannot purchase All Access with in-store credit. Your All Access subscription will require a valid credit card for auto renewal.<h3>The Bodybuilding.com store has a 10% Off Everything promotion. Does that apply to All Access?</h3><p>No, that promotion cannot be applied to the purchase of an All Access subscription. If we choose to run a promotion on All Access, it will be clearly specified.<h3>Is there a free trial of All Access?</h3><p>We do not offer a free trial period, but try out this pared down version of our fitness plans. It’s simple for you to jump in, give it a try, and consider signing up for All Access.</p><a href=https://www.bodybuilding.com/fun/new-year-start-here-7-day-beginner-trainer.html>7-Day Beginner Trainer</a><h3>Will I be charged sales tax if I purchase an All Access subscription?</h3><p>Yes, you will be charged sales tax based on the credit card billing address associated with your subscription purchase and auto renewals.</p><p>If you have any other questions about All Access, please feel free to contact us at <a href='tel:1-833-649-9634'>1(833)649-9634</a> and we'll be happy to help you.</p>"
+						},
+					"secondarySection" : ""
 				},
 				{
-					"section": "How Do I Use All-Access?",
-					"answer": [
-						{
-							"block": "<h3>Once I’m signed up, how do I view the All Access content?</h3><p>Please make sure you are logged into your Bodybuilding.com account to view the content on the All Access section of the website.<h3>How do I find the right fitness plan for me?</h3><p>Once you are logged in, you will be able to filter all of the plans by goal, fitness experience level, duration, and more."
-						}
-					]
+					"section": "Using All Access",
+					"answer": {
+							"block": "<h3>Once I’m signed up, how do I view the All Access content?</h3><p>Please make sure you are logged into your Bodybuilding.com account to view the content on the All Access section of the website.<h3>How do I find the right fitness plan for me?</h3><p>Once you are logged in, you will be able to filter all of the plans by goal, fitness experience level, duration, and more.</p><p>If you have any other questions about All Access, please feel free to contact us at <a href='tel:1-833-649-9634'>1(833)649-9634</a> and we'll be happy to help you.</p>"
+						} ,
+					"secondarySection" : ""
 				},
 				{
-					"section": "All-Access Subscription Details",
-					"answer": [
-						{
-							"block": "<h3>Can I skip a month with my annual All Access subscription?</h3><p>Not at this time. Annual All Access subscriptions will run for twelve consecutive months from your date of purchase. If you need to cancel your subscription, please see our cancelation policy below.<h3>How do I cancel my All Access subscription?</h3><p>If you purchased your All Access subscription directly from Bodybuilding.com’s website, please log in to you Bodybuilding.com Account and choose Manage Subscription from your My Account page. Here you will be able to cancel your All Access subscription. You can also contact our stellar Customer Service team for assistance.<p>If you purchased an All Access subscription through Google Play or iTunes, please reference the subscription policies of Google Play and iTunes directly, as your subscription is managed directly through the app store and not your Bodybuilding.com account.<h3>Will I receive a refund if I cancel All Access?</h3><p>We do not provide refunds for All Access. If you cancel, your subscription will remain active for the duration of the subscription period you purchased.<h3>How do I view or edit my All Access Account and Billing Information?</h3><p>If you purchased your All Access subscription directly from Bodybuilding.com’s website, please log in and choose Manage Subscription from your My Account page. It will have all the information about your All Access purchase, payment method, and renewal transactions. Alternatively, if you purchased your All Access subscription from Google Play or iTunes, your subscriptions will be managed through your Google Play or iTunes account used to purchase your All Access subscription.<h3>How do I know I am officially signed up for All Access?</h3><p>A welcome email will be sent to the email address that is connected to your Bodybuilding.com account."
-						}
-					]
+					"section": "Managing All Access Subscription",
+					"answer": {
+							"block": "<h3>Can I skip a month with my annual All Access subscription?</h3><p>Not at this time. Annual All Access subscriptions will run for twelve consecutive months from your date of purchase. If you need to cancel your subscription, please see our cancelation policy below.<h3>How do I cancel my All Access subscription?</h3><p>If you purchased your All Access subscription directly from Bodybuilding.com’s website, please log in to you Bodybuilding.com Account and choose Manage Subscription from your My Account page. Here you will be able to cancel your All Access subscription. You can also contact our Customer Service team for assistance.<p>If you purchased an All Access subscription through Google Play or iTunes, please reference the subscription policies of Google Play and iTunes directly, as your subscription is managed directly through the app store and not your Bodybuilding.com account.<h3>Will I receive a refund if I cancel All Access?</h3><p>We do not provide refunds for All Access. If you cancel, your subscription will remain active for the duration of the subscription period you purchased.<h3>How do I view or edit my All Access Account and Billing Information?</h3><p>If you purchased your All Access subscription directly from Bodybuilding.com’s website, please log in and choose Manage Subscription from your My Account page. It will have all the information about your All Access purchase, payment method, and renewal transactions. Alternatively, if you purchased your All Access subscription from Google Play or iTunes, your subscriptions will be managed through your Google Play or iTunes account used to purchase your All Access subscription.<h3>How do I know I am officially signed up for All Access?</h3><p>A welcome email will be sent to the email address that is connected to your Bodybuilding.com account.</p><p>If you have any other questions about All Access, please feel free to contact us at <a href='tel:1-833-649-9634'>1(833)649-9634</a> and we'll be happy to help you.</p>"
+						} ,
+					"secondarySection" : ""
 				},
 				{
-					"section": "All-Access App Questions",
-					"answer": [
-						{
-							"block": "<h3>I downloaded a free Bodybuilding.com fitness plan app from Google Play. Do I still have access to my app?</h3><p>If you downloaded a free Bodybuilding.com fitness plan app from Google Play store, you will no longer have access to its content. You must subscribe to All Access in order to use the app.<h3>I purchased a Bodybuilding.com fitness plan app from iTunes. Do I still have access to my app?</h3><p>If you purchased your Bodybuilding.com fitness plan app from iTunes, that app and its content is yours as long as you like.<h3>Will I get All Access since the app I purchased is now part of the subscription package?</h3><p>Your previously downloaded Bodybuilding.com fitness app does not grant you access to the All Access program but rather only the content within the app you purchased. You must subscribe to All Access in order to enjoy other fitness plans.<h3>Can I purchase an All Access subscription through Google Play or iTunes?</h3><p>Yes, you can sign up for All Access directly through any Bodybuilding.com fitness plan app (excluding the BodySpace application) using the payment method associated with your iTunes or Google Play account. All subscriptions and auto-renewing charges purchased through a Bodybuilding.com fitness plan application will be managed through your Google Play or iTunes account."
-						}
-					]
+					"section": "All Access App Questions",
+					"answer": {
+							"block": "<h3>I downloaded a free Bodybuilding.com fitness plan app from Google Play. Do I still have access to my app?</h3><p>If you downloaded a free Bodybuilding.com fitness plan app from Google Play store, you will no longer have access to its content. You must subscribe to All Access in order to use the app.<h3>I purchased a Bodybuilding.com fitness plan app from iTunes. Do I still have access to my app?</h3><p>If you purchased your Bodybuilding.com fitness plan app from iTunes, that app and its content is yours as long as you like.<h3>Will I get All Access since the app I purchased is now part of the subscription package?</h3><p>Your previously downloaded Bodybuilding.com fitness app does not grant you access to the All Access program but rather only the content within the app you purchased. You must subscribe to All Access in order to enjoy other fitness plans.<h3>Can I purchase an All Access subscription through Google Play or iTunes?</h3><p>Yes, you can sign up for All Access directly through any Bodybuilding.com fitness plan app (excluding the BodySpace application) using the payment method associated with your iTunes or Google Play account. All subscriptions and auto-renewing charges purchased through a Bodybuilding.com fitness plan application will be managed through your Google Play or iTunes account.</p><p>If you have any other questions about All Access, please feel free to contact us at <a href='tel:1-833-649-9634'>1(833)649-9634</a> and we'll be happy to help you.</p>"
+						},
+					"secondarySection" : ""
 				}
 			]
    
 		},
 		{
+			"section": "Order Inquiries",
+			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/icon_orders.png",
+			"secondSection": [
+   				{
+					"section": "Returns and Exchanges",
+					"answer": {
+							"block": "<h2>NEED INFO HERE</h2>"
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "Backordered Products",
+					"answer": {
+							"block": "<p>If an item is out-of-stock, it displays a status of \"On Backorder\" on the product page next to the Order button, or listed in the shopping cart. Even if a product is labeled \"On Backorder\" in our store, it is still available for order and most items are replenished within only a few days. We'll notify you by email within 24 hours of your purchase any time items are unavailable.<p>If all of the items in your order are on backorder, nothing will be shipped until all of the items are back in-stock. Once the items return to inventory, your order will be packaged and shipped, and you will receive a second email to alert you of the shipment.<p>When only some items in your order are on backorder, the available items are shipped right away. As soon as they become available, the backordered items are shipped separately at no extra cost to you.<p>If you’d prefer not to wait for an item to return to inventory, you can swap it for something similar or remove it from the order completely by contacting our Customer Service Department.<p>In very rare situations, orders for products that have been on backorder for more than 25 days are automatically canceled and an email notification is sent.<p>International Note: Due to customs regulations, we cannot partially ship international orders. Due to inventory levels at specific warehouse locations, sometimes an item can display as in-stock, but then display \"on backorder\" after an order is placed. When this happens and you'd like to swap the backordered item for something else, please contact our Customer Service Department. If contacting us by email, please include your name and order number in your email."
+						},
+					"secondarySection" : "Shopping the Store"
+				},
+				{
+					"section": "Canceling Orders",
+					"answer": {
+							"block": "<p>Within minutes of submitting your order, our warehouse is already picking and packing your items. Unfortunately, after we start fulfilling it, it is unlikely that we can make any edits or cancel your order.<ul><li>If your order has not yet shipped, please contact our Customer Service department to cancel the order and refund your payment.<li>If your order has already shipped, unfortunately we are unable to cancel it; however, you can return the unopened product for a full refund or exchange it for something else. Please note that the refund does not include the cost of shipping. For more information on returning an order, please visit our <a>Returns and Exchanges</a> section.<li>If you need to edit or make changes to your order after it has been submitted, please contact our Customer Service Department. We may be able to make the needed changes without canceling the order. If contacting us by email, please include your name and order number in your email.</ul>"
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "Changing an Order",
+					"answer": {
+							"block": "<p>Within minutes of submitting your order, our warehouse is already picking and packing your items.<ul><li>If your order has not yet shipped, please contact us to cancel the order, refund your payment, and help you place a new order with the correct shipping address.<li>If your order has already shipped, we'll attempt to contact the courier to process a reroute, however a reroute often leads to a fee from the courier, which will be charged to you.</ul><p>If contacting us by email, please include your name and order number in your email.<p>If we are unable to process a reroute or cancel the order, most of the time orders delivered to the wrong location are returned. Unfortunately, the return shipping process may take a while, especially for international orders. Once the order has returned and processed, you’ll be notified by email immediately and given the option to have the order reshipped to the corrected address, however you’ll be charged a shipping fee for the new order. If you decide you don't want the order reshipped, we can issue a refund for the cost of the products, but cannot refund the shipping fees."
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "Bad/Damaged Products",
+					"answer": {
+							"block": "<h2>NEED INFO HERE</h2>"
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "Adverse Reaction to Product",
+					"answer": {
+							"block": "<h2>INFO NEEDED HERE. AER TOOL?</h2>"
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "Discontinued Products",
+					"answer": {
+							"block": "<p>On rare occasions, manufacturers discontinue one of their products or we may stop selling it on our site. Once an item has been discontinued, we remove it from the site before inventory runs out. When a discontinued item is ordered before we get it removed from the site, we'll notify you by email within 24 hours.</p><p>Upon receiving notification of a discontinued item, please contact our Customer Service Department for more information on your options, including a refund, an in-store credit, or product swap details. If contacting us by email, please include your name and order number in your email.</p>"
+						},
+					"secondarySection" : "Shopping the Store"
+				},
+				{
+					"section": "Order History",
+					"answer": {
+							"block": "<p>You can easily view everything about your past orders, and even quickly reorder the same products, in the <a href='https://www.bodybuilding.com/store/account/order-history '>'Order History'</a> section of your <a href='https://www.bodybuilding.com/store/account/'>account settings.</a></p>"
+						},
+					"secondarySection" : "Account Inquiries"
+				},
+				{
+					"section": "Reorder Products",
+					"answer": {
+							"block": "<h2>Logged in script here?</h2><p>You can easily reorder your favorite products that you’ve ordered before by logging in and going to <a href='https://www.bodybuilding.com/store/account/'>'My Account'</a> and clicking on 'Quick Reorder'.</p>"
+						},
+					"secondarySection" : ""
+				}
+   			]
+		},
+		{
+			"section": "Website Inquiries",
+			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/icon_orders.png",
+			"secondSection": [
+   				{
+					"section": "Affiliate Program",
+					"answer": {
+							"block": "<h2>Need info here</h2>"
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "Content Use",
+					"answer": {
+							"block": "<h2><h2>Terms of Use?</h2>"
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "New Product Request",
+					"answer": {
+							"block": "<p>If you’d like to see a new product added to our store, you can put in a <a href='https://www.bodybuilding.com/store/help/vendorapplication.htm '>request here.</a></p><p>If you’d like to sell your product on Bodybuilding.com, please see the <a>New Vendor Application</a> help page.</p>"
+						},
+					"secondarySection" : "Shopping the Store"
+				},
+				{
+					"section": "New Vendor Application",
+					"answer": {
+							"block": "<p>If you’d like to be considered to sell your products on Bodybuilding.com you must complete the following steps:<ol><li>Complete the form below these instructions to start the process.<li>Send a non-returnable, full-size sample of your products to the appropriate Category Manager (Sports Nutrition,<li>Vitamin Supplements, Clothing, Workout Accessories & Equipment, Personal Care, or Food.)<li>Send a price sheet to newvendor@bodybuilding.com with all of the following information:</li><ul><li>MSRP<li>Wholesale<li>Percentage off wholesale<li>Bodybuilding.com unit cost<li>MAP</ul><li>Send your marketing programs for the current year, including promotional programs and advertising to <a href=\"mailto:someone@example.com?Subject=New%20Vendor%20Application\"type=email>newvendor@bodybuilding.com.</a></ol><p>Corporate Address Example:<br>ATTN: Merchandising (Sports Nutrition Category Manager)<br>Bodybuilding.com<br>5777 N. Meeker Ave<br>Boise, ID 83713<br>USA<br><p>For further assistance, please email the Bodybuilding.com vendor liaison at <a href=\"mailto:someone@example.com?Subject=New%20Vendor%20Application\"type=email>newvendor@bodybuilding.com.</a>"
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "Referral Program",
+					"answer": {
+							"block": "<h2>Get Help Info From Dean S.? Look for FAQ on site.</h2>"
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "Security & Privacy",
+					"answer": {
+							"block": "<h2>List Privacy Policy here? Or link?</h2>"
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "Sponsorships",
+					"answer": {
+							"block": "<p>If you’d like your event, yourself, or your organization to be considered for sponsorship by Bodybuilding.com, please go to the <a href='https://www.bodybuilding.com/fun/sponsorship-inquiry-page.html'>Sponsorship Inquiry Page</a> and supply the needed information to the best of your ability.</p>"
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "Unsubscribe",
+					"answer": {
+							"block": "<h2>Unsubscribe Tool Script?</h2><p>If you’d like to unsubscribe from our emailing lists, please go to the most recent email you’ve received from us, scroll to the bottom, and click ‘Unsubscribe’. From there follow the prompts to complete unsubscribing.</p>"
+						},
+					"secondarySection" : ""
+				},
+				{
+					"section": "Write Articles",
+					"answer": {
+							"block": "<p>If you’d like to show us your work and become a Contributing Writer on Bodybuilding.com, please contact us at <a href=’mailto:editor@bodybuilding.com’>editor@bodybuilding.com</a>.</p>"
+						},
+					"secondarySection" : ""
+				}
+   			]
+		},
+		{
 			"section": "Gift Certificates",
-			"sectionImg" : "imgs/gift1.png",
+			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/gift1.png",
 			"secondSection": [
 				{
 					"section": "Buying Gift Certificates",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "</h2>Need Info here.</h2>"
+						},
+					"secondarySection" : "Payments and Refunds"
 				},
 				{
 					"section": "Gift Certificate Balance",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "</h2>Gift Cert Balance Script Here?</h2>"
+						},
+					"secondarySection" : "Payments and Refunds"
 				},
 				{
 					"section": "Using Gift Certificate",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "</h2>Need Info here.</h2>"
+						},
+					"secondarySection" : "Payments and Refunds"
 				}
 			]
 		},
 		{
 			"section": "Account Inquiries",
-			"sectionImg" : "imgs/icon_account.png",
+			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/icon_account.png",
 			"secondSection": [
 				{
 					"section" : "Change Billing Address",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>You can change the billing addresses for payment methods on your account under the <a href='https://www.bodybuilding.com/store/account/billing'>'Saved Credit Cards'</a> section of your <a href='https://www.bodybuilding.com/store/account/'>account settings</a>.</p>"
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section" : "Change Username",
-					"answer": [
-						{
+					"answer": {
 							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section" : "Manage Credit Cards",
-					"answer": [
-						{
+					"answer": {
 							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section" : "Deactivate Account",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>Once an account has been created, the username cannot be changed. If changing your username is vital, the only solution is to deactivate your profile and create a new one using a different username and email address.</p><p>Please see the <a>'Deactivate Account'</a> section for more information on deactivating your account.</p>"
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section" : "Change Password",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>If you are logged in currently, you can change the password for your account on the <a href='https://www.bodybuilding.com/profile/change-password'>Change Password page</a>, in BodySpace settings.</p><p>If you’ve forgotten or misplaced your password, please go to the <a href='https://www.bodybuilding.com/profile/forgot-password'>Reset Password</a> page and follow the prompts.</p><p>Passwords must be a minimum of 6 characters and contain at least one letter and one number.</p>"
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section" : "Change Email Address",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section" : "Order History",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<h2>Logged in script here?</h2><p>If you are logged in, you can change the email address for your account on the <a href='https://bodyspace.bodybuilding.com/community/change-email'>Email Settings</a> page, in BodySpace settings.</p><p>To confirm the change, you must click the link in the verification email sent to the new address.</p>"
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section" : "Change Shipping Address ",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>Your shipping addresses can be added, changed, and removed in the <a href='https://www.bodybuilding.com/store/account/addresses'>'Address' section</a> of your <a href='https://www.bodybuilding.com/store/account/'>account settings.</a></p>"
+						},
+					"secondarySection" : ""
 				}
 			]
 		},
@@ -426,218 +429,149 @@
 			"secondSection": [
 				{
 					"section": "Deactivate My Account",
-					"answer": [
-						{
+					"answer": {
 							"block": "<p>You can easily deactivate your profile by getting in touch with our customer service team. You can call our team at <a href='tel:+1-866-236-8417'>1-866-236-8417</a>, <a href='https://cschat.bodybuilding.com/chat/chatstart.aspx?domain=www.bodybuilding.com&SID=0'>Chat Live</a> with a representative, or send us an email at <a href='mailTo:service@bodybuilding.com'>service@bodybuilding.com</a></p><p>Please include your BodySpace Username, your date of birth, and the email address associated with your account.</p><p>Please note there is no way to completely delete an account, so you may want to erase any personal photos/information from your account before contacting us. After deactivation you are still able to log into the account and place orders, but the account is not active on BodySpace or the forums.</p>"
-						}
-					]
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Change Username",
-					"answer": [
-						{
+					"answer": {
 							"block": "<p>Once an account has been created, the username cannot be changed. If changing your username is vital, the only solution is to deactivate your profile and create a new one using a different username and email address.</p><p>If you choose to create a new profile, please note you will not have access to your previous order history, saved payments and shipping details, forum posts, or BodySpace profile information (including tracked workouts).</p><p>Click here for more information on deactivating your account.</p>"
-						}
-					]
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Create An Account",
-					"answer": [
-						{
+					"answer": {
 							"block": "<p>You can easily create a profile on the <a href='https://www.bodybuilding.com/profile/signup'>Account Registration page</a>.</p>"
-						}
-					]
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "BodySpace Profile Management",
-					"answer": [
-						{
+					"answer": {
 							"block": "<p>You can easily manage profile information in your profile by going to <a href='https://my.bodybuilding.com/community/my-bodyspace/'>your BodySpace dashboard</a> and clicking the ‘Manage Profile’ link located in the left bar.</p>"
-						}
-					]
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Manage Friends",
-					"answer": [
-						{
+					"answer": {
 							"block": "<p>Having friends with similar aspirations can make a big difference when it comes to accomplishing your own health and fitness goals.</p><ul><p>Adding:</p><ul><li>You can add someone as a friend by going to the ‘Member Search’ section of BodySpace.</li></ul><p>Removing:</p><ul><li>You can remove friends by logging in and going to your friends page. From there you can click on the friend button to remove a user from your friends list.</li></ul></ul>"
-						}
-					]
+						},
+					"secondarySection" : ""
 				},
 				{
-					"section": "Add/Remove Pictures",
-					"answer": [
-						{
+					"section": "Add or Remove Pictures",
+					"answer": {
 							"block": "<h2>Removing Pictures</h2><p>You can remove Progress photos, Gallery photos, and Videos from your profile by logging in and going to <a href='https://my.bodybuilding.com/community/my-bodyspace/'>your BodySpace dashboard</a>, clicking the ‘Manage Profile’ link in the left bar, and then clicking on Photos in the left bar. Click on the blue ‘edit’ button at the top right of photos, and then click delete.</p><h2>Adding Pictures</h2><p>You can add Progress photos and Gallery photos to your profile by logging in and going to <a href='https://my.bodybuilding.com/community/my-bodyspace/'>your BodySpace dashboard</a>, and then clicking on 'Add Photo' in the right top bar.</p>"
-						}
-					]
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Block User",
-					"answer": [
-						{
+					"answer": {
 							"block": "<p>You can block other BodySpace members by adding them to your Ignore List, in the <a href='https://forum.bodybuilding.com/profile.php?do=ignorelist'>forum settings</a>. Members can be added or removed at any time.</p><p>Once a member has been added to your ignore list, they can no longer send direct messages, leave profile comments, or interact with your BodySpace profile.</p>"
-						}
-					]
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Tracking Workouts",
-					"answer": [
-						{
+					"answer": {
 							"block": "<h2>On Website:</h2><p>You can easily track your progress or track a workout at your computer by logging in and going to the <a href='https://bodyspace.bodybuilding.com/community/track'>Track section</a> of your BodySpace profile.</p><h2>On App:</h2><p>Using the BodySpace app….</p>"
-						}
-					]
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Setting Goals",
-					"answer": [
-						{
+					"answer": {
 							"block": "<p>Setting goals is an important step on the road to success.</p><h2>On Website:</h2><p>You can add, change, or remove your goals from BodySpace by navigating to the <a href='https://bodyspace.bodybuilding.com/community/goal'>Track section</a> of your BodySpace account.<h2>On App:</h2><p>Using the BodySpace app….</p>"
-						}
-					]
+						},
+					"secondarySection" : ""
 				}
     			
 			]
-			
 		},
 		{
 			"section": "Payments and Refunds",
-			"sectionImg" : "imgs/icon_payment.png",
+			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/icon_payment.png",
 			"secondSection": [
 				{
 					"section": "Payment Methods",
-					"answer": [
-						{
+					"answer": {
 							"block": "<h2>Accepted Methods</h2><p>We accept several different payment methods including:</p><ul><li>Amazon Pay</li><li>Credit Cards</li><ul><li>Visa</li><li>MasterCard</li><li>Discover</li><li>American Express</li><li>JCB</li></ul><li>Bodybuilding.com Gift Certificates</li><li>PayPal</li><li>Bank Wire Transfer</li><li>Money Order</li></ul><p>We do not accept cash or personal check payments.</p><p>Notes:</p><ul><li>The bank wire transfer and money order options are not available for customers using our mobile Store app.</li><li>Money order, Discover cards, and JCB cards are only available for domestic customers.</li><li>For the safety and security of our customers, any international orders over $25,000 USD must be placed using a secure form of payment.</li></ul><p>Brazilian Customers: A few Brazilian banks currently block the use of credit cards on the Brazilian Bodybuilding.com site. If you are having problems using your credit card, please attempt to place your order again using the U.S. store.</p>"
-						}
-						
-					]
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Checkout Errors",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>If you’ve received an error during checkout using a credit card, please ensure your billing address is exactly correct. If this does not work, you may need to contact your bank, to verify that the billing address that you’re using matches what they have on file.</p><p>For any other errors, please contact us by phone and we will do everything we can to ensure your order goes through.</p>"
+						},
+					"secondarySection" : ""
 				}, 
 				{
 					"section": "Credit / Debit Cards",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>You can use the following credit cards on Bodybuilding.com:</p><ul><li>Visa</li><li>MasterCard</li><li>Discover</li><li>American Express</li><li>JCB</li></ul><p>When an order is submitted using a card payment, we authorize the amount with your bank, but no money is withdrawn from the account. While the funds may appear gone from your available balance, they have not entered our account, your bank has placed the funds on hold.</p><p>Once an order has shipped, the authorization becomes settled and the funds enter our account. If for some reason your order does not ship and the order is cancelled, it can take several days for your bank to release the funds back to your account.</p><p>If your card is declined we suggest verifying the card information and billing address was entered correctly and trying again. If the card is declined again, you may need to contact your credit card company or the issuing bank for more information.</p><p>*Notes:</p><p>To protect against fraud, orders that are suspected as fraudulent are canceled and payment is voided.</p><p>Discover and JCB cards are only available for domestic customers. For the safety and security of our customers, any international orders over $25,000 USD must be placed using a secure form of payment.</p>"
+						},
+					"secondarySection" : ""
 				}, 
 				{
 					"section": "In-Store Credit",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				}, 
-				{
-					"section": "Using Gift Certificate",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				}, 
+					"answer": {
+							"block": "<h2>Checking Your Balance</h2><p>The easiest way to check your in-store credit balance is to log in to your account, and add an item to the cart. Your in-store credit balance will then be displayed in the cart near the total.</p><p>If you prefer, you can also contact our Customer Service department and one of our representatives will check your balance right away.</p><h2>Using Credit</h2><p>To use your in-store credit, log in and place the items you’d like to order in the cart. When you’re logged in to your account, in-store credit displays at the bottom of the page next to the order total, and automatically applies towards the purchase.</p><ul><li>If you don't want to use the in-store credit on a purchase, log out of your account and place the order as a guest.</li></ul><h2>Missing A Credit?</h2><p>First, make sure you are logged in, as in-store credit is linked to your account. If you’re an international customer and the in-store credit was issued in your local currency, the credit will only display when shopping in your country specific store, which can be changed <a href='https://www.bodybuilding.com/store/common/store/change-store.jsp?&_requestid=15204'>here</a>. If this fails, feel free to contact us for further assistance.</p>"
+						},
+					"secondarySection" : ""
+				},  
 				{
 					"section": "PayPal",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>To pay using your PayPal account, choose the PayPal option during checkout, and then click the ‘Proceed to PayPal’ button to continue to the PayPal website.</p><p>Note: Bodybuilding.com does not accept eChecks through PayPal.</p><p>Restricted Product Notice: Due to PayPal restrictions, some items cannot be paid for using the PayPal service. In these situations, a message displays in the cart to prompt you to choose a different payment option for those products.</p>"
+						},
+					"secondarySection" : ""
 				}, 
 				{
 					"section": "Refund Timeframes",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>If you have been issued a refund by us, the timeframe for it to arrive in your account can vary with many different factors, including payment method and location.</p><h2>Credit Cards</h2><p><u>Domestic Customers</u></p><p>Depending on your bank, refunds should post back to your account within 2-5 business days.</p><p><u>International Customers</u></p><p>Depending on your bank, refunds should post back to your account within 4-25 business days. If your refund still hasn't processed after 25 business days, please let us know so we can research the issue and get it corrected right away.</p><p><u>Pending Charges</u></p>When an order is placed with Bodybuilding.com, a pending authorization is obtained from your credit card company. It is not until the order is shipped from our warehouse that the final charges are processed with the credit card. If for any reason your order is canceled before it is shipped, the final confirmation charge will not occur and any pending authorizations will be voided from our system within 24 hours. This can take several days to drop from your statement depending on your bank and we have no control over this timeframe.<h2>PayPal</h2><p>Any refunds should post to your account within 2-5 business days.</p><h2>In-Store Credit</h2><p>If you’ve been issued an In-Store Credit the next time you place an order you'll automatically see an credit deduction in the cart. Please make sure you're logged into your account so the credit displays correctly.</p>"
+						},
+					"secondarySection" : ""
 				}, 
 				{
 					"section": "Secure Payments",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>Under specific circumstances, we may require a secure form of payment, such as a bank wire transfer or a money order (domestic customers only).</p><p>When you’re ready to order and would like to use a secure payment method, begin to check out and then choose the ‘Money Order/Wire Transfer’ option on the billing page. Once you submit your order, you can send payment using one of the following options:</p><p><u>Bank Wire Transfer</u></p><p>To pay using a bank wire transfer, provide the following information to your bank to transfer the funds:</p><p class=indent>Bank Name: JPMorgan Chase Bank<br>201 South Main Street Suite 300<br>Salt Lake City, UT 84111<br>Account Name: Bodybuilding.com, LLC<br>Routing #: 021000021<br>Account: 626512243<br>Swift Code: CHASUS33</p><p><u>Money Order (Domestic Customers Only)</u></p><p>To pay using a money order, send it in U.S. dollars to Bodybuilding.com along with a printed copy of your invoice, and address the money order to:</p><p class=indent>Bodybuilding.com LLC<br>Dept # 880083<br>P.O. Box 29650<br>Phoenix, AZ 85038-9650<br>USA</p><p>Include your order number with your secure payment to help ensure the payment is applied to your order. It can take up to two weeks for funds from a secure payment to deposit to our account. After the payment is processed, it can take an additional 3-4 business days to apply the payment to your order and prepare it for shipment.</p>"
+						},
+					"secondarySection" : ""
 				}, 
 				{
 					"section": "Store Currency",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>Depending on which country store you are in, the currency displayed may change. When shopping a country specific store, the following currencies are enabled and display as default:</p><ul><li>Euro: Austria, Belgium, Cyprus, Estonia, Finland, Germany, Greece, Ireland, Italy, Luxembourg, Malta, Netherlands, Portugal, Slovakia, Slovenia, Spain, French Guiana, Martinique, Monaco, Reunion, and San Marino</li><li>GBP: United Kingdom</li><li>CAD: Canada</li><li>AUD: Australia</li><li>CHF: Switzerland and Liechtenstein</li><li>YEN: Japan</li></ul><p>If no country is selected, the site defaults to the U.S. store and all prices are displayed in U.S. dollars (USD). If you would like to change your country specific store, that can be done <a href='https://www.bodybuilding.com/store/common/store/change-store.jsp?&_requestid=15204'>here</a>.</p><p>If you’re shopping within your country store and items are still displayed using U.S. dollars, we are not yet setup to use your local currency.</p>"
+						},
+					"secondarySection" : ""
 				}
 			]
 		},
 		{
 			"section": "Shopping the Store",
-			"sectionImg" : "imgs/shoppingthestore.png",
+			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/shoppingthestore.png",
 			"secondSection": [
 				{
-					"section": "Backordered Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Country Store",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Discontinued Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "New Product Request",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Product Restrictions",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
 					"section": "Quantity Policy",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<h2>NEED INFO HERE</h2>"
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Review Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
+					"answer": {
+							"block": "<p>Reviewing products couldn’t be easier. Simply go to any product’s page, scroll to the reviews section at the bottom of the page and click ‘Write A Review’.</p><p>To report any reviews that may be inaccurate or not pertain to the specific product, please scroll to the reviews section at the bottom of the page and click the ‘Report’ link at the bottom right of every review.</p>"
+						},
+					"secondarySection" : "Order Inquiries"
 				}
 			]
    

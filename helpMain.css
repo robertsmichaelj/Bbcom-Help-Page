@@ -2,6 +2,7 @@
 	font: 500 28px/29px ProximaNova, Arial, sans-serif;
 	margin: 0;
 	transition: opacity .3s;
+	text-transform: capitalize;
 }
 #helpPage h2 {
 	font: 500 21px/24px ProximaNova, Arial, sans-serif;
@@ -60,6 +61,7 @@
 #main #helpMain #helpBreadCrumbs a{
 	font: 500 15px/18px ProximaNova, Arial, sans-serif;
 	color: #00aeef;
+	text-transform: capitalize;
 }
 #helpBreadCrumbs #breadCrumbInner a:before{
 	content: "|";
@@ -69,7 +71,6 @@
 #helpBreadCrumbs #breadCrumbInner {
 	transition: opacity .3s;
 }
-
 #helpMain #helpSideBar {
 	width: auto;
 	padding: 0px 10px 14px;
@@ -192,9 +193,9 @@
 }
 #helpQuickLinks a {
 	font: 600 14px/16px ProximaNova, Arial, sans-serif;
-	width: 19%;
+	flex: 1 1 0;
 	display: block;
-	margin: 0;
+	margin: 0 5px;
 	padding: 10px;
 	background: #F2F2F2;
 	border-radius: 5px;
@@ -207,7 +208,7 @@
   	align-content: center;
   	justify-content: center;
 }
-#helpMain .helpHeader {
+#helpMain #helpHeader {
  	margin: 0px 0 8px;
   	padding: 0;
   	display: flex;
@@ -215,6 +216,11 @@
   	flex-wrap: nowrap;
   	align-content: center;
   	justify-content: flex-start;
+}
+#helpMain #helpHeader img {
+	max-height: 28px;
+	align-self: center;
+	margin-left: 10px;
 }
 #helpMain #helpSectionBoxes {
  	margin: 0 0 0 0;
@@ -279,16 +285,14 @@
 	font: 600 16px/22px ProximaNova, Arial, sans-serif;
 }
 #helpMain .helpAnswerBox p {
-	margin: 5px 0 10px;
-	font: 400 16px/19px ProximaNova, Arial, sans-serif;
+	margin: 5px 0 16px;
+	font: 400 16px/21px ProximaNova, Arial, sans-serif;
 }
-#helpMain .helpAnswerBox p.paraUnder {
-	text-decoration: underline;
-	font-weight: 600;
-	margin-bottom: 0px;
+#helpMain .helpAnswerBox p.indent {
+	margin-left: 14px;
 }
 #helpMain .helpAnswerBox ul {
-	margin: 5px auto;
+	margin: 5px auto 15px;
 	list-style: disc;
 	width: 90%;
 }
@@ -298,13 +302,37 @@
 	width: 90%;
 }
 #helpMain .helpAnswerBox li {
-	margin: 2px 0 0 10px;
+	margin: 6px 0 0 10px;
 	font: 400 16px/19px ProximaNova, Arial, sans-serif;
 }
 #helpMain .helpAnswerBox a {
 	margin: auto 0;
 	font: 400 16px/19px ProximaNova, Arial, sans-serif;
 	color: #00aeef;
+}
+#helpMain .helpAnswerBox span {
+	font-weight: 600;
+}
+#helpMain .helpAnswerBox u {
+	text-decoration: underline;
+	font-weight: 600;
+	margin: 0px;
+}
+#helpMain .helpAnswerBox img.smallImg {
+	max-height: 15px;
+	margin-top: -1px;
+}
+#helpMain .helpAnswerBox img.midImg {
+	max-height: 100px;
+	max-width: 100px;
+	margin: 12px auto;
+	align-self: center;
+}
+#helpMain .helpAnswerBox img.largeImg {
+	max-height: 300px;
+	max-width: 300px;
+	margin: 14px auto;
+	align-self: center;
 }
 #reset {
  	margin: 0 auto 0 auto;
