@@ -5,7 +5,12 @@
 //TAKE HELP MAIN OUT AT DEPLOYMENT
 
 //BASIC GLOBAL VARIABLES
+<<<<<<< HEAD
 var i, r, jsonData, firstHeader, mainSections, sectionName, answers, fullLoadQueries, splitQueries, pop, found, sideTopicsContainer = document.getElementById("helpSideBar").getElementsByTagName("UL")[0],
+=======
+var i, r, jsonData, mainSection, firstHeader, secondHeader, thirdHeader, mainSections, value, secondSections, sectionName, sectionAnswer, answers, value1,
+	sideTopicsContainer = document.getElementById("helpSideBar").getElementsByTagName("UL")[0],
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 	mainCellsAppendTo = document.getElementById("helpSectionBoxes"),
 	quickLinksContainer = document.getElementById("helpQuickLinks"),
 	breadCrumbInner = document.getElementById('breadCrumbInner'),
@@ -13,6 +18,7 @@ var i, r, jsonData, firstHeader, mainSections, sectionName, answers, fullLoadQue
 	searchBar = document.getElementById('helpSearchBar'),
 	resetElements = document.querySelectorAll(".resetLinking"),
 	typingTimer,
+<<<<<<< HEAD
 	tSpeed = 350,
 	classFade = 'helpFade',
 	topicHeader = document.getElementById('helpContent').getElementsByTagName("h1")[0],
@@ -22,17 +28,36 @@ var i, r, jsonData, firstHeader, mainSections, sectionName, answers, fullLoadQue
 $.ajax({
 	'async': false,
 	url: "/helpMain.json",
+=======
+	transitionSpeed = 300,
+	classFade = 'helpFade';
+//GET JSON DATA AND SEND TO APPROPRIATE FUNCTIONS
+$.ajax({
+	'async': false,
+	url: "helpMain.json",
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 	dataType: "json",
 	success: function (data) {
 		jsonData = data;
 	}
 });
+<<<<<<< HEAD
 var snapshot = Defiant.getSnapshot(jsonData);
+=======
+//ALL SECTIONS TOP AND BOTTOM
+mainSection = JSON.search(jsonData, '*//*[section]');
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 //TOP LEVEL SECTIONS
 mainSections = JSON.search(jsonData, '//mainSection[section]');
 //BOTTOM LEVEL SECTIONS AND ANSWERS
 answers = JSON.search(jsonData, '//secondSection[section]');
+<<<<<<< HEAD
 
+=======
+//SECONDARY SECTIONS
+secondSections = JSON.search(jsonData, '//secondSection[secondarySection]');
+//CHANGES PAGE TITLE IN HOPES SEARCH ENGINES WILL PICK UP ON IT
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 function changePageAttributes(text) {
 	//CHANGES PAGE TITLE IN HOPES SEARCH ENGINES WILL PICK UP ON IT
 	var titleText = text;
@@ -44,14 +69,17 @@ function removeChildren(element) {
 		element.removeChild(element.lastChild);
 	}
 }
+//FADES OUT ELEMENT WITH CSS
 function helpFadeOut(element) {
 	//FADES OUT ELEMENT WITH CSS
 	element.classList.add(classFade);
 }
+//FADE IN ELEMENT WITH CSS
 function helpFadeIn(element) {
 	//FADE IN ELEMENT WITH CSS
 	element.classList.remove(classFade);
 }
+<<<<<<< HEAD
 if (window.location.search.indexOf('?') >= 0) {
 	//PARSES URL - AND RETURNS SECTIONS
 	fullLoadQueries = window.location.search.split('?')[1];
@@ -134,6 +162,23 @@ function breadClick(element, i) {
 		}
 	});
 }
+=======
+
+//BREADCRUMBS SECTION
+function breadClick(element, i) {
+	element[i].addEventListener("click", function () {
+		if (this.classList.contains('helpBreadLink2')) {
+			console.log('bread link 2');
+			searching(this.textContent, 1);
+		} else if (this.classList.contains('helpBreadLink3')) {
+			console.log('bread link 3');
+			searching(this.textContent, 2);
+		}
+		console.log(this.textContent);
+		
+	});
+}
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 function breadLinked() {
 	//CALL FUNCTION FOR SETTING CLICKS ON BREADCRUMBS - MAY BE ABLE TO REVISE TO TAKE THIS OUT
 	var bread = document.querySelectorAll('.helpBreadLink');
@@ -186,8 +231,23 @@ function alpha() {
 	});
 }
 
+<<<<<<< HEAD
 function createCells(text, appendTo, main, second, imgSrc) {
 	//CREATES CLICKABLE AREAS
+=======
+//CREATES FADE FOR THE MAIN HEADER 
+function mainHeaderFade(text) {
+	var topicHeader = document.getElementById('helpContent').getElementsByTagName("h1")[0];
+	helpFadeOut(topicHeader);
+	setTimeout(function () {
+		topicHeader.innerHTML = text;
+		helpFadeIn(topicHeader);
+	}, transitionSpeed);
+}
+
+//CREATES CLICKABLE CELLS
+function createCells(text, appendTo, main, second, imgSrc) {
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 	var cell = document.createElement('a'),
 		wrapSection = document.createElement('div'),
 		cellImg = document.createElement('img'),
@@ -195,7 +255,10 @@ function createCells(text, appendTo, main, second, imgSrc) {
 		anchor = document.createElement('a'),
 		imgSource = imgSrc;
 	if (appendTo === mainCellsAppendTo) {
+<<<<<<< HEAD
 		//IF CREATING MAIN SECTION CELLS
+=======
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 		if (main === true && second === false) {
 			cell.classList.add('helpSectionBox', 'helpSectionNormalBox');
 		} else if (main === true && second === true) {
@@ -247,6 +310,7 @@ function createAnswers(text) {
 		helpBoxes.append(helpDiv);
 	}
 }
+<<<<<<< HEAD
 //SEARCHES SECONDARY SECTIONS AND ADDS TO CLICKABLE CELLS IF MATCHES
 //function secondarySearch(term) {
 //	var secTerm = term.toLowerCase();
@@ -332,6 +396,71 @@ function searching(term, level) {
 					for (r = 0; r < secMat.secondSection.length; r += 1) {
 						createCells(secMat.secondSection[r].section, mainCellsAppendTo, true, true);
 					}
+=======
+
+function setSearchClicks(answer, breadcrumb) {
+	//CLICK ON SEARCH GENERATED CELLS
+	$(document).on('click', '.helpSectionSearchBox', function (e) {
+		e.preventDefault();
+		var answerData = answer,
+			index = Array.prototype.slice.call(e.currentTarget.parentElement.children).indexOf(e.currentTarget),
+			thirdBreadCrumb1 = e.currentTarget.textContent,
+			textData = answerData[index].answer,
+			sectionText = answerData[index].section;
+		breadCrumbs(firstHeader, breadcrumb, thirdBreadCrumb1);
+		mainHeaderFade(sectionText);
+		helpFadeOut(helpBoxes);
+		setTimeout(function () {
+			removeChildren(helpBoxes);
+			createAnswers(textData);
+			helpFadeIn(helpBoxes);
+		}, transitionSpeed);
+	});
+}
+function createSearchCells(data, secondary) {
+	helpFadeOut(helpBoxes);
+	setTimeout(function () {
+		if (secondary !== true) {
+			removeChildren(helpBoxes);
+		}
+		for (i = 0; i < data.length; i += 1) {
+			var wrapSection = document.createElement('div'),
+				cell = document.createElement('a');
+			wrapSection.className = 'helpSectionBoxWrap';
+			wrapSection.innerHTML = data[i].section;
+			cell.classList.add('helpSectionBox', 'helpSectionNormalBox');
+			cell.append(wrapSection);
+			mainCellsAppendTo.append(cell);
+		}
+		helpFadeIn(helpBoxes);
+	}, transitionSpeed);
+}
+function secondarySearch(term) {
+	var secTerm = term.toLowerCase();
+	for (i = 0; i < secondSections.length; i += 1) {
+		var value1 = secondSections[i];
+		sectionName = value1.secondarySection.toLowerCase();
+		if (sectionName.indexOf(secTerm) >= 0) {
+			createCells(value1.section, mainCellsAppendTo, true, true);
+		}
+	}
+}
+function searching(term, type, header) {
+	console.log(term);
+	var searchArray = [],
+		searchTerm,
+		stripSearch;
+	if (searchBar.value) {
+		//SEARCH IN THE SEARCH BAR
+		searchTerm = searchBar.value.toLowerCase();
+		for (i = 0; i < answers.length; i += 1) {
+			value = answers[i];
+			if (typeof value.answer !== "undefined") {
+				sectionAnswer = value.answer[0].block;
+				sectionName = value.section.replace('?', '').replace("'", "").replace("-", "").trim().toLowerCase();
+				if (sectionAnswer.toLowerCase().indexOf(searchTerm) >= 0 && searchTerm.length > 0) {
+					searchArray.push(value);
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 				}
 			}
 			breadCrumbs(firstHeader, cn2);
@@ -369,6 +498,7 @@ function searching(term, level) {
 					}
 				}
 			}
+<<<<<<< HEAD
 		} else if (level === 4) {
 			var alt = search.result(jsonData, "section")[0];
 			if (alt.hasOwnProperty('answer')) {
@@ -391,6 +521,65 @@ function searching(term, level) {
 							return;
 						}
 					}
+=======
+		}
+		stripSearch = searchArray.filter(function (elem, index, self) {
+			return index === self.indexOf(elem);
+		});
+		createSearchCells(stripSearch);
+		setSearchClicks(stripSearch);
+	} else if (term !== undefined) {
+		//SEARCHING FOR A TERM IN THE JSON BY CLICKING
+		searchTerm = term.toLowerCase();
+		if (type === 1) {
+			//SEARCHES TOP LEVEL MAIN SECTIONS
+			console.log("1");
+			for (i = 0; i < mainSections.length; i += 1) {
+				value = mainSections[i];
+				var sectionNames = value.secondSection[i],
+					sectionWhole = value.section;
+				sectionName = value.section.toLowerCase();
+				if (sectionName.indexOf(searchTerm) >= 0) {
+					mainHeaderFade(term);
+					breadCrumbs(firstHeader, term);
+					helpFadeOut(helpBoxes);
+					value1 = value;
+					setTimeout(function () {
+						removeChildren(helpBoxes);
+						for (r = 0; r < value1.secondSection.length; r += 1) {
+							createCells(value1.secondSection[r].section, mainCellsAppendTo, true, true);
+						}
+						changePageAttributes(thirdHeader);
+						secondarySearch(term);
+						helpFadeIn(helpBoxes);
+					}, transitionSpeed);
+				}
+			}
+		} else if (type === 2) {
+			//SEARCHES ANSWERS - SECOND LAYER CLICKS AND QUICK LINKS
+			console.log("2");
+			for (i = 0; i < answers.length; i += 1) {
+				value = answers[i];
+				sectionName = value.section.toLowerCase();
+				if (sectionName.indexOf(searchTerm) >= 0) {
+					var section = value.section,
+						block = value.answer[0].block;
+					mainHeaderFade(section);
+					if (header) {
+						secondHeader = header;
+						breadCrumbs(firstHeader, secondHeader);
+					} else {
+						secondHeader = document.querySelector('.helpBreadLink2').innerHTML;
+						breadCrumbs(firstHeader, secondHeader, section);
+					}
+					helpFadeOut(helpBoxes);
+					setTimeout(function () {
+						removeChildren(helpBoxes);
+						createAnswers(block);
+						changePageAttributes(thirdHeader);
+						helpFadeIn(helpBoxes);
+					}, transitionSpeed);
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 				}
 			}
 			return;
@@ -398,13 +587,20 @@ function searching(term, level) {
 	}, tSpeed);
 	return;
 }
+<<<<<<< HEAD
 function initLoad() {
 	//INTIAL LOADING
 	var text, imgSrc;
+=======
+
+function initLoad() {
+	var text, indexBox, imgSrc;
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 	firstHeader = jsonData.mainSectionHeader;
 	//CREATE SIDE BAR LINKS
 	document.getElementById('helpSideBarHeader').textContent = jsonData.popularTopicsHeader;
 	for (i = 0; i < jsonData.popularTopics.length; i += 1) {
+<<<<<<< HEAD
 		text = jsonData.popularTopics[i];
 		createCells(text, sideTopicsContainer);
 	}
@@ -412,6 +608,22 @@ function initLoad() {
 	document.getElementById('helpQuickLinksHeader').textContent = jsonData.selfHelpLinksHeader;
 	for (i = 0; i < jsonData.selfHelpLinkTopics.length; i += 1) {
 		text = jsonData.selfHelpLinkTopics[i];
+=======
+		text = jsonData.popularTopics[i].section;
+		createCells(text, sideTopicsContainer);
+	}
+	//CREATE MAIN SECTIONS
+	document.getElementById('helpH1').textContent = firstHeader;
+	for (i = 0; i < mainSections.length; i += 1) {
+		text = mainSections[i].section;
+		imgSrc = mainSections[i].sectionImg;
+		createCells(text, mainCellsAppendTo, true, false, imgSrc);
+	}
+	//CREATE QUICK LINKS
+	document.getElementById('helpQuickLinksHeader').textContent = jsonData.selfHelpLinksHeader;
+	for (i = 0; i < jsonData.selfHelpLinkTopics.length; i += 1) {
+		text = jsonData.selfHelpLinkTopics[i].section;
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 		createCells(text, quickLinksContainer);
 	}
 	if (window.location.search.indexOf('?') >= 0) {
@@ -433,6 +645,7 @@ function initLoad() {
 	}
 	//SET CLICK ZONES FOR CLICKABLE BOXES
 	$(document).on('click', '.helpSectionNormalBox', function (e) {
+<<<<<<< HEAD
 		e.stopImmediatePropagation();
 		if (!e.currentTarget.classList.contains('helpSectionBoxSecond')) {
 			//FIRST CLICK ON MAIN CELLS
@@ -442,10 +655,23 @@ function initLoad() {
 			//SECOND LEVEL CELL CLICK
 			text = e.currentTarget.textContent;
 			searching(text, 3);
+=======
+		e.preventDefault();
+		if (e.currentTarget.classList.contains('helpSectionBoxSecond')) {
+			//SECOND LEVEL CELL CLICK
+			text = e.currentTarget.textContent;
+			console.log(text);
+			searching(text, 2);
+		} else {
+			text = e.currentTarget.textContent;
+			searching(text, 1);
+			//FIRST CLICK ON MAIN CELLS
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 		}
 		return;
 	});
 	$('#helpQuickLinks a').on('click', function (e) {
+<<<<<<< HEAD
 		if (e.target.href.length === 0) {
 			var sqi = Array.prototype.slice.call(e.currentTarget.parentElement.children).indexOf(e.currentTarget),
 				sq = jsonData.selfHelpLinkTopics[sqi].name;
@@ -472,6 +698,21 @@ function initLoad() {
 			var text = $(this).text();
 			searching(text, 4);
 		}
+=======
+		indexBox = Array.prototype.slice.call(e.currentTarget.parentElement.children).indexOf(e.currentTarget);
+		var header1 = jsonData.selfHelpLinksHeader,
+			section = jsonData.selfHelpLinkTopics[indexBox].section,
+			alternate = jsonData.selfHelpLinkTopics[indexBox].alternate;
+		console.log(indexBox);
+		searching(alternate, 2, section);
+	});
+	$('#helpSideBar ul li').on('click', function (e) {
+		indexBox = Array.prototype.slice.call(e.currentTarget.parentElement.children).indexOf(e.currentTarget);
+		var header1 = jsonData.popularTopicsHeader,
+			section = jsonData.popularTopics[indexBox].section,
+			alternate = jsonData.popularTopics[indexBox].alternate;
+		searching(alternate, 2, section);
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 	});
 	breadLinked();
 }
@@ -493,6 +734,7 @@ function reset() {
 	}, tSpeed);
 	return;
 }
+<<<<<<< HEAD
 searchBar.addEventListener('keyup', function () {
 	//SEARCH BAR TYPING
 	//ON ANY KEY UP SET TIMER TO SEE IF USER IS DONE TYPING AND THEN SEARCH FOR WHAT IS IN THE SEARCH BOX
@@ -500,10 +742,21 @@ searchBar.addEventListener('keyup', function () {
 	//IF SEARCH FIELD IS EMPTY AFTER TYPING THEN RESET HELP PAGE
 	if (searchBar.value.length === 0) {
 		reset();
+=======
+
+//SEARCH BAR TYPING
+//ON ANY KEY UP SET TIMER TO SEE IF USER IS DONE TYPING AND THEN SEARCH FOR WHAT IS IN THE SEARCH BOX
+searchBar.addEventListener('keyup', function () {
+	clearTimeout(typingTimer);
+	//IF SEARCH FIELD IS EMPTY AFTER TYPING THEN RESET HELP PAGE
+	if (searchBar.value.length === 0) {
+		reset(jsonData);
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 		return;
 	}
 	//IF SEARCH FIELD HAS MORE THAN 4 CHARACTERS RUN SEARCH - PREVENTS TOO MANY ENTRIES FROM SHOWING
 	if (searchBar.value.length >= 4) {
+<<<<<<< HEAD
 		var term = searchBar.value;
 		typingTimer = setTimeout(function () {
 			searching(term, 1);
@@ -534,6 +787,25 @@ window.onpopstate = function (event) {
 initLoad();
 document.addEventListener("DOMContentLoaded", function () {
 	//ADDS CUSTOMERS NAME TO THE HEADER OF THE PAGE IF THEY ARE LOGGED IN AND HAVE A NAME SET
+=======
+		typingTimer = setTimeout(searching, 400);
+	}
+});
+//ON ANY KEY DOWN RESET TIMER ABOVE
+searchBar.addEventListener('keydown', function () {
+	clearTimeout(typingTimer);
+});
+//ADD CLICK EVENTS TO RESET TO ALL WITH RESETLINKING CLASS
+for (i = 0; i < resetElements.length; i += 1) {
+	resetElements[i].addEventListener("click", function () {
+		reset(jsonData);
+	});
+}
+//INITAL LOAD AND SEARCHES
+initLoad(jsonData);
+//ADDS CUSTOMERS NAME TO THE HEADER OF THE PAGE IF THEY ARE LOGGED IN AND HAVE A NAME SET
+document.addEventListener("DOMContentLoaded", function () {
+>>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 	if (localStorage.getItem("currentUser") !== null) {
 		var name = JSON.parse(localStorage.currentUser).user.realName,
 			firstName = name.trim().split(" ")[0];
