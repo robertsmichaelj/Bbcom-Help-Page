@@ -11,16 +11,7 @@
 			"name": "Change Password"
 		},
 		{
-<<<<<<< HEAD
 			"name": "Add or Remove Pictures"
-=======
-			"section": "Change Password",
-			"alternate": "Change Password"
-		},
-		{
-			"section": "Add/Delete Pictures",
-			"alternate": "Add/Remove Pictures"
->>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 		}
 	],
 	"popularTopicsHeader": "Most Popular Topics",
@@ -48,7 +39,6 @@
 	"mainSectionHeader": "All Help Topics",
 	"mainSection": [
 		{
-<<<<<<< HEAD
 			"section": "Free Shipping",
 			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/freeShipTruck.png",
 			"secondSection": [
@@ -72,28 +62,6 @@
 							"block": "<p><p>Our free shipping program is currently available to customers in the United States and with orders that have eligible products of $49 or more. Look for the Free Shipping icon (shipping icon here) to find eligible products.</p>"
 						},
 					"secondarySection" : "Domestic Shipping"
-=======
-			"section": "Free Shipping Details",
-			"sectionImg" : "imgs/freeShipTruck.png",
-			"secondSection": [
-				{
-					"section": "Free Shipping Section",
-					"answer": [
-						{
-							"block": "<h2>Free Shipping Section - Test is working</h2>"
-						}
-					],
-					"secondarySection" : "Domestic Shipping"
-				},
-				{
-					"section": "APO / DPO / FPO (Military Shipping)",
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					],
-					"secondarySection" : "Domestic Shipping, International Shipping"
->>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 				}
 			]
 		},
@@ -102,7 +70,6 @@
 			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/north-america.png",
 			"secondSection": [
 				{
-<<<<<<< HEAD
 					"section": "Where's My Order? - Domestic",
 					"answer": {
 							"block": "<p>WHERE MY ORDER?!</p>"
@@ -121,80 +88,20 @@
 					"answer": {
 							"block": "<p>We are honored to support members of our nation’s military, and ship to all APO, FPO, or DPO military addresses. When placing your order, select the Military shipping option to help ensure your package arrives safely.<p>Due to heightened security, only limited tracking information is available on military orders and we are unable to track them after they leave the United States. Most military packages are delivered within 3-8 business days, however depending on location and other external factors, including military inspection, some orders may experience additional delays.<p>When shipping to an APO, FPO, or DPO address, please use the following format when completing your shipping address:<p>Example:<ul><li>John Smith<li>Address Line 1<li>Address Line 2 (if needed)<li>APO, AP 91645-<span>0000</span> (ZIP code for your location)<li>USA</ul><p>Note: <span>The 4-digit ZIP code extension is required for all military addresses.</span> Please make sure to enter this extension when placing your order to help ensure your package arrives as quickly as possible.<p>There is no need to enter the actual city, state, or country where you are located. Enter APO, DPO, or FPO for the city and AA, AP, or AE for the state."
 						},
-=======
-					"section": "Shipping Rates",
-					"answer": [
-						{
-							"block": "<h2>Shipping Rates</h2>"
-						}
-					],
-					"secondarySection" : ""
-				},
-				{
-					"section": "APO / DPO / FPO (Military Shipping)",
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					],
-					"secondarySection" : ""
-				},
-				{
-					"section": "Free Shipping",
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					],
->>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 					"secondarySection" : ""
 				},
 				{
 					"section": "Shipping Methods",
-<<<<<<< HEAD
 					"answer": {
 							"block": "<p>We have domestic warehouse locations throughout the country to help ensure your order is shipped and delivered as quickly as possible.<p>We've partnered with multiple regional and national couriers and offer the following shipping options in the United States:<ul><li><span>Economy:</span> Economy shipping normally arrives within 2 to 6 business days, and is usually the least expensive option. Monday thru Friday delivery only.<li><span>Standard:</span> Standard shipping normally arrives within 2 to 4 business days, and is usually the best option for heavy shipments, like those with large tubs of protein.<li><span>Two Business Day Delivery:</span> Two day delivery helps ensure delivery within two business days. Please understand that we can only ship items that are in-stock at one of our domestic warehouses. For two day delivery, orders must be placed Monday - Friday by 2:00pm Eastern to qualify.<li><span>One Business Day Delivery:</span> Selecting this option ensures we can ship your package to you in just one business day. Please understand that we can only ship items that are in-stock at one of our domestic warehouses. For one day delivery, orders must be placed Monday - Friday by 2:00pm Eastern to qualify.<li><span>Military:</span> Military shipping normally arrives within three to eight business days, and is the only shipping option available for APO, FPO, or DPO military mailing addresses.</ul>"
 						},
-=======
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					],
->>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 					"secondarySection" : ""
 				},
 				{
 					"section": "PO Boxes",
-<<<<<<< HEAD
 					"answer": {
 							"block": "<p>We ship to P.O. Boxes with no problem. When you enter your shipping address, our system automatically selects the correct shipping option to get your order delivered directly to the Post Office box specified.</p>"
 						},
-=======
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					],
-					"secondarySection" : ""
-				},
-				{
-					"section": "Where's My Order? - Domestic",
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					],
-					"secondarySection" : ""
-				},
-				{
-					"section": "Sales Tax",
-					"answer": [
-						{
-							"block": "<p>Answer Answers</p>"
-						}
-					],
->>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 					"secondarySection" : ""
 				}
 			]
@@ -297,7 +204,6 @@
    
 		},
 		{
-<<<<<<< HEAD
 			"section": "Order Inquiries",
 			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/icon_orders.png",
 			"secondSection": [
@@ -432,160 +338,6 @@
 							"block": "<p>If you’d like to show us your work and become a Contributing Writer on Bodybuilding.com, please contact us at <a href=’mailto:editor@bodybuilding.com’>editor@bodybuilding.com</a>.</p>"
 						},
 					"secondarySection" : ""
-=======
-			"section": "All Access",
-			"sectionImg" : "imgs/allaccess3.png",
-			"secondSection": [
-				{
-					"section": "What is All Access?",
-					"answer": [
-						{
-							"block": "<p>All Access is a subscription service that gives you access to incredible fitness experts who can tell you exactly what you need to do to hit your goals. Start with the fitness plans they created exclusively for Bodybuilding.com. Each plan includes video instruction, daily workouts, nutrition information, supplement guides, and more. We have more than 45 plans for you to choose from!</p>"
-						}
-					]
-				},
-				{
-					"section": "Benefits of All-Access",
-					"answer": [
-						{
-							"block": "<p>45+ expert-designed fitness plans that include:</p><ul><li>Daily workouts</li><li>Video instruction</li><li>Nutrition guides</li><li>Meal plans</li><li>Recipes</li><li>Free apps</li></ul><p>With Much more to come!</p><p>All of the great articles and videos you love will still be free, with fresh features added on the regular. All Access is a premium content subscription service which includes over 45 fitness plans all curated by Bodybuilding.com experts and editors. What you will experience with All Access is a simple path to finding and finishing a fitness plan that fits your goals and your lifestyle.</p><p>We will continue to add new fitness plans, so we can support a broader range of fitness goals. In the near future, we’ll be rolling out live Q&A sessions with the pros, daily advice, original programming, chat, and much more.</p>"
-						}
-					]
-				},
-				{
-					"section": "How Much Is All-Access?",
-					"answer": [
-						{
-							"block": "<h3>How much is all Access?</h3><ul><li>$8.99 per month<li>$89.99 per year (Two months free!)</ul><h3>Can I purchase All Access with Bodybuilding.com in-store credit?</h3><p>You cannot purchase All Access with in-store credit. Your All Access subscription will require a valid credit card for auto renewal.<h3>The Bodybuilding.com store has a 10% Off Everything promotion. Does that apply to All Access?</h3><p>No, that promotion cannot be applied to the purchase of an All Access subscription. If we choose to run a promotion on All Access, it will be clearly specified.<h3>Is there a free trial of All Access?</h3><p>We do not offer a free trial period, but try out this pared down version of our fitness plans. It’s simple for you to jump in, give it a try, and consider signing up for All Access.</p><a href=https://www.bodybuilding.com/fun/new-year-start-here-7-day-beginner-trainer.html>7-Day Beginner Trainer</a><h3>Will I be charged sales tax if I purchase an All Access subscription?</h3><p>Yes, you will be charged sales tax based on the credit card billing address associated with your subscription purchase and auto renewals."
-						}
-					]
-				},
-				{
-					"section": "How Do I Use All-Access?",
-					"answer": [
-						{
-							"block": "<h3>Once I’m signed up, how do I view the All Access content?</h3><p>Please make sure you are logged into your Bodybuilding.com account to view the content on the All Access section of the website.<h3>How do I find the right fitness plan for me?</h3><p>Once you are logged in, you will be able to filter all of the plans by goal, fitness experience level, duration, and more."
-						}
-					]
-				},
-				{
-					"section": "All-Access Subscription Details",
-					"answer": [
-						{
-							"block": "<h3>Can I skip a month with my annual All Access subscription?</h3><p>Not at this time. Annual All Access subscriptions will run for twelve consecutive months from your date of purchase. If you need to cancel your subscription, please see our cancelation policy below.<h3>How do I cancel my All Access subscription?</h3><p>If you purchased your All Access subscription directly from Bodybuilding.com’s website, please log in to you Bodybuilding.com Account and choose Manage Subscription from your My Account page. Here you will be able to cancel your All Access subscription. You can also contact our stellar Customer Service team for assistance.<p>If you purchased an All Access subscription through Google Play or iTunes, please reference the subscription policies of Google Play and iTunes directly, as your subscription is managed directly through the app store and not your Bodybuilding.com account.<h3>Will I receive a refund if I cancel All Access?</h3><p>We do not provide refunds for All Access. If you cancel, your subscription will remain active for the duration of the subscription period you purchased.<h3>How do I view or edit my All Access Account and Billing Information?</h3><p>If you purchased your All Access subscription directly from Bodybuilding.com’s website, please log in and choose Manage Subscription from your My Account page. It will have all the information about your All Access purchase, payment method, and renewal transactions. Alternatively, if you purchased your All Access subscription from Google Play or iTunes, your subscriptions will be managed through your Google Play or iTunes account used to purchase your All Access subscription.<h3>How do I know I am officially signed up for All Access?</h3><p>A welcome email will be sent to the email address that is connected to your Bodybuilding.com account."
-						}
-					]
-				},
-				{
-					"section": "All-Access App Questions",
-					"answer": [
-						{
-							"block": "<h3>I downloaded a free Bodybuilding.com fitness plan app from Google Play. Do I still have access to my app?</h3><p>If you downloaded a free Bodybuilding.com fitness plan app from Google Play store, you will no longer have access to its content. You must subscribe to All Access in order to use the app.<h3>I purchased a Bodybuilding.com fitness plan app from iTunes. Do I still have access to my app?</h3><p>If you purchased your Bodybuilding.com fitness plan app from iTunes, that app and its content is yours as long as you like.<h3>Will I get All Access since the app I purchased is now part of the subscription package?</h3><p>Your previously downloaded Bodybuilding.com fitness app does not grant you access to the All Access program but rather only the content within the app you purchased. You must subscribe to All Access in order to enjoy other fitness plans.<h3>Can I purchase an All Access subscription through Google Play or iTunes?</h3><p>Yes, you can sign up for All Access directly through any Bodybuilding.com fitness plan app (excluding the BodySpace application) using the payment method associated with your iTunes or Google Play account. All subscriptions and auto-renewing charges purchased through a Bodybuilding.com fitness plan application will be managed through your Google Play or iTunes account."
-						}
-					]
-				}
-			]
-   
-		},
-		{
-			"section": "Order Inquiries",
-			"sectionImg" : "imgs/icon_orders.png",
-			"secondSection": [
-   				{
-					"section": "Returns and Exchanges",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Backordered Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Canceling Orders",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Changing an Order",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Bad/Damaged Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Adverse Reaction to Product",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Discontinued Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Order History",
-					"link": "",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Reorder Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				}
-   			]
-		},
-		{
-			"section": "Website Inquiries",
-			"sectionImg" : "imgs/icon_orders.png",
-			"secondSection": [
-   				{
-					"section": "asdf",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2>"
-						}
-					]
-				},
-				{
-					"section": "Backordered Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
->>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 				}
    			]
 		},
@@ -808,7 +560,6 @@
 			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/shoppingthestore.png",
 			"secondSection": [
 				{
-<<<<<<< HEAD
 					"section": "Quantity Policy",
 					"answer": {
 							"block": "<h2>NEED INFO HERE</h2>"
@@ -821,62 +572,6 @@
 							"block": "<p>Reviewing products couldn’t be easier. Simply go to any product’s page, scroll to the reviews section at the bottom of the page and click ‘Write A Review’.</p><p>To report any reviews that may be inaccurate or not pertain to the specific product, please scroll to the reviews section at the bottom of the page and click the ‘Report’ link at the bottom right of every review.</p>"
 						},
 					"secondarySection" : "Order Inquiries"
-=======
-					"section": "Backordered Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Country Store",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Discontinued Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "New Product Request",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Product Restrictions",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Quantity Policy",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
-				},
-				{
-					"section": "Review Products",
-					"answer": [
-						{
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul><ul><li>Holder List</li><li>Holder List 2</li></ul>"
-						}
-					]
->>>>>>> 4374102afe5760676d2b361d6afe1981da856255
 				}
 			]
    
