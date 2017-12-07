@@ -139,7 +139,6 @@
 #contactSideBar .contactCell a:hover {
 	color: #c8c8c8;
 }
-
 #helpMain #helpContent {
 	flex: 1 1 75%;
 	padding: 0px 10px 10px;
@@ -149,7 +148,6 @@
 	min-height: 400px;
 	transition: .3s height;
 }
-
 #helpSearch {
 	width: 100%;
 	margin: 0px auto 30px;
@@ -180,7 +178,6 @@
 	background-position: center;
 	cursor: pointer;
 }
-
 #helpQuickLinks {
 	width: 100%;
 	margin: 5px 0 34px 0;
@@ -230,7 +227,7 @@
   	flex-wrap: wrap;
   	align-content: center;
   	justify-content: flex-start;
-	transition: opacity .3s;
+	transition: opacity .3s, height .4s;
 }
 #helpMain .helpSectionBox {
 	width: 33.33333%;
@@ -376,7 +373,7 @@
 	}
 	#helpQuickLinks a {
 		font: 600 13px/14px ProximaNova, Arial, sans-serif;
-		padding: 5px;
+		padding: 8px;
 	}
 	#helpMain #helpSideBar {
 		padding: 0 0px 10px 10px;
@@ -400,17 +397,11 @@
 		margin-bottom: 3px;
 	}
 	#contactSideBar .contactCell {
-		width: 25%;
+		width: 50%;
 	}
 	#contactSideBar .contactImg {
 		justify-content: center;
 		margin-top: 0px;
-	}
-}
-/* ----------------------------  MEDIA QUERY ------------------------------ */
-@media screen and (max-width:985px) {
-	#contactSideBar .contactCell {
-		width: 35%;
 	}
 }
 /* ----------------------------  MEDIA QUERY ------------------------------ */
@@ -455,6 +446,10 @@
 		width: 46%;
 		margin: 7px 5px;	
 	}
+	#helpContent .helpContentWrap {
+		min-height: 600px;
+		transition: .8s height;
+	}
 }
 /* ----------------------------  MEDIA QUERY ------------------------------ */
 @media screen and (max-width:685px) {
@@ -476,25 +471,32 @@
 		justify-content: space-between
 	}
 	#helpQuickLinks a {
-		width: 49%;
-		margin: 5px 0;
+		margin: 5px 5px;
+		padding: 7px 5px;
 		font: 600 13px/13px ProximaNova, Arial, sans-serif;
 	}
 }
 /* ----------------------------  MEDIA QUERY ------------------------------ */
 @media screen and (max-width:500px) {
+	#helpQuickLinks a {
+		flex: 1 1 auto;
+		margin: 5px 3px;
+		padding: 10px 5px;
+		font: 600 13px/13px ProximaNova, Arial, sans-serif;
+		min-height: 48px;
+	}
 	#contactSideBar h2 {
-		text-align: center;
+		text-align: left;
 	}
 	#contactSideBar .contactCell {
 		width: 100%;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: flex-start;
 		margin: 7px auto;
 		padding: 0;
 	}
 	#contactSideBar .contactCell a{
-		width: 100%;
+		width: auto;
 		text-align: center;
 	}
 	#contactSideBar .contactImg {
@@ -517,5 +519,10 @@
 	#helpBreadCrumbs {
 		padding: 0;
 	}
-	
+	#main #helpMain #helpBreadCrumbs a:nth-of-type(2){
+		display: none;
+	}
+	#helpBreadCrumbs #breadCrumbInner a:before{
+		content: "<";
+	}
 }

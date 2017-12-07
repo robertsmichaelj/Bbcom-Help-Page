@@ -63,13 +63,16 @@ function setQuery(first, second) {
 	if (first && !second) {
 //		history.pushState(state, null, "helpMain.html?" + first);
 		history.pushState(state, null, first);
+		ga('gtm1.set', 'page', "/help" + "/" + first);
 	} else if (first) {
 //		history.pushState(state, null, "helpMain.html?" + first + "&" + second);
 		history.pushState(state, null, first + "&" + second);
+		ga('gtm1.set', 'page', "/help" + "/" + first + "/" + second);
 	}
 	if (!first) {
 //		window.history.pushState(state, null, "helpMain.html");
 		window.history.pushState(state, null, null);
+		ga('gtm1.set', 'page', "/help");
 	}
 	pop = state.filter(function (val) {return val !== undefined; });
 }
