@@ -1,11 +1,14 @@
 {
 	"selfHelpLinksHeader": "Self-Help Links",
 	"selfHelpLinkTopics": [
+        {
+			"name": "Where's My Order?"
+		},
 		{
 			"name": "Order History"
 		},
 		{
-			"name": "Returns and Exchanges"
+			"name": "Returns"
 		},
 		{
 			"name": "Change Password"
@@ -47,14 +50,16 @@
 					"answer": {
 							"block": "<p>We’ve invited the our top brands to partner with us to offer you Free Shipping. Together, we want to make it easier and more cost-effective for you to shop for the products you love. <span>Any product marked with the Free Shipping <img class='smallImg' src='https://www.bodybuilding.com/images/help-pages/icons/freeShipTruck.png'/> icon is eligible for Free Shipping when you spend over $49 on these eligible product(s).</span></p><p>If you have over $49 of eligible products in your cart, those will be shipped for free. Any product that is not eligible will be charged the Economy Shipping rate. Free Shipping also is only applied to orders of up to $500.</p>"
 						},
-					"secondarySection" : "Domestic Shipping"
+					"secondarySection" : "Domestic Shipping",
+                    "keywords": ["return product"]
 				},
 				{
 					"section": "Free Shipping Timeframes",
 					"answer": {
-							"block": "<p>Free Shipping orders should be received within 3-6 days of your order. Orders placed by 2:00pm Monday-Friday will ship out that same day.</p>"
+							"block": "<p>Free Shipping orders should be received within 3-6 days of your order. Orders   placed by 2:00pm Monday-Friday will ship out that same day.</p>"
 						},
-					"secondarySection" : "Domestic Shipping"
+					"secondarySection" : "Domestic Shipping",
+                    "keywords": ["received within", "eligible products"]
 				},
 				{
 					"section": "Free Shipping Availability",
@@ -67,15 +72,8 @@
 		},
 		{
 			"section": "Domestic Shipping",
-			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/north-america.png",
+			"sectionImg" : "/imgs/north-america1.png",
 			"secondSection": [
-				{
-					"section": "Where's My Order? - Domestic",
-					"answer": {
-							"block": "<p>WHERE MY ORDER?!</p>"
-						},
-					"secondarySection" : ""
-				},
 				{
 					"section": "Shipping Rates",
 					"answer": {
@@ -91,7 +89,7 @@
 					"secondarySection" : ""
 				},
 				{
-					"section": "Shipping Methods",
+					"section": "Shipping Methods - Domestic",
 					"answer": {
 							"block": "<p>We have domestic warehouse locations throughout the country to help ensure your order is shipped and delivered as quickly as possible.<p>We've partnered with multiple regional and national couriers and offer the following shipping options in the United States:<ul><li><span>Economy:</span> Economy shipping normally arrives within 2 to 6 business days, and is usually the least expensive option. Monday thru Friday delivery only.<li><span>Standard:</span> Standard shipping normally arrives within 2 to 4 business days, and is usually the best option for heavy shipments, like those with large tubs of protein.<li><span>Two Business Day Delivery:</span> Two day delivery helps ensure delivery within two business days. Please understand that we can only ship items that are in-stock at one of our domestic warehouses. For two day delivery, orders must be placed Monday - Friday by 2:00pm Eastern to qualify.<li><span>One Business Day Delivery:</span> Selecting this option ensures we can ship your package to you in just one business day. Please understand that we can only ship items that are in-stock at one of our domestic warehouses. For one day delivery, orders must be placed Monday - Friday by 2:00pm Eastern to qualify.<li><span>Military:</span> Military shipping normally arrives within three to eight business days, and is the only shipping option available for APO, FPO, or DPO military mailing addresses.</ul>"
 						},
@@ -108,21 +106,21 @@
 		},
 		{
 			"section": "International Shipping",
-			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/earth-globe.png",
+			"sectionImg" : "/imgs/earth-globe2.png",
 			"secondSection": [
-				{
-					"section": "Where's My Order? - International",
-					"answer": {
-							"block": "<p>WHERE MY ORDER?!</p>"
-						},
-					"secondarySection" : ""
-				},
 				{
 					"section": "Countries We Ship To",
 					"answer": {
 							"block": "<p>We are constantly striving to accommodate all international customers and make their purchase experience with Bodybuilding.com simple, safe, and professional. To determine if we are able to ship to your country, please check the list of available <a href='https://www.bodybuilding.com/store/help/countrystore.htm'>country specific stores.</a></p><p>If your country is not listed, then unfortunately we are unable to ship to you at this time. In some cases, we are restricted by U.S. State Department regulations, and in other cases, we cannot ship to certain countries for other business related reasons.</p><p><span>Note:</span> For customers in the U.S. military, we ship to all APO, FPO, and DPO addresses regardless of country.</p>"
 						},
 					"secondarySection" : "Shopping the Store"
+				},
+                {
+					"section": "Shipping Methods - International",
+					"answer": {
+							"block": "<p>We have worked hard to find the best shipping methods possible for our international customers. Many factors play a role in the time it takes for an international shipment to arrive at your door, but we do everything we can to help ensure these times are as quick as possible. When placing an order, you can select from the following shipping options:</p><p><span>Standard Delivery (10 - 25 Business Days*):</span> This service is very popular for smaller, lighter packages with orders delivered by the local mail service. Unfortunately, tracking numbers may not be available to customers on packages sent using this shipping method.</p><p><span>Economy (5 - 10 Business Days*):</span> For even faster delivery, international customers can select the Economy shipping method, which speeds delivery and includes step-by-step tracking information, allowing you to follow the progress of your order all the way to your front door.</p><p><span>Priority (2 - 6 Business Days*):</span> Priority shipping is the fastest method available to international customers. Shipping times are incredibly fast, with most orders arriving at your country's customs agency very quickly. Priority also offers more tracking visibility, which allows you to check the status on your order at any time.</p><p>*Not all shipping methods are available in all countries and times given are an average for international delivery. Actual shipping time to your country's customs agency may vary and a more specific time frame for your country will be provided during the checkout process. When customs clearance procedures are required, it can cause delays beyond our original delivery estimates.</p><p><span>Note:</span> International customers are responsible for ensuring that the products ordered can be lawfully imported to your country. When ordering from Bodybuilding.com, the recipient is the importer of record and must comply with all laws and regulations of the destination country. Orders shipped to countries outside of the United States may be subject to import taxes and customs duties levied by the destination country once a shipment enters the country. From our experience, most foreign customers are not charged when they receive the shipment, however, any additional charges for customs clearance must be paid by the recipient. Customs policies vary widely from country to country and we recommend contacting your local customs office for further information. If you do get charged an additional fee, the carrier will expect payment at the time of delivery. If you refuse the shipment because of these charges, or if an order is rejected by customs due to item restrictions, or if the order is returned because the local post is unable to locate your address, we can refund you for the cost of the products (which does not include any shipping or return shipping fees) once the package is returned and processed by our warehouse. Please note that packages returned by customs can sometimes take a very long time to return, and in extreme circumstances can take as long as one year.</p><p>No matter which shipping option you choose, our award winning customer service team is here to help you with your shipment and make sure it arrives to you quickly and safely.</p>"
+						},
+					"secondarySection" : ""
 				},
 				{
 					"section": "Delays and Customs",
@@ -142,13 +140,6 @@
 					"section": "Product Restrictions",
 					"answer": {
 							"block": "<p>When you are shopping in our U.S. store, you have the ability to add any item to your shopping cart. However, when you enter your address, select your shipping country, and an error message displays, the flagged item has known import restrictions to your country and will not be allowed through customs.<p>Due to regulations put in place by the local customs department in some countries, we may not be able to ship all items available in our U.S. store to your location. To help you determine what can or cannot be shipped to you, we created a store specific to your country. The country specific store contains only products available to be shipped directly to you and removes the uncertainty.<p>Regulations are different in every country, and though they change often, we do our best to keep up with them and update your store as soon as we know of a new restriction. We try not to ship products that are restricted in your country to prevent you from losing out on the item and money, however the responsibility falls on you, the customer, to ensure the products ordered are not seized by customs.<p><span>***IMPORTANT:</span> Canada prohibits the importation of more than a 90 day supply of certain dietary supplements (natural health products) within a single order and you may see this restriction reflected in your cart.<span>***</span><h3>DISCLAIMER:</h3><p>\"We cannot be responsible for any customs restrictions, tariffs, or other regulations that may apply at Customs in any country. Any duties or taxes that may apply are your responsibility. If you have any questions, we encourage you to speak with your customs office, although we will ship any products you order to the address you provide.<p>Since the laws are different in every country (and change often), we maintain an extensive database of known product restrictions. To make ordering easier for you, your country store and the shopping cart will enforce these known restrictions to prevent you from accidentally ordering a product we know to have issues with your customs department. The responsibility is yours to check with your country's customs office to verify that your products can clear customs.<p>We will do our part and follow the exact directions in your order. We will ship your order to the exact address that you provide. Please keep in mind that once an order has shipped, we cannot change the address information on an international order, and errors here could cause a delivery delay or rejection. We will give you the best service and ship it very quickly at the rates that we have agreed to on our site - you pay actual shipping charges based on the weight of the package. If for whatever reason the package is seized by Customs officials, we will not issue you a refund unless all products are returned to us in their original condition. The vast majority of orders make it through customs without any problems, and most orders that are stopped are automatically returned to us. You may be responsible for any return shipping charges, in accordance with your local regulations.\"<p>By ordering from Bodybuilding.com, you are stating that you agree to the above disclaimer. While we rarely have problems with international shipments, if there is a problem with your order, we will work hard to find a solution as quickly as possible.<p><span>Note:</span> International customers are responsible for ensuring that the products ordered can be lawfully imported to your country. When ordering from Bodybuilding.com, the recipient is the importer of record and must comply with all laws and regulations of the destination country. Orders shipped to countries outside of the United States may be subject to import taxes and customs duties levied by the destination country once a shipment enters the country. From our experience, most foreign customers are not charged when they receive the shipment, however, any additional charges for customs clearance must be paid by the recipient. Customs policies vary widely from country to country and we recommend contacting your local customs office for further information. If you do get charged an additional fee, the carrier will expect payment at the time of delivery. If you refuse the shipment because of these charges, or if an order is rejected by customs due to item restrictions, or if the order is returned because the local post is unable to locate your address, we can refund you for the cost of the products (which does not include any shipping or return shipping fees) once the package is returned and processed by our warehouse. Please note that packages returned by customs can sometimes take a very long time to return, and in extreme circumstances can take as long as one year.</p>"
-						},
-					"secondarySection" : ""
-				},
-				{
-					"section": "Shipping Timeframes",
-					"answer": {
-							"block": "<h2>NEED INFO HERE</h2>"
 						},
 					"secondarySection" : "Shopping the Store"
 				}
@@ -205,14 +196,28 @@
 		},
 		{
 			"section": "Order Inquiries",
-			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/icon_orders.png",
+			"sectionImg" : "/imgs/icon_orders3.png",
 			"secondSection": [
    				{
-					"section": "Returns and Exchanges",
+					"section": "Returns",
 					"answer": {
-							"block": "<h2>NEED INFO HERE</h2>"
+							"block": "<p>At Bodybuilding.com, we want you to be overjoyed with your purchase! If you’re not satisfied, we’re not satisfied. If you’re unhappy with your order, whatever the reason may be, we’ll make it right. Contact our award-winning Customer Service team within 90 days of your purchase and we’ll either give you a full refund or in-store credit equal to the value of your product.</p><p><span>Clearance Products:</span> All clearance items are final sale and may not be returned. No price adjustments will be given on prior sales.</p>"
 						},
 					"secondarySection" : ""
+				},
+                {
+					"section": "Exchanges",
+					"answer": {
+							"block": "<p>At Bodybuilding.com we want you to be happy with your purchase. If you received clothes that do not fit, or you do not enjoy the product flavors, contact our Customer Service team within 90 days of your purchase and we would be happy to assist you with an exchange, refund, or offer in-store credit.</p><p><span>Clearance Products:</span> All clearance items are final sale and may not be exchanged, returned, or refunded.</p>"
+						},
+					"secondarySection" : ""
+				},
+                {
+					"section": "Where's My Order?",
+					"answer": {
+							"block": "<p>When your order has been submitted, you should receive an order confirmation email. With the information available, use our <a href=’https://www.bodybuilding.com/store/orderstatus.htm’>Order Status</a> tool to locate your purchase.</p>"
+						},
+					"secondarySection" : "International Shipping, Domestic Shipping"
 				},
 				{
 					"section": "Backordered Products",
@@ -224,7 +229,7 @@
 				{
 					"section": "Canceling Orders",
 					"answer": {
-							"block": "<p>Within minutes of submitting your order, our warehouse is already picking and packing your items. Unfortunately, after we start fulfilling it, it is unlikely that we can make any edits or cancel your order.<ul><li>If your order has not yet shipped, please contact our Customer Service department to cancel the order and refund your payment.<li>If your order has already shipped, unfortunately we are unable to cancel it; however, you can return the unopened product for a full refund or exchange it for something else. Please note that the refund does not include the cost of shipping. For more information on returning an order, please visit our <a>Returns and Exchanges</a> section.<li>If you need to edit or make changes to your order after it has been submitted, please contact our Customer Service Department. We may be able to make the needed changes without canceling the order. If contacting us by email, please include your name and order number in your email.</ul>"
+							"block": "<p>Within minutes of submitting your order, our warehouse is already picking and packing your items. Unfortunately, after we start fulfilling it, it is unlikely that we can make any edits or cancel your order.<ul><li>If your order has not yet shipped, please contact our Customer Service department to cancel the order and refund your payment.<li>If your order has already shipped, unfortunately we are unable to cancel it; however, you can return the unopened product for a full refund or exchange it for something else. Please note that the refund does not include the cost of shipping. For more information on returning an order, please visit our <a>Returns</a> section.<li>If you need to edit or make changes to your order after it has been submitted, please contact our Customer Service Department. We may be able to make the needed changes without canceling the order. If contacting us by email, please include your name and order number in your email.</ul>"
 						},
 					"secondarySection" : ""
 				},
@@ -236,16 +241,23 @@
 					"secondarySection" : ""
 				},
 				{
-					"section": "Bad/Damaged Products",
+					"section": "Bad Products",
 					"answer": {
-							"block": "<h2>NEED INFO HERE</h2>"
+							"block": "<p>If you receive a product that has gone bad, or has other issues, please contact us with the product’s lot number and expiration date. These are usually printed next to each other on the bottom of the container. When contacting us, please also provide your order number and name. After we receive this information, we will contact you with the best options for your situation.</p>"
+						},
+					"secondarySection" : ""
+				},
+                {
+					"section": "Damaged Products",
+					"answer": {
+							"block": "<p>If you receive a product that has been damaged, or has other issues, please contact us with the product’s lot number and expiration date. These are usually printed next to each other on the bottom of the container. When contacting us, please also provide your order number and name. After we receive this information, we will contact you with the best options for your situation.</p>"
 						},
 					"secondarySection" : ""
 				},
 				{
 					"section": "Adverse Reaction to Product",
 					"answer": {
-							"block": "<h2>INFO NEEDED HERE. AER TOOL?</h2>"
+							"block": "<p>On rare occasions, a product may not agree with your stomach or cause a negative reaction. Anytime you have a negative reaction to a product, please contact our Customer Service department with the name of the product, the lot number, the expiration date, and information about your reaction. We also recommend contacting the manufacturer of the product using the contact information on the product label.</p><p>It is important to gather information about your reaction to help us and our vendors comply with the Dietary Supplement and Nonprescription Drug Consumer Protection Act and to help us look for trends that indicate a product should be investigated, withdrawn, or recalled. We take all reports of negative reactions very seriously and are committed to protecting our valued customers.</p><p>Following a negative reaction, we can issue an in-store credit or exchange the product for something more agreeable.</p>"
 						},
 					"secondarySection" : ""
 				},
@@ -274,19 +286,19 @@
 		},
 		{
 			"section": "Website Inquiries",
-			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/icon_orders.png",
+			"sectionImg" : "/imgs/bbcomLogoCyan.png",
 			"secondSection": [
    				{
 					"section": "Affiliate Program",
 					"answer": {
-							"block": "<h2>Need info here</h2>"
+							"block": "<p>More information on our affiliate program can be found on the <a href=’https://www.bodybuilding.com/store/affiliate.htm’>Join Our Affiliate Program</a> page.</p>"
 						},
 					"secondarySection" : ""
 				},
 				{
 					"section": "Content Use",
 					"answer": {
-							"block": "<h2><h2>Terms of Use?</h2>"
+							"block": "<p>Please see our <a href=’https://www.bodybuilding.com/fun/disclaim.htm’>Terms of Use</a> Page for more information on what you can and cannot do with our content.</p>"
 						},
 					"secondarySection" : ""
 				},
@@ -307,14 +319,14 @@
 				{
 					"section": "Referral Program",
 					"answer": {
-							"block": "<h2>Get Help Info From Dean S.? Look for FAQ on site.</h2>"
+							"block": "<p>Check out our current referral program offers at the <a href=’https://marketing.bodybuilding.com/marketing/campaign/invite’>Refer Your Friend</a> Page</p>."
 						},
 					"secondarySection" : ""
 				},
 				{
 					"section": "Security & Privacy",
 					"answer": {
-							"block": "<h2>List Privacy Policy here? Or link?</h2>"
+							"block": "<p>You can see our Security and Privacy policies on our <a href=’https://www.bodybuilding.com/store/help/privacy-policy.htm’>Privacy &amp; Security</a> page.</p>"
 						},
 					"secondarySection" : ""
 				},
@@ -343,26 +355,26 @@
 		},
 		{
 			"section": "Gift Certificates",
-			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/gift1.png",
+			"sectionImg" : "/imgs/gift2.png",
 			"secondSection": [
 				{
 					"section": "Buying Gift Certificates",
 					"answer": {
-							"block": "</h2>Need Info here.</h2>"
+							"block": "<p>To purchase a gift certificate, visit the <a href='http://www.bodybuilding.com/store/gift-certificate.html'>Gift Certificate purchase page</a>, enter the amount, complete the form, and proceed to checkout. Within 24 hours, the recipient will receive an email from Bodybuilding.com with the gift certificate which lets them know of your gift.</p><p><span>Note:</span> Gift certificates can only be purchased using U.S. dollars, and can only be redeemed in the U.S. store.</p>"
 						},
 					"secondarySection" : "Payments and Refunds"
 				},
 				{
 					"section": "Gift Certificate Balance",
 					"answer": {
-							"block": "</h2>Gift Cert Balance Script Here?</h2>"
+							"block": "<p>To check the balance of your gift certificate, please contact our Customer Service, and we can check your balance right away.</p>"
 						},
 					"secondarySection" : "Payments and Refunds"
 				},
 				{
-					"section": "Using Gift Certificate",
+					"section": "Using A Gift Certificate",
 					"answer": {
-							"block": "</h2>Need Info here.</h2>"
+							"block": "<p>Paying for an order using a gift certificate is easy! When you're ready to checkout, select <span>Gift Certificate</span> as the payment option, enter the gift certificate number, and then click <span>Submit Order</span>.</p><ul><li>If the total is less than the gift certificate balance, the remaining balance stays on the gift certificate to use on a future purchase.</li><li>If the total is more than the gift certificate balance, you'll be returned to the Payment Options page to select a secondary form of payment to pay for the remainder of the balance.</li><li>If you receive an error after submitting your order, try clicking the <span>Back</span> button on your browser and re-entering the gift certificate number.</li></ul><p><span>Note:</span> Gift certificates can only be purchased using U.S. dollars, and can only be redeemed in the U.S. store.</p>"
 						},
 					"secondarySection" : "Payments and Refunds"
 				}
@@ -370,10 +382,10 @@
 		},
 		{
 			"section": "Account Inquiries",
-			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/icon_account.png",
+			"sectionImg" : "/imgs/icon_account1.png",
 			"secondSection": [
 				{
-					"section" : "Change Billing Address",
+					"section" : "Change Billing Addresses",
 					"answer": {
 							"block": "<p>You can change the billing addresses for payment methods on your account under the <a href='https://www.bodybuilding.com/store/account/billing'>'Saved Credit Cards'</a> section of your <a href='https://www.bodybuilding.com/store/account/'>account settings</a>.</p>"
 						},
@@ -382,40 +394,40 @@
 				{
 					"section" : "Change Username",
 					"answer": {
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+							"block": "<p>Once an account has been created, the username cannot be changed. If changing your username is vital, the only solution is to deactivate your profile and create a new one using a different username and email address.</p><p>If you choose to create a new profile, please note you will not have access to your previous order history, saved payments and shipping details, forum posts, or BodySpace profile information (including tracked workouts).</p><p>Click here for more information on deactivating your account.</p>"
 						},
-					"secondarySection" : ""
+					"secondarySection" : "BodySpace"
 				},
 				{
 					"section" : "Manage Credit Cards",
 					"answer": {
-							"block": "<h2>Holder Header</h2><p>Holder Text</p><ul><li>Holder List</li><li>Holder List 2</li></ul>"
+							"block": "<p>You can securely add, edit, and delete credit cards on your account under the <a href='https://www.bodybuilding.com/store/account/billing'>Saved Credit Cards</a> section of your <a href='https://www.bodybuilding.com/store/account/'>account settings.</a></p>"
 						},
 					"secondarySection" : ""
 				},
 				{
 					"section" : "Deactivate Account",
 					"answer": {
-							"block": "<p>Once an account has been created, the username cannot be changed. If changing your username is vital, the only solution is to deactivate your profile and create a new one using a different username and email address.</p><p>Please see the <a>'Deactivate Account'</a> section for more information on deactivating your account.</p>"
+							"block": "<p>You can easily deactivate your profile by getting in touch with our customer service team. <span>Please include your BodySpace Username, your date of birth, and the email address associated with your account if you contact us by email or chat.</span></p><p>Please note there is no way to completely delete an account, so you may want to erase any personal photos/information from your account before contacting us. After deactivation you are still able to log into the account and place orders, but the account is not active on BodySpace or the forums.</p>"
 						},
-					"secondarySection" : ""
+					"secondarySection" : "BodySpace"
 				},
 				{
 					"section" : "Change Password",
 					"answer": {
 							"block": "<p>If you are logged in currently, you can change the password for your account on the <a href='https://www.bodybuilding.com/profile/change-password'>Change Password page</a>, in BodySpace settings.</p><p>If you’ve forgotten or misplaced your password, please go to the <a href='https://www.bodybuilding.com/profile/forgot-password'>Reset Password</a> page and follow the prompts.</p><p>Passwords must be a minimum of 6 characters and contain at least one letter and one number.</p>"
 						},
-					"secondarySection" : ""
+					"secondarySection" : "BodySpace"
 				},
 				{
 					"section" : "Change Email Address",
 					"answer": {
 							"block": "<h2>Logged in script here?</h2><p>If you are logged in, you can change the email address for your account on the <a href='https://bodyspace.bodybuilding.com/community/change-email'>Email Settings</a> page, in BodySpace settings.</p><p>To confirm the change, you must click the link in the verification email sent to the new address.</p>"
 						},
-					"secondarySection" : ""
+					"secondarySection" : "BodySpace"
 				},
 				{
-					"section" : "Change Shipping Address ",
+					"section" : "Change Shipping Addresses",
 					"answer": {
 							"block": "<p>Your shipping addresses can be added, changed, and removed in the <a href='https://www.bodybuilding.com/store/account/addresses'>'Address' section</a> of your <a href='https://www.bodybuilding.com/store/account/'>account settings.</a></p>"
 						},
@@ -425,7 +437,7 @@
 		},
 		{
 			"section": "BodySpace",
-			"sectionImg" : "https://www.bodybuilding.com/images/lpimages/optimization/testing/help-page/bbIcon1.png",
+			"sectionImg" : "/imgs/bodyspace-logo.png",
 			"secondSection": [
 				{
 					"section": "Deactivate My Account",
@@ -435,18 +447,11 @@
 					"secondarySection" : ""
 				},
 				{
-					"section": "Change Username",
-					"answer": {
-							"block": "<p>Once an account has been created, the username cannot be changed. If changing your username is vital, the only solution is to deactivate your profile and create a new one using a different username and email address.</p><p>If you choose to create a new profile, please note you will not have access to your previous order history, saved payments and shipping details, forum posts, or BodySpace profile information (including tracked workouts).</p><p>Click here for more information on deactivating your account.</p>"
-						},
-					"secondarySection" : ""
-				},
-				{
 					"section": "Create An Account",
 					"answer": {
 							"block": "<p>You can easily create a profile on the <a href='https://www.bodybuilding.com/profile/signup'>Account Registration page</a>.</p>"
 						},
-					"secondarySection" : ""
+					"secondarySection" : "Account Inquiries"
 				},
 				{
 					"section": "BodySpace Profile Management",
@@ -495,7 +500,7 @@
 		},
 		{
 			"section": "Payments and Refunds",
-			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/icon_payment.png",
+			"sectionImg" : "/imgs/icon_payment1.png",
 			"secondSection": [
 				{
 					"section": "Payment Methods",
@@ -557,12 +562,12 @@
 		},
 		{
 			"section": "Shopping the Store",
-			"sectionImg" : "https://www.bodybuilding.com/images/help-pages/icons/shoppingthestore.png",
+			"sectionImg" : "/imgs/icon_shopping2.png",
 			"secondSection": [
 				{
 					"section": "Quantity Policy",
 					"answer": {
-							"block": "<h2>NEED INFO HERE</h2>"
+							"block": "<p>Generally we do not restrict the numbers of items that you can order, however, sometime we must due to vendor restrictions, item scarcity, along with other reasons. Feel free to read about quantity restrictions more at our <a href=’https://www.bodybuilding.com/fun/disclaim.htm’>Terms of Use</a> page.</p>"
 						},
 					"secondarySection" : ""
 				},
