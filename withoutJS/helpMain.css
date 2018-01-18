@@ -223,7 +223,6 @@
 	margin-right: 16px;
 }
 #helpContent .helpContentWrap {
-	min-height: 400px;
 	-webkit-transition: .3s height;
 	transition: .3s height;
 }
@@ -288,7 +287,9 @@
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 }
-
+.helpQuickSet {
+    margin: 0 !important;
+}
 #helpQuickLinks a {
 	font: 600 14px/16px ProximaNova, Arial, sans-serif;
 	-webkit-box-flex: 1;
@@ -662,10 +663,13 @@
 		margin: 7px 5px;	
 	}
 	#helpContent .helpContentWrap {
-		min-height: 500px;
+        min-height: 440px;
 		-webkit-transition: .8s height;
 		transition: .8s height;
 	}
+    #helpContent .helpContentWrapSet {
+        min-height: 0 !important;
+    }
     #helpSearch {
         display: none;
     }

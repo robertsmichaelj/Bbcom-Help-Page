@@ -1,6 +1,3 @@
-/*jslint devel: true, nomen: true, sloppy: true, browser: true, regexp: true*/
-/*global $*/
-
 //BASIC GLOBAL VARIABLES
 var i, r, jsonData, firstHeader, mainSections, sectionName, answers, keywords, fullLoadQueries, splitQueries, pop, found, clickedSection, st1, st2, secCat1, secCat2, sideTopicsContainer = document.getElementById('helpSideBarTopics'),
     mainCellsAppendTo = document.getElementById("helpSectionBoxes"),
@@ -93,7 +90,6 @@ function setQuery(first, second) {
 //    pop = state.filter(function (val) {
 //        return val !== undefined;
 //    });
-//    console.log(pop);
 //}
 
 function breadClick(element, i) {
@@ -280,7 +276,6 @@ function searching(term, level, otherCat) {
                     }
                 }
             }
-            
             if (cells.length >= 1) {
                 var clean = removeDuplicates(cells);
                 for (i = 0; i < clean.length; i += 1) {
@@ -381,8 +376,8 @@ function searching(term, level, otherCat) {
                 }
             } else if (alt.hasOwnProperty('secondSection')) {
                 var an5 = alt.section,
-                    ai5 = alt.sectionImg,
-                    al5 = createLink(an5);
+                ai5 = alt.sectionImg,
+                al5 = createLink(an5);
                 removeChildren(helpBoxes);
                 for (r = 0; r < alt.secondSection.length; r += 1) {
                     createCells(alt.secondSection[r].section, mainCellsAppendTo, true, true);
@@ -405,10 +400,10 @@ function searching(term, level, otherCat) {
                 changePageAttributes(an5);
                 alpha();
                 [helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
+                }
+                return;
             }
-            return;
-        }
-    }, tSpeed);
+        }, tSpeed);
     return;
 }
 
@@ -556,11 +551,9 @@ window.onpopstate = function (event) {
         reset();
     }
 };
-
 //INITAL LOAD AND SEARCHES
 initLoad();
 document.addEventListener("DOMContentLoaded", function () {
-    
     //ADDS CUSTOMERS NAME TO THE HEADER OF THE PAGE IF THEY ARE LOGGED IN AND HAVE A NAME SET
     if (localStorage.getItem("currentUser") !== null) {
         var name = JSON.parse(localStorage.currentUser).user.realName,
@@ -571,21 +564,4 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
     }
-    var initialAtTop = $('#helpHeader').offset().top + $('#helpHeader').height();
-    $(window).scroll(function () {
-        var atTop = $(window).scrollTop();
-        if (atTop >= initialAtTop) {
-            topicHeaderDiv.classList.add('headerFixed');
-        } else if (atTop) {
-            topicHeaderDiv.classList.remove('headerFixed');
-        }
-    });
 });
-
-//$.ajax({
-//    url: "https://www.bodybuilding.com/store/commerce/orderstatus.jsp?nl=true&_requestid=7379271",
-//    method: "get",
-//    success: function (data) {
-//        console.log(data);
-//    }
-//});

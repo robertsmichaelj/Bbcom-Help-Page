@@ -17,13 +17,16 @@ var i, r, jsonData, firstHeader, mainSections, sectionName, answers, keywords, f
     topicHeaderImg = document.getElementById('helpHeaderImg'),
     helpErrorMessage = document.getElementById('helpErrorMessage');
 jsonData = helpJsonData;
-var snapshot = Defiant.getSnapshot(jsonData);
-//TOP LEVEL SECTIONS
-mainSections = JSON.search(snapshot, '//mainSection[section]');
-//BOTTOM LEVEL SECTIONS AND ANSWERS
-answers = JSON.search(snapshot, '//secondSection[section]');
-//BOTTOM LEVEL SECTIONS AND ANSWERS
-keywords = JSON.search(snapshot, '//secondSection[keywords]');
+
+mainSections = jsonData.mainSections;
+sections = jsonData.sections;
+//var snapshot = Defiant.getSnapshot(jsonData);
+////TOP LEVEL SECTIONS
+//mainSections = JSON.search(snapshot, '//mainSection[section]');
+////BOTTOM LEVEL SECTIONS AND ANSWERS
+//answers = JSON.search(snapshot, '//secondSection[section]');
+////BOTTOM LEVEL SECTIONS AND ANSWERS
+//keywords = JSON.search(snapshot, '//secondSection[keywords]');
 
 function changePageAttributes(text) {
     //CHANGES PAGE TITLE IN HOPES SEARCH ENGINES WILL PICK UP ON IT
@@ -53,48 +56,36 @@ if (window.location.search.indexOf('?') >= 0) {
     splitQueries = fullLoadQueries.split('&');
 }
 
-function setGA(page) {
-    try {
-        ga('gtm4.set', 'page', page);
-        ga('gtm4.send', 'pageview');
-    } catch (e) {
-        console.log('GA Not Catching');
-    }
-}
+//function setQuery(first, second) {
+//    //USES HTML5 PUSHSTATE TO CHANGE AND SET URLS
+//    var state = ["home", first, second];
+//    if (first && !second) {
+//        window.history.pushState(state, null, "/help?" + first);
+//    } else if (first) {
+//        window.history.pushState(state, null, "/help?" + first + "&" + second);
+//    }
+//    if (!first) {
+//        window.history.pushState(state, null, "/help");
+//    }
+//    pop = state.filter(function (val) {
+//        return val !== undefined;
+//    });
+//}
 function setQuery(first, second) {
     //USES HTML5 PUSHSTATE TO CHANGE AND SET URLS
-    var state = ["home", first, second];
+    var state = ["helpMain.html", first, second];
     if (first && !second) {
-        window.history.pushState(state, null, "/help?" + first);
-        setGA("/help?" + first);
+        window.history.pushState(state, null, "helpMain.html?" + first);
     } else if (first) {
-        window.history.pushState(state, null, "/help?" + first + "&" + second);
-        setGA("/help?" + first + "&" + second);
+        window.history.pushState(state, null, "helpMain.html?" + first + "&" + second);
     }
     if (!first) {
-        window.history.pushState(state, null, "/help");
-        setGA("/help");
+        window.history.pushState(state, null, "helpMain.html");
     }
     pop = state.filter(function (val) {
         return val !== undefined;
     });
 }
-//function setQuery(first, second) {
-//    //USES HTML5 PUSHSTATE TO CHANGE AND SET URLS
-//    var state = ["helpMain.html", first, second];
-//    if (first && !second) {
-//        window.history.pushState(state, null, "helpMain.html?" + first);
-//    } else if (first) {
-//        window.history.pushState(state, null, "helpMain.html?" + first + "&" + second);
-//    }
-//    if (!first) {
-//        window.history.pushState(state, null, "helpMain.html");
-//    }
-//    pop = state.filter(function (val) {
-//        return val !== undefined;
-//    });
-//    console.log(pop);
-//}
 
 function breadClick(element, i) {
     //CLICKS ON BREADCRUMBS SET HERE
@@ -166,6 +157,11 @@ function alpha() {
 }
 
 function createCells(text, appendTo, main, second, imgSrc) {
+//    console.log(text);
+//    console.log(appendTo);
+//    console.log(main);
+//    console.log(second);
+//    console.log(imgSrc);
     //CREATES CLICKABLE AREAS
     var cell = document.createElement('a'),
         wrapSection = document.createElement('div'),
@@ -241,175 +237,207 @@ function removeDuplicates(arr) {
     return unique_array;
 }
 
-function searching(term, level, otherCat) {
+function searching(term) {
     //MAIN SEARCHING FUNCTION - USED FOR CLICKS AND TYPING
-    var search = {
-        result: function (data, section) {
-            var searchTerm = term.toLowerCase().trim(),
-                snapshot = Defiant.getSnapshot(data),
-                terms = '//*[contains(' + section + ', "' + searchTerm + '")]';
-            found = JSON.search(snapshot, terms);
-            return found;
-        }
-    };
-    var answerMatch = search.result(jsonData, "section")[0],
-        secMat = search.result(jsonData, "secondarySection");
-	[helpBoxes, breadCrumbInner, topicHeaderDiv, helpErrorMessage].forEach(helpFadeOut);
+    var searchTerm = term;
+    [helpBoxes, breadCrumbInner, topicHeaderDiv, helpErrorMessage].forEach(helpFadeOut);
     setTimeout(function () {
-        if (level === 1) {
-            //SEARCH BAR
-            removeChildren(helpBoxes);
-            var cells = [];
-            for (i = 0; i < answers.length; i += 1) {
-                var name = answers[i].section;
-                if (name.toLowerCase().indexOf(term) >= 0) {
-                    cells.push(name);
-                    console.log('here1');
-                }
-                if (answers[i].answer.block.toLowerCase().indexOf(term) >= 0) {
-                    cells.push(name);
-                    console.log('here2');
-                }
-            }
-            for (i = 0; i < keywords.length; i += 1) {
-                for (r = 0; r < keywords[i].keywords.length; r += 1) {
-                    if (keywords[i].answer.block.toLowerCase().indexOf(term) >= 0) {
-                        var name = keywords[i].section;
-                        cells.push(name);
-                        console.log('here3');
-                    }
-                }
-            }
-            
-            if (cells.length >= 1) {
-                var clean = removeDuplicates(cells);
-                for (i = 0; i < clean.length; i += 1) {
-                    createCells(clean[i], mainCellsAppendTo, true, true);
-                    console.log('here4');
-                }
-            } else {
-                helpFadeIn(helpErrorMessage);
-                console.log('here5');
-            }
-			[helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
-        } else if (level === 2) {
-            //First Level Clicks
-            console.log('first level clicks');
-            var cn2 = answerMatch.section,
-                ci2 = answerMatch.sectionImg,
-                cl1 = createLink(cn2);
-            removeChildren(helpBoxes);
-            for (r = 0; r < answerMatch.secondSection.length; r += 1) {
-                createCells(answerMatch.secondSection[r].section, mainCellsAppendTo, true, true);
-            }
-            //ARRAYS ARE NOT EQUAL
-            if (typeof secMat === 'object' && secMat.length > 0) {
-                if (secMat[0].hasOwnProperty('section')) {
-                    for (r = 0; r < secMat.length; r += 1) {
-                        createCells(secMat[r].section, mainCellsAppendTo, true, true);
-                    }
+        removeChildren(helpBoxes);
+        console.log('here3');
+        //SEARCH THROUGH EVERY SECTION
+        for (i = 0; i < sections.length; i += 1) {
+            var sectionIndex = sections[i];
+            console.log('here2');
+            //SEARCH THROUGH PARENT SECTIONS OF EVERY SECTION
+            for (n = 0; n < sectionIndex.parentSections.length; n += 1) {
+                console.log('here1');
+                if (searchTerm === sectionIndex.parentSections[n]) {
+                    var item = sections[i].section;
+                    var link = createLink(searchTerm);
+                    console.log(item);
+                    createCells(item, mainCellsAppendTo, true, true);
+                    breadCrumbs(firstHeader, searchTerm);
+                    setQuery(link);
+                    mainHeaderText(searchTerm);
+                    changePageAttributes(searchTerm);
+                    alpha();
+                    break;
                 } else {
-                    for (r = 0; r < secMat.secondSection.length; r += 1) {
-                        createCells(secMat.secondSection[r].section, mainCellsAppendTo, true, true);
-                    }
+                    console.log('no match');
                 }
+                console.log('bottom1');
             }
-            breadCrumbs(firstHeader, cn2);
-            setQuery(cl1);
-            mainHeaderText(cn2, ci2);
-            changePageAttributes(cn2);
-            alpha();
-			[helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
-        } else if (level === 3) {
-            //Second Level Clicks
-            console.log('second level clicks');
-            console.log(answerMatch.section);
-            var an3 = answerMatch.section,
-                al1 = createLink(an3),
-                ac = answerMatch.answer.block,
-                m3;
-            removeChildren(helpBoxes);
-            mainHeaderText(an3, false);
-            createAnswers(ac);
-            changePageAttributes(an3);
-            for (i = 0; i < mainSections.length; i += 1) {
-                for (r = 0; r < mainSections[i].secondSection.length; r += 1) {
-                    m3 = mainSections[i].section.toLowerCase();
-                    var s3 = mainSections[i].secondSection[r].section.toLowerCase(),
-                        ml3 = createLink(m3);
-                    if (s3 === term.toLowerCase()) {
-                        var ml31 = ml3;
-                        if (clickedSection === undefined) {
-                            clickedSection = otherCat;
-                        }
-                        breadCrumbs(firstHeader, clickedSection, an3);
-                        if (clickedSection) {
-                            var makelink3 = createLink(clickedSection);
-                            setQuery(makelink3, al1);
-                        } else {
-                            setQuery(ml31, al1);
-                        }
-						[helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
-                        return;
-                    }
-                }
-            }
-        } else if (level === 4) {
-            //QUICK LINKS AND POPULAR TOPICS
-            console.log('quick links');
-            var alt = search.result(jsonData, "section")[0];
-            if (alt.hasOwnProperty('answer')) {
-                var an4 = alt.section,
-                    al4 = createLink(an4),
-                    ac4 = alt.answer.block;
-                removeChildren(helpBoxes);
-                mainHeaderText(an4, false);
-                createAnswers(ac4);
-                changePageAttributes(an4);
-                for (i = 0; i < mainSections.length; i += 1) {
-                    for (r = 0; r < mainSections[i].secondSection.length; r += 1) {
-                        var s4 = mainSections[i].secondSection[r].section.toLowerCase(),
-                            sc4 = mainSections[i].section.toLowerCase(),
-                            scl4 = createLink(sc4);
-                        if (s4 === term.toLowerCase()) {
-                            breadCrumbs(firstHeader, sc4, an4);
-                            setQuery(scl4, al4);
-							[helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
-                            return;
-                        }
-                    }
-                }
-            } else if (alt.hasOwnProperty('secondSection')) {
-                var an5 = alt.section,
-                    ai5 = alt.sectionImg,
-                    al5 = createLink(an5);
-                removeChildren(helpBoxes);
-                for (r = 0; r < alt.secondSection.length; r += 1) {
-                    createCells(alt.secondSection[r].section, mainCellsAppendTo, true, true);
-                }
-                //ARRAYS ARE NOT EQUAL
-                if (typeof secMat === 'object' && secMat.length > 0) {
-                    if (secMat[0].hasOwnProperty('section')) {
-                        for (r = 0; r < secMat.length; r += 1) {
-                            createCells(secMat[r].section, mainCellsAppendTo, true, true);
-                        }
-                    } else {
-                        for (r = 0; r < secMat.secondSection.length; r += 1) {
-                            createCells(secMat.secondSection[r].section, mainCellsAppendTo, true, true);
-                        }
-                    }
-                }
-                breadCrumbs(firstHeader, an5);
-                setQuery(al5);
-                mainHeaderText(an5, ai5);
-                changePageAttributes(an5);
-                alpha();
-                [helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
-            }
-            return;
         }
+        [helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
     }, tSpeed);
-    return;
+//    var search = {
+//        result: function (data, section) {
+//            var searchTerm = term.toLowerCase().trim(),
+//                snapshot = Defiant.getSnapshot(data),
+//                terms = '//*[contains(' + section + ', "' + searchTerm + '")]';
+//            found = JSON.search(snapshot, terms);
+//            return found;
+//        }
+//    };
+//    
+//    
+//    var answerMatch = search.result(jsonData, "section")[0],
+//        secMat = search.result(jsonData, "secondarySection");
+//	[helpBoxes, breadCrumbInner, topicHeaderDiv, helpErrorMessage].forEach(helpFadeOut);
+//    setTimeout(function () {
+//        if (level === 1) {
+//            //SEARCH BAR
+//            removeChildren(helpBoxes);
+//            var cells = [];
+//            for (i = 0; i < answers.length; i += 1) {
+//                var name = answers[i].section;
+//                if (name.toLowerCase().indexOf(term) >= 0) {
+//                    cells.push(name);
+//                    console.log('here1');
+//                }
+//                if (answers[i].answer.block.toLowerCase().indexOf(term) >= 0) {
+//                    cells.push(name);
+//                    console.log('here2');
+//                }
+//            }
+//            for (i = 0; i < keywords.length; i += 1) {
+//                for (r = 0; r < keywords[i].keywords.length; r += 1) {
+//                    if (keywords[i].answer.block.toLowerCase().indexOf(term) >= 0) {
+//                        var name = keywords[i].section;
+//                        cells.push(name);
+//                        console.log('here3');
+//                    }
+//                }
+//            }
+//            if (cells.length >= 1) {
+//                var clean = removeDuplicates(cells);
+//                for (i = 0; i < clean.length; i += 1) {
+//                    createCells(clean[i], mainCellsAppendTo, true, true);
+//                    console.log('here4');
+//                }
+//            } else {
+//                helpFadeIn(helpErrorMessage);
+//                console.log('here5');
+//            }
+//			[helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
+//        } else if (level === 2) {
+//            //First Level Clicks
+//            console.log('first level clicks');
+//            var cn2 = answerMatch.section,
+//                ci2 = answerMatch.sectionImg,
+//                cl1 = createLink(cn2);
+//            removeChildren(helpBoxes);
+//            for (r = 0; r < answerMatch.secondSection.length; r += 1) {
+//                createCells(answerMatch.secondSection[r].section, mainCellsAppendTo, true, true);
+//            }
+//            //ARRAYS ARE NOT EQUAL
+//            if (typeof secMat === 'object' && secMat.length > 0) {
+//                if (secMat[0].hasOwnProperty('section')) {
+//                    for (r = 0; r < secMat.length; r += 1) {
+//                        createCells(secMat[r].section, mainCellsAppendTo, true, true);
+//                    }
+//                } else {
+//                    for (r = 0; r < secMat.secondSection.length; r += 1) {
+//                        createCells(secMat.secondSection[r].section, mainCellsAppendTo, true, true);
+//                    }
+//                }
+//            }
+//            breadCrumbs(firstHeader, cn2);
+//            setQuery(cl1);
+//            mainHeaderText(cn2, ci2);
+//            changePageAttributes(cn2);
+//            alpha();
+//			[helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
+//        } else if (level === 3) {
+//            //Second Level Clicks
+//            console.log('second level clicks');
+//            console.log(answerMatch.section);
+//            var an3 = answerMatch.section,
+//                al1 = createLink(an3),
+//                ac = answerMatch.answer.block,
+//                m3;
+//            removeChildren(helpBoxes);
+//            mainHeaderText(an3, false);
+//            createAnswers(ac);
+//            changePageAttributes(an3);
+//            for (i = 0; i < mainSections.length; i += 1) {
+//                for (r = 0; r < mainSections[i].secondSection.length; r += 1) {
+//                    m3 = mainSections[i].section.toLowerCase();
+//                    var s3 = mainSections[i].secondSection[r].section.toLowerCase(),
+//                        ml3 = createLink(m3);
+//                    if (s3 === term.toLowerCase()) {
+//                        var ml31 = ml3;
+//                        if (clickedSection === undefined) {
+//                            clickedSection = otherCat;
+//                        }
+//                        breadCrumbs(firstHeader, clickedSection, an3);
+//                        if (clickedSection) {
+//                            var makelink3 = createLink(clickedSection);
+//                            setQuery(makelink3, al1);
+//                        } else {
+//                            setQuery(ml31, al1);
+//                        }
+//						[helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
+//                        return;
+//                    }
+//                }
+//            }
+//        } else if (level === 4) {
+//            //QUICK LINKS AND POPULAR TOPICS
+//            console.log('quick links');
+//            var alt = search.result(jsonData, "section")[0];
+//            if (alt.hasOwnProperty('answer')) {
+//                var an4 = alt.section,
+//                    al4 = createLink(an4),
+//                    ac4 = alt.answer.block;
+//                removeChildren(helpBoxes);
+//                mainHeaderText(an4, false);
+//                createAnswers(ac4);
+//                changePageAttributes(an4);
+//                for (i = 0; i < mainSections.length; i += 1) {
+//                    for (r = 0; r < mainSections[i].secondSection.length; r += 1) {
+//                        var s4 = mainSections[i].secondSection[r].section.toLowerCase(),
+//                            sc4 = mainSections[i].section.toLowerCase(),
+//                            scl4 = createLink(sc4);
+//                        if (s4 === term.toLowerCase()) {
+//                            breadCrumbs(firstHeader, sc4, an4);
+//                            setQuery(scl4, al4);
+//							[helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
+//                            return;
+//                        }
+//                    }
+//                }
+//            } else if (alt.hasOwnProperty('secondSection')) {
+//                var an5 = alt.section,
+//                ai5 = alt.sectionImg,
+//                al5 = createLink(an5);
+//                removeChildren(helpBoxes);
+//                for (r = 0; r < alt.secondSection.length; r += 1) {
+//                    createCells(alt.secondSection[r].section, mainCellsAppendTo, true, true);
+//                }
+//                //ARRAYS ARE NOT EQUAL
+//                if (typeof secMat === 'object' && secMat.length > 0) {
+//                    if (secMat[0].hasOwnProperty('section')) {
+//                        for (r = 0; r < secMat.length; r += 1) {
+//                            createCells(secMat[r].section, mainCellsAppendTo, true, true);
+//                        }
+//                    } else {
+//                        for (r = 0; r < secMat.secondSection.length; r += 1) {
+//                            createCells(secMat.secondSection[r].section, mainCellsAppendTo, true, true);
+//                        }
+//                    }
+//                }
+//                breadCrumbs(firstHeader, an5);
+//                setQuery(al5);
+//                mainHeaderText(an5, ai5);
+//                changePageAttributes(an5);
+//                alpha();
+//                [helpBoxes, breadCrumbInner, topicHeaderDiv].forEach(helpFadeIn);
+//                }
+//                return;
+//            }
+//        }, tSpeed);
+//    return;
 }
 
 function initLoad() {
@@ -448,25 +476,33 @@ function initLoad() {
     } else {
         //IF THERE IS NOTHING IN THE URL TO SEARCH FOR
         document.getElementById('helpH1').textContent = firstHeader;
+//        console.log(Object.keys(jsonData.mainSections));
+//        console.log(mainSections);
+//        Object.keys(jsonData).forEach(function(key) {
+//            console.log(key, jsonData[key]);
+//        });
         for (i = 0; i < mainSections.length; i += 1) {
-            text = mainSections[i].section;
-            imgSrc = mainSections[i].sectionImg;
+            text = mainSections[i].mainSection;
+            imgSrc = mainSections[i].mainSectionImg;
             createCells(text, mainCellsAppendTo, true, false, imgSrc);
         }
     }
     //SET CLICK ZONES FOR CLICKABLE BOXES
     $(document).on('click', '.helpSectionNormalBox', function (e) {
         e.stopImmediatePropagation();
-        if (!e.currentTarget.classList.contains('helpSectionBoxSecond')) {
-            //FIRST CLICK ON MAIN CELLS
-            text = e.currentTarget.textContent;
-            searching(text, 2);
-        } else {
-            //SECOND LEVEL CELL CLICK
-            clickedSection = $('#helpBreadLink2').text();
-            text = e.currentTarget.textContent;
-            searching(text, 3);
-        }
+        text = e.currentTarget.textContent;
+        searching(text);
+//        if (!e.currentTarget.classList.contains('helpSectionBoxSecond')) {
+//            //FIRST CLICK ON MAIN CELLS
+//            
+////            searching(text, 2);
+//            
+//        } else {
+//            //SECOND LEVEL CELL CLICK
+//            clickedSection = $('#helpBreadLink2').text();
+//            text = e.currentTarget.textContent;
+//            searching(text, 3);
+//        }
         return;
     });
     $('#helpQuickLinks a').on('click', function (e) {
@@ -556,11 +592,9 @@ window.onpopstate = function (event) {
         reset();
     }
 };
-
 //INITAL LOAD AND SEARCHES
 initLoad();
 document.addEventListener("DOMContentLoaded", function () {
-    
     //ADDS CUSTOMERS NAME TO THE HEADER OF THE PAGE IF THEY ARE LOGGED IN AND HAVE A NAME SET
     if (localStorage.getItem("currentUser") !== null) {
         var name = JSON.parse(localStorage.currentUser).user.realName,
@@ -571,21 +605,4 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
     }
-    var initialAtTop = $('#helpHeader').offset().top + $('#helpHeader').height();
-    $(window).scroll(function () {
-        var atTop = $(window).scrollTop();
-        if (atTop >= initialAtTop) {
-            topicHeaderDiv.classList.add('headerFixed');
-        } else if (atTop) {
-            topicHeaderDiv.classList.remove('headerFixed');
-        }
-    });
 });
-
-//$.ajax({
-//    url: "https://www.bodybuilding.com/store/commerce/orderstatus.jsp?nl=true&_requestid=7379271",
-//    method: "get",
-//    success: function (data) {
-//        console.log(data);
-//    }
-//});

@@ -1,6 +1,10 @@
 /*jslint devel: true, nomen: true, sloppy: true, browser: true, regexp: true*/
 /*global $*/
 
+//HIDING CONTENT FOR NON-JAVASCRIPT DEVICES
+document.getElementById('helpJSDisabled').style.display = "none";
+
+
 //BASIC GLOBAL VARIABLES
 var i, r, jsonData, firstHeader, mainSections, sectionName, answers, keywords, fullLoadQueries, splitQueries, pop, found, clickedSection, st1, st2, secCat1, secCat2, sideTopicsContainer = document.getElementById('helpSideBarTopics'),
     mainCellsAppendTo = document.getElementById("helpSectionBoxes"),
@@ -560,7 +564,8 @@ window.onpopstate = function (event) {
 //INITAL LOAD AND SEARCHES
 initLoad();
 document.addEventListener("DOMContentLoaded", function () {
-    
+    document.getElementById('helpContent').querySelector('.helpContentWrap').classList.remove('helpContentWrapSet');
+    document.getElementById('helpQuickLinks').classList.remove('helpQuickSet');
     //ADDS CUSTOMERS NAME TO THE HEADER OF THE PAGE IF THEY ARE LOGGED IN AND HAVE A NAME SET
     if (localStorage.getItem("currentUser") !== null) {
         var name = JSON.parse(localStorage.currentUser).user.realName,

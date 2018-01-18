@@ -581,11 +581,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
-//$.ajax({
-//    url: "https://www.bodybuilding.com/store/commerce/orderstatus.jsp?nl=true&_requestid=7379271",
-//    method: "get",
-//    success: function (data) {
-//        console.log(data);
-//    }
-//});

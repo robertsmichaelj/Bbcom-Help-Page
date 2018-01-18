@@ -335,25 +335,13 @@
   	-ms-flex-pack: start;
   	justify-content: flex-start;
 	-webkit-transition: opacity .3s;
-	transition: opacity .3s, top .5s;
+	transition: opacity .3s;
 }
 #helpMain #helpHeader img {
 	max-height: 25px;
 	-ms-flex-item-align: center;
 	align-self: center;
 	margin-left: 10px;
-}
-#helpMain .headerFixed {
-    position: fixed;
-    top: 75px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto !important;
-    background-color: #FFF;
-    padding: 10px 20px !important;
-    z-index: 5 !important;
 }
 #helpMain #helpSectionBoxes {
  	margin: 0 0 0 0;
@@ -624,10 +612,6 @@
 		width: 220px;
 		margin: 7px 5px;	
 	}
-    .headerFixed {
-        padding: 8px 10px !important;
-        top: 0 !important;
-    }
 }
 /* ----------------------------  MEDIA QUERY ------------------------------ */
 @media screen and (max-width:880px) {
@@ -692,10 +676,6 @@
 		flex-direction: column;
 		margin: 0px 6px;
 		min-height: 67px;
-	}
-    #helpPage h1 {
-		font: 500 24px/24px ProximaNova, Arial, sans-serif;
-		margin: 0;
 	}
 }
 /* ----------------------------  MEDIA QUERY ------------------------------ */
@@ -769,7 +749,7 @@
 		margin: 0px 4px;
 	}
 	#helpPage h1 {
-		font: 500 22px/24px ProximaNova, Arial, sans-serif;
+		font: 500 24px/24px ProximaNova, Arial, sans-serif;
 		margin: 0;
 	}
 	#main h3#pageHeader {
